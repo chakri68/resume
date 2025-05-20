@@ -95,7 +95,7 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          git add resume.pdf
+          git add chakradhar-reddy-d.pdf
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
