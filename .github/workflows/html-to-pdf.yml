@@ -1,0 +1,43 @@
+name: Convert HTML to PDF and Commit
+
+on:
+  push:
+    paths:
+      - "index.html"
+    branches:
+      - main
+
+jobs:
+  convert-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false # We'll use a separate token for commit
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate PDF from HTML
+        run: |
+          node convert.js
+          mv output.pdf chakradhar-reddy-d.pdf
+
+      - name: Commit PDF back to repository
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add chakradhar-reddy-d.pdf
+          git commit -m "chore: update chakradhar-reddy-d.pdf from index.html" || echo "No changes to commit"
+          git push
+        env:
+          # Required for pushing with token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

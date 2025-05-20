@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chakradhar Reddy Devireddy - Resume</title>
+
+    <!--  Fonts  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* =====  PALETTE & FONTS  ===== */
+      :root {
+        --font-body: "Palatino Linotype", "Book Antiqua", Palatino,
+          "EB Garamond", Georgia, serif;
+        --font-head: "Bebas Neue", "Source Sans Pro", "Helvetica Neue",
+          Helvetica, Arial, sans-serif;
+        --font-code: "JetBrains Mono", Consolas, monospace;
+
+        /* Light theme variables */
+        --clr-text: #181818;
+        --clr-head: #101010;
+        --clr-accent: #395b9c;
+        --clr-rule: #c6c6c6;
+        --clr-code-bg: #f6f8fa;
+        --clr-bg: #ffffff;
+        --clr-hover-bg: #e9f0ff;
+        --clr-nav-bg: rgba(255, 255, 255, 0.95);
+        --clr-card-bg: #ffffff;
+        --clr-card-shadow: rgba(0, 0, 0, 0.05);
+
+        /* Transition settings */
+        --transition-speed: 0.3s;
+
+        --fs-base: 0.92rem; /* screen font size */
+        --lh-base: 1.42;
+        --page-max: 70rem;
+      }
+
+      /* Dark theme variables */
+      [data-theme="dark"] {
+        --clr-text: #e4e4e4;
+        --clr-head: #ffffff;
+        --clr-accent: #7aa2ff;
+        --clr-rule: #444444;
+        --clr-code-bg: #2d333b;
+        --clr-bg: #121212;
+        --clr-hover-bg: #253044;
+        --clr-nav-bg: rgba(18, 18, 18, 0.95);
+        --clr-card-bg: #1e1e1e;
+        --clr-card-shadow: rgba(0, 0, 0, 0.2);
+      }
+
+      /* =====  LAYOUT  ===== */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0 auto;
+        max-width: var(--page-max);
+        padding: 1.9rem 2.2rem 2.2rem;
+        font: var(--fs-base) / var(--lh-base) var(--font-body);
+        -webkit-font-smoothing: antialiased;
+        color: var(--clr-text);
+        background-color: var(--clr-bg);
+        transition: background-color var(--transition-speed),
+          color var(--transition-speed);
+      }
+
+      /* =====  NAVIGATION  ===== */
+      .nav-wrapper {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background-color: var(--clr-nav-bg);
+        backdrop-filter: blur(5px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin: -1.9rem -2.2rem 0;
+        padding: 0.5rem 2.2rem;
+        transition: background-color var(--transition-speed);
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: var(--page-max);
+        margin: 0 auto;
+      }
+
+      .nav-logo {
+        font-family: var(--font-head);
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--clr-head);
+        text-decoration: none;
+        transition: color var(--transition-speed);
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .nav-item a {
+        text-decoration: none;
+        color: var(--clr-text);
+        font-family: var(--font-head);
+        font-size: 0.9rem;
+        font-weight: 600;
+        position: relative;
+        transition: color var(--transition-speed);
+      }
+
+      .nav-item a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--clr-accent);
+        transition: width var(--transition-speed);
+      }
+
+      .nav-item a:hover::after {
+        width: 100%;
+      }
+
+      .nav-controls {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .theme-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--clr-text);
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.25rem;
+        border-radius: 50%;
+        transition: background-color var(--transition-speed);
+      }
+
+      .theme-toggle:hover {
+        background-color: var(--clr-hover-bg);
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--clr-text);
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* =====  HEADER BAR  ===== */
+      .resume-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1.1rem;
+        animation: fadeIn 1s ease-out;
+      }
+      .name {
+        font-family: var(--font-head);
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin: 1rem 0 0;
+        text-align: center;
+        color: var(--clr-head);
+        transition: color var(--transition-speed);
+      }
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem;
+        font-family: var(--font-head);
+        font-size: 0.84rem;
+        margin-top: 0.25rem;
+      }
+      .contact a {
+        color: var(--clr-accent);
+        text-decoration: none;
+        transition: color var(--transition-speed), transform 0.2s;
+      }
+      .contact a:hover {
+        transform: translateY(-2px);
+        background: none;
+      }
+      .contact a::after {
+        content: "·";
+        margin: 0 0.35rem;
+        color: var(--clr-text);
+        transition: color var(--transition-speed);
+      }
+      .contact a:last-of-type::after {
+        content: "";
+      }
+
+      /* =====  HEADINGS  ===== */
+      h2 {
+        font-family: var(--font-head);
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin: 1.6rem 0 0.5rem;
+        letter-spacing: 0.02em;
+        color: var(--clr-head);
+        border-bottom: 1px solid var(--clr-rule);
+        padding-bottom: 0.15rem;
+        transition: color var(--transition-speed),
+          border-color var(--transition-speed);
+      }
+      h3 {
+        font-family: var(--font-head);
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 1.05rem 0 0.35rem;
+        color: var(--clr-head);
+        transition: color var(--transition-speed);
+      }
+
+      /* =====  BODY TEXT & LISTS  ===== */
+      p,
+      li {
+        margin: 0.22rem 0;
+        transition: color var(--transition-speed);
+      }
+      ul {
+        padding-left: 1.05rem;
+        margin: 0.25rem 0;
+      }
+      li {
+        line-height: 1.32;
+      }
+      strong {
+        font-weight: 600;
+        color: var(--clr-head);
+        transition: color var(--transition-speed);
+      }
+
+      /* =====  INLINE CODE  ===== */
+      code {
+        font-family: var(--font-code);
+        font-size: 0.83rem;
+        background: var(--clr-code-bg);
+        padding: 0.03em 0.23em;
+        border-radius: 4px;
+        transition: background-color var(--transition-speed);
+      }
+
+      /* =====  HR ===== */
+      hr {
+        border: none;
+        border-top: 1px solid var(--clr-rule);
+        margin: 1.4rem 0;
+        transition: border-color var(--transition-speed);
+      }
+
+      /* =====  LINKS ===== */
+      a {
+        text-decoration: underline;
+        color: var(--clr-accent);
+        transition: color var(--transition-speed),
+          background-color var(--transition-speed);
+      }
+      a:hover {
+        background: var(--clr-hover-bg);
+      }
+
+      /* Job title and date row */
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 0.2rem;
+      }
+
+      .job-title {
+        font-weight: 400;
+        font-style: italic;
+        margin: 0;
+      }
+
+      .job-date {
+        font-weight: 600;
+        margin: 0;
+      }
+
+      /* Skills grid for better organization */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 0.5rem;
+      }
+
+      .skills-item {
+        margin-bottom: 0.5rem;
+        padding: 0.75rem;
+        background-color: var(--clr-card-bg);
+        border-radius: 6px;
+        box-shadow: 0 2px 8px var(--clr-card-shadow);
+        transition: transform 0.2s, box-shadow 0.2s,
+          background-color var(--transition-speed);
+      }
+
+      .skills-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px var(--clr-card-shadow);
+      }
+
+      /* Style for experience and project items */
+      article {
+        padding: 1rem;
+        padding-top: 0.1rem;
+        margin-bottom: 1rem;
+        border-radius: 6px;
+        background-color: var(--clr-card-bg);
+        box-shadow: 0 2px 8px var(--clr-card-shadow);
+        transition: transform 0.2s, box-shadow 0.2s,
+          background-color var(--transition-speed);
+      }
+
+      article:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px var(--clr-card-shadow);
+      }
+
+      /* Back to top button */
+      .back-to-top {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 40px;
+        height: 40px;
+        background-color: var(--clr-accent);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s, background-color 0.3s,
+          transform 0.2s;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+
+      .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        background-color: var(--clr-head);
+        transform: translateY(-3px);
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s, transform 0.5s;
+      }
+
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        margin-top: 3rem;
+        padding: 1rem 0;
+        font-size: 0.8rem;
+        color: var(--clr-text);
+        opacity: 0.8;
+        transition: color var(--transition-speed);
+      }
+
+      /* =====  PRINT OPTIMISATION  ===== */
+      @media print {
+        @page {
+          size: A4 portrait;
+          margin: 1.3cm 1.6cm 1.4cm; /* top  | sides | bottom */
+        }
+
+        html,
+        body {
+          width: 100%;
+          max-width: none;
+          font-size: 8pt;
+          line-height: 1.35;
+          padding: 0;
+          -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+          print-color-adjust: exact;
+          background-color: white !important;
+          color: var(--clr-text) !important;
+        }
+
+        /* Reset theme to light for printing regardless of current theme */
+        :root {
+          --clr-text: #181818 !important;
+          --clr-head: #101010 !important;
+          --clr-accent: #395b9c !important;
+          --clr-rule: #c6c6c6 !important;
+          --clr-code-bg: #f6f8fa !important;
+          --clr-bg: #ffffff !important;
+          --clr-hover-bg: #e9f0ff !important;
+          --font-head: "Helvetica Neue", "Source Sans Pro", Helvetica, Arial,
+            sans-serif !important;
+        }
+
+        /* Hide web-only elements */
+        .nav-wrapper,
+        .back-to-top,
+        .theme-toggle,
+        .print-button,
+        .mobile-menu-toggle {
+          display: none !important;
+        }
+
+        /* Reset section animations */
+        section {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+
+        /* Reset card styles */
+        article,
+        .skills-item {
+          box-shadow: none !important;
+          background-color: transparent !important;
+          padding: 0 !important;
+          margin-bottom: 0.15rem !important;
+          transform: none !important;
+        }
+
+        /* Keep blocks intact; avoid awkward splits */
+        h1,
+        h2,
+        h3,
+        p,
+        ul,
+        li {
+          page-break-inside: avoid;
+        }
+
+        h2 {
+          margin-top: 1.2rem;
+          border-width: 1px;
+        }
+
+        .name {
+          margin-top: 0;
+        }
+
+        /* Replace bullets with bars in contacts */
+        .contact a::after {
+          content: " | ";
+          color: var(--clr-text);
+        }
+
+        /* Remove underlines / colours for a cleaner PDF */
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+
+        /* Subtle background for inline code when printed */
+        code {
+          background: #f2f2f2;
+        }
+
+        /* Remove footer for print */
+        footer {
+          display: none;
+        }
+      }
+
+      /* =====  MOBILE  ===== */
+      @media (max-width: 768px) {
+        body {
+          padding: 1rem;
+        }
+        .name {
+          font-size: 1.45rem;
+        }
+        h2 {
+          font-size: 1rem;
+        }
+        :root {
+          --fs-base: 0.87rem;
+        }
+        .job-header {
+          flex-direction: column;
+        }
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-menu {
+          position: fixed;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          background-color: var(--clr-nav-bg);
+          flex-direction: column;
+          padding: 1rem 0;
+          gap: 0;
+          transform: translateY(-150%);
+          transition: transform 0.3s ease-in-out;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          z-index: 90;
+        }
+
+        .nav-menu.active {
+          transform: translateY(0);
+        }
+
+        .nav-item {
+          width: 100%;
+          text-align: center;
+          padding: 0.75rem 0;
+        }
+
+        .mobile-menu-toggle {
+          display: block;
+        }
+
+        .back-to-top {
+          bottom: 1rem;
+          right: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <div class="nav-wrapper">
+      <nav class="nav">
+        <a href="#chakradhar-reddy" class="nav-logo">CR</a>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#professional-summary">Summary</a></li>
+          <li class="nav-item"><a href="#technical-skills">Skills</a></li>
+          <li class="nav-item">
+            <a href="#professional-experience">Experience</a>
+          </li>
+          <li class="nav-item"><a href="#projects">Projects</a></li>
+          <li class="nav-item"><a href="#education">Education</a></li>
+          <li class="nav-item"><a href="#achievements">Achievements</a></li>
+        </ul>
+        <div class="nav-controls">
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <div class="theme-icon">🌙</div>
+          </button>
+          <button class="print-button" aria-label="Print resume">
+            <div class="print-icon">🖨️</div>
+          </button>
+          <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            ☰
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- HEADER SECTION -->
+    <header class="resume-header">
+      <h1 class="name" id="chakradhar-reddy">CHAKRADHAR REDDY DEVIREDDY</h1>
+      <div class="contact">
+        <a href="https://github.com/chakri68">GitHub</a>
+        <a href="https://www.linkedin.com/in/chakradhar-reddy-d">LinkedIn</a>
+        <a href="mailto:chakradharreddydevireddy@gmail.com"
+          >chakradharreddydevireddy@gmail.com</a
+        >
+        <a href="tel:+916303708424">+91 63037 08424</a>
+      </div>
+    </header>
+    <hr />
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <section id="professional-summary">
+      <h2>PROFESSIONAL SUMMARY</h2>
+      <p>
+        Backend‑leaning <strong>Full‑Stack / Platform Engineer</strong> with 2
+        years of internship experience building
+        <strong>distributed, cloud‑native microservices</strong> on AWS.
+        Proficient in
+        <strong>Go, TypeScript/Node.js, React, PostgreSQL</strong> and
+        container‑driven DevOps (<strong>Docker, Kubernetes, CI/CD</strong>).
+        Designed systems processing <strong>75 k req/min</strong>, cut P95
+        latency 95%, and automated pipelines that slashed deploy times 75%.
+        Passionate about low‑latency data paths, observability, and
+        developer‑centric tooling.
+      </p>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section id="technical-skills">
+      <h2>TECHNICAL SKILLS</h2>
+      <div class="skills-grid">
+        <div class="skills-item">
+          <strong>Languages:</strong> Go, TypeScript, JavaScript, Java, Python,
+          SQL, Bash
+        </div>
+        <div class="skills-item">
+          <strong>Backend / Frameworks:</strong> Node.js, Express, Fastify,
+          NestJS, gRPC, REST, GraphQL
+        </div>
+        <div class="skills-item">
+          <strong>Frontend:</strong> React, Next.js, Redux Toolkit, SvelteKit
+        </div>
+        <div class="skills-item">
+          <strong>Cloud &amp; DevOps:</strong> AWS (S3, EC2, Lambda, RDS, SQS,
+          SNS, CloudWatch), Docker, <strong>Kubernetes</strong>, Nginx, GitHub
+          Actions, Redis, Kafka
+        </div>
+        <div class="skills-item">
+          <strong>Databases:</strong> PostgreSQL, MySQL, MSSQL, Prisma ORM,
+          Strapi CMS, Sanity
+        </div>
+        <div class="skills-item">
+          <strong>Practices:</strong> Distributed Systems, Microservices,
+          Scalability, CI/CD, TDD, Agile/Scrum
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <section id="professional-experience">
+      <h2>PROFESSIONAL EXPERIENCE</h2>
+
+      <article>
+        <h3>Zomato</h3>
+        <div class="job-header">
+          <p class="job-title">
+            Software Development Engineer Intern — Gurugram, India
+          </p>
+          <p class="job-date">Jan 2025 – Present</p>
+        </div>
+        <ul>
+          <li>
+            Migrated <strong>200+</strong> legacy JS components to
+            <strong>TypeScript + Redux</strong> in Next.js; decreased build‑time
+            errors <strong>40%</strong> and boosted feature velocity
+            <strong>30%</strong>.
+          </li>
+          <li>
+            Authored a <strong>Go streaming SDK</strong> to pipe multi‑GB ZIP
+            archives directly to <strong>AWS S3</strong>; reduced transfer
+            latency <strong>65%</strong> and halved memory overhead.
+          </li>
+          <li>
+            Built a GPS ingestion service (≈ 50 k msgs/s) with
+            <strong>WebSocket dashboards</strong>; improved average delivery ETA
+            <strong>12%</strong>.
+          </li>
+          <li>
+            Refactored RPC layer using
+            <strong>goroutines &amp; gRPC batching</strong>; slashed P95 latency
+            <strong>95%</strong> under 2 k TPS.
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Shinpo Engineering Pvt. Ltd.</h3>
+        <div class="job-header">
+          <p class="job-title">Backend Developer Intern — Remote</p>
+          <p class="job-date">Dec 2023 – Apr 2024</p>
+        </div>
+        <ul>
+          <li>
+            Scaled <strong>Strapi‑based ERM</strong> to ~1 k RPS; in‑memory
+            caching and query tuning lifted throughput <strong>80%</strong>.
+          </li>
+          <li>
+            Containerised micro‑services with
+            <strong>Docker &amp; AWS EC2</strong>; trimmed CI/CD duration
+            <strong>75%</strong> and cut infra costs <strong>63%</strong>.
+          </li>
+          <li>
+            Restructured React component hierarchy; reduced client re‑renders
+            <strong>40%</strong>, keeping First‑Input Delay &lt; 50 ms.
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>WCARL — IIIT Lucknow</h3>
+        <div class="job-header">
+          <p class="job-title">
+            Full‑Stack Web Developer Intern — Lucknow, India
+          </p>
+          <p class="job-date">Oct 2022 – Mar 2023</p>
+        </div>
+        <ul>
+          <li>
+            Engineered <strong>Next.js</strong> backend for the UP Commercial
+            Tax Dept.; sustained <strong>75 k req/min</strong> with JWT +
+            HTTPOnly cookies and WAF rules.
+          </li>
+          <li>
+            Indexed <strong>MSSQL</strong> and wrote stored procedures; cut
+            query latency <strong>95%</strong> and CPU utilisation
+            <strong>90%</strong>.
+          </li>
+          <li>
+            Automated discrepancy reports with
+            <strong>PDFMake &amp; Mammoth</strong>; eliminated
+            <strong>60%</strong> of manual formatting effort.
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>PROJECTS</h2>
+      <ul>
+        <li>
+          <strong>codeCollab</strong> — Real‑time code‑sharing IDE (Next.js,
+          WebSockets, CodeMirror); syncs 20+ concurrent users with
+          operational‑transform logic.
+          <a href="https://github.com/chakri68/codeCollab">GitHub</a>
+        </li>
+        <li>
+          <strong>get‑proctored.ai</strong> — AI‑powered exam proctoring
+          (TensorFlow, MediaPipe, WebRTC); cut false‑positive rate 30%.
+          <a href="https://github.com/chakri68/get-proctered-public">GitHub</a>
+        </li>
+        <li>
+          <strong>TS‑ML Algorithms</strong> — TypeScript library of classic ML
+          &amp; search algorithms (K‑Means, GA, A*).
+          <a href="https://github.com/chakri68/machine-learning-algos"
+            >GitHub</a
+          >
+        </li>
+        <li>
+          <strong>Pixel Drawing Simulator</strong> — Canvas tool showcasing
+          Bresenham, flood‑fill, and CRUD export; built for graphics coursework
+          and still a personal favourite.
+          <a href="https://github.com/chakri68/pixel-drawing-sim">GitHub</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2>EDUCATION</h2>
+      <p>
+        <strong>Indian Institute of Information Technology, Lucknow</strong> —
+        <em>B.Tech. in Computer Science</em> (CGPA 9.15/10)<br />
+        Dec 2021 – Jun 2025 • Lucknow, India
+      </p>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements">
+      <h2>ACHIEVEMENTS</h2>
+      <ul>
+        <li>
+          <strong>Codeforces Expert (1667)</strong> — Top 6% worldwide • 2024
+        </li>
+        <li>
+          <strong>Amazon HackOn Season 3</strong> — Top 50 / 5,000+ teams • 2023
+        </li>
+        <li>
+          Contributor, <strong>WCARL Drone</strong> — Featured in
+          <em>The Times of India</em> • 2023
+        </li>
+        <li>
+          Executive Member, <strong>GDSC IIIT Lucknow</strong> — Organised 15+
+          tech events &amp; mentored 50+ juniors • 2022–24
+        </li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <!-- KEYWORDS -->
+    <section id="keywords">
+      <p>
+        <em
+          >Keywords: Distributed Systems, Microservices, Cloud‑Native, AWS,
+          Kubernetes, Docker, REST, gRPC, SQL, PostgreSQL, Go, TypeScript,
+          React, CI/CD, Observability, Scalability, Agile</em
+        >
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Chakradhar Reddy Devireddy • Last Updated: May 2025</p>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#chakradhar-reddy" class="back-to-top">↑</a>
+
+    <!-- JavaScript -->
+    <script>
+      // Dark mode toggle
+      const themeToggle = document.querySelector(".theme-toggle");
+      const themeIcon = document.querySelector(".theme-icon");
+
+      // Check for saved theme preference or prefer-color-scheme
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const savedTheme = localStorage.getItem("theme");
+
+      // Set initial theme
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        themeIcon.textContent = "☀️";
+      }
+
+      // Theme toggle functionality
+      themeToggle.addEventListener("click", () => {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+
+        // Update icon
+        themeIcon.textContent = newTheme === "dark" ? "☀️" : "🌙";
+      });
+
+      // Print button functionality
+      const printButton = document.querySelector(".print-button");
+      printButton.addEventListener("click", () => {
+        window.print();
+      });
+
+      // Mobile menu toggle
+      const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      mobileMenuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        mobileMenuToggle.textContent = navMenu.classList.contains("active")
+          ? "✕"
+          : "☰";
+      });
+
+      // Close mobile menu when clicking on a nav item
+      document.querySelectorAll(".nav-item a").forEach((item) => {
+        item.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          mobileMenuToggle.textContent = "☰";
+        });
+      });
+
+      // Back to top button visibility
+      const backToTopButton = document.querySelector(".back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopButton.classList.add("visible");
+        } else {
+          backToTopButton.classList.remove("visible");
+        }
+      });
+
+      // Section reveal on scroll
+      const revealSections = () => {
+        const sections = document.querySelectorAll("section");
+        const windowHeight = window.innerHeight;
+
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          if (sectionTop < windowHeight - 100) {
+            section.classList.add("visible");
+          }
+        });
+      };
+
+      // Run on load
+      revealSections();
+
+      // Run on scroll
+      window.addEventListener("scroll", revealSections);
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            // Offset for fixed header
+            const headerOffset = 70;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition =
+              elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
