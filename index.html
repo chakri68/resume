@@ -656,46 +656,59 @@
 
     <!-- JavaScript -->
     <script>
-      // Load resume data
+      // Load resume data based on the query param
+      const resumeToLoad = new URLSearchParams(window.location.search).get(
+        "resume"
+      );
+
+      function getResumeJson(name) {
+        if (["fullstack", "frontend"].includes(resumeToLoad))
+          return resumeToLoad;
+        return "fullstack";
+      }
+
       async function loadResumeData() {
         try {
-          const response = await fetch('resume.json');
+          const response = await fetch(`${getResumeJson(resumeToLoad)}.json`);
           const data = await response.json();
           populateResume(data);
         } catch (error) {
-          console.error('Error loading resume data:', error);
+          console.error("Error loading resume data:", error);
         }
       }
 
       function populateResume(data) {
         // Personal Info
-        document.querySelector('.name').textContent = data.personal.name;
+        document.querySelector(".name").textContent = data.personal.name;
         
         // Contact Info
-        const contactDiv = document.querySelector('.contact');
-        Object.values(data.personal.contact).forEach(contact => {
-          const link = document.createElement('a');
+        const contactDiv = document.querySelector(".contact");
+        Object.values(data.personal.contact).forEach((contact) => {
+          const link = document.createElement("a");
           link.href = contact.url;
           link.textContent = contact.text;
           contactDiv.appendChild(link);
         });
 
         // Summary
-        document.querySelector('#professional-summary p').textContent = data.summary.text;
+        document.querySelector("#professional-summary p").textContent =
+          data.summary.text;
 
         // Skills
-        const skillsGrid = document.querySelector('.skills-grid');
-        data.skills.categories.forEach(category => {
-          const skillItem = document.createElement('div');
-          skillItem.className = 'skills-item';
+        const skillsGrid = document.querySelector(".skills-grid");
+        data.skills.categories.forEach((category) => {
+          const skillItem = document.createElement("div");
+          skillItem.className = "skills-item";
           skillItem.innerHTML = `<strong>${category.title}:</strong> ${category.items}`;
           skillsGrid.appendChild(skillItem);
         });
 
         // Experience
-        const experienceContainer = document.querySelector('.experience-container');
-        data.experience.forEach(exp => {
-          const article = document.createElement('article');
+        const experienceContainer = document.querySelector(
+          ".experience-container"
+        );
+        data.experience.forEach((exp) => {
+          const article = document.createElement("article");
           article.innerHTML = `
             <h3>${exp.company}</h3>
             <div class="job-header">
@@ -703,16 +716,18 @@
               <p class="job-date">${exp.period}</p>
             </div>
             <ul>
-              ${exp.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
+              ${exp.achievements
+                .map((achievement) => `<li>${achievement}</li>`)
+                .join("")}
             </ul>
           `;
           experienceContainer.appendChild(article);
         });
 
         // Projects
-        const projectsList = document.querySelector('.projects-list');
-        data.projects.forEach(project => {
-          const li = document.createElement('li');
+        const projectsList = document.querySelector(".projects-list");
+        data.projects.forEach((project) => {
+          const li = document.createElement("li");
           li.innerHTML = `
             <strong>${project.name}</strong> — ${project.description}
             <a href="${project.url}">GitHub</a>
@@ -722,16 +737,16 @@
 
         // Education
         const education = data.education;
-        document.querySelector('#education p').innerHTML = `
+        document.querySelector("#education p").innerHTML = `
           <strong>${education.institution}</strong> —
           <em>${education.degree}</em> (CGPA ${education.gpa})<br />
           ${education.period} • ${education.location}
         `;
 
         // Achievements
-        const achievementsList = document.querySelector('.achievements-list');
-        data.achievements.forEach(achievement => {
-          const li = document.createElement('li');
+        const achievementsList = document.querySelector(".achievements-list");
+        data.achievements.forEach((achievement) => {
+          const li = document.createElement("li");
           li.innerHTML = `
             <strong>${achievement.title}</strong> — ${achievement.description}
           `;
@@ -739,15 +754,18 @@
         });
 
         // Keywords
-        document.querySelector('#keywords em').textContent = `Keywords: ${data.keywords}`;
+        document.querySelector(
+          "#keywords em"
+        ).textContent = `Keywords: ${data.keywords}`;
 
         // Footer
-        document.querySelector('footer p').textContent = 
-          `${data.footer.copyright} • Last Updated: ${data.footer.lastUpdated}`;
+        document.querySelector(
+          "footer p"
+        ).textContent = `${data.footer.copyright} • Last Updated: ${data.footer.lastUpdated}`;
       }
 
       // Load resume data when the page loads
-      document.addEventListener('DOMContentLoaded', loadResumeData);
+      document.addEventListener("DOMContentLoaded", loadResumeData);
 
       // Dark mode toggle
       const themeToggle = document.querySelector(".theme-toggle");
