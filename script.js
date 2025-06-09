@@ -25,6 +25,8 @@ function populateResume(data) {
   Object.values(data.personal.contact).forEach((contact) => {
     const link = document.createElement("a");
     link.href = contact.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
     link.textContent = contact.text;
     contactDiv.appendChild(link);
   });
@@ -67,7 +69,7 @@ function populateResume(data) {
     const li = document.createElement("li");
     li.innerHTML = `
             <strong>${project.name}</strong> — ${project.description}
-            <a href="${project.url}">GitHub</a>
+            <a href="${project.url}" target="_blank" rel="noopener noreferrer">GitHub</a>
           `;
     projectsList.appendChild(li);
   });
