@@ -7,7 +7,7 @@ function getResumeJson(name) {
 }
 
 async function loadResumeData() {
-  const ANIMATION_DURATION = 1.5; // Duration in seconds
+  const ANIMATION_DURATION = 4.2; // Duration in seconds
   const startTime = Date.now();
 
   try {
