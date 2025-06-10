@@ -94,9 +94,10 @@ body {
 
 .nav-logo:hover {
   background: unset;
-  .nav-logo-svg path {
-    fill: var(--clr-accent);
-  }
+}
+
+.nav-logo:hover logo-animated {
+  --stroke-color: var(--clr-accent);
 }
 
 .nav-logo-svg {
