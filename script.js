@@ -247,25 +247,3 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
-
-// Nav logo SVG animation
-function animateLogo(delay, duration, timingFunction, repeat) {
-  document.querySelectorAll(".nav-logo-svg path").forEach((path, i) => {
-    const L = path.getTotalLength();
-    path.style.strokeDasharray = L;
-    path.style.strokeDashoffset = L;
-    path.getBoundingClientRect(); // force layout
-
-    path.animate([{ strokeDashoffset: L }, { strokeDashoffset: 0 }], {
-      duration: duration * 1000,
-      delay: i * delay * 1000,
-      easing: timingFunction,
-      iterations: repeat ? Infinity : 1,
-      fill: "forwards",
-    });
-  });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  animateLogo(0.1, 2.2, "ease", false);
-});

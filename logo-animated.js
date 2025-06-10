@@ -14,6 +14,7 @@ class LogoAnimated extends HTMLElement {
       "duration",
       "timing-function",
       "repeat",
+      "alternate",
     ];
   }
 
@@ -44,7 +45,7 @@ class LogoAnimated extends HTMLElement {
   }
 
   get fillColor() {
-    return this.getAttribute("fill-color") || "none";
+    return this.getAttribute("fill-color") || "transparent";
   }
 
   get delay() {
@@ -61,6 +62,10 @@ class LogoAnimated extends HTMLElement {
 
   get repeat() {
     return this.getAttribute("repeat") === "true";
+  }
+
+  get alternate() {
+    return this.getAttribute("alternate") === "true";
   }
 
   render() {
@@ -146,11 +151,20 @@ class LogoAnimated extends HTMLElement {
         path.style.strokeDashoffset = L;
         path.getBoundingClientRect(); // force layout
 
-        path.animate([{ strokeDashoffset: L }, { strokeDashoffset: 0 }], {
+        const keyframes = this.alternate
+          ? [
+              { strokeDashoffset: L },
+              { strokeDashoffset: 0 },
+              { strokeDashoffset: L },
+            ]
+          : [{ strokeDashoffset: L }, { strokeDashoffset: 0 }];
+
+        path.animate(keyframes, {
           duration: this.duration * 1000,
           delay: i * this.delay * 1000,
           easing: this.timingFunction,
           iterations: this.repeat ? Infinity : 1,
+          direction: this.alternate ? "alternate" : "normal",
           fill: "forwards",
         });
       });
