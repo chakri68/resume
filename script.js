@@ -7,12 +7,37 @@ function getResumeJson(name) {
 }
 
 async function loadResumeData() {
+  const ANIMATION_DURATION = 1.5; // Duration in seconds
+  const startTime = Date.now();
+
   try {
     const response = await fetch(`${getResumeJson(resumeToLoad)}.json`);
     const data = await response.json();
     populateResume(data);
+
+    // Calculate remaining time to ensure minimum display duration
+    const elapsedTime = (Date.now() - startTime) / 1000; // Convert to seconds
+    const remainingTime = Math.max(
+      0,
+      (ANIMATION_DURATION - elapsedTime) * 1000
+    ); // Convert to milliseconds
+
+    // Wait for remaining time before hiding
+    setTimeout(() => {
+      hideLoadingScreen();
+    }, remainingTime);
   } catch (error) {
     console.error("Error loading resume data:", error);
+    // Even on error, ensure minimum display time
+    const elapsedTime = (Date.now() - startTime) / 1000;
+    const remainingTime = Math.max(
+      0,
+      (ANIMATION_DURATION - elapsedTime) * 1000
+    );
+
+    setTimeout(() => {
+      hideLoadingScreen();
+    }, remainingTime);
   }
 }
 
@@ -101,6 +126,17 @@ function populateResume(data) {
   document.querySelector(
     "footer p"
   ).textContent = `${data.footer.copyright} • Last Updated: ${data.footer.lastUpdated}`;
+}
+
+function hideLoadingScreen() {
+  const loadingScreen = document.querySelector(".loading-screen");
+  if (loadingScreen) {
+    loadingScreen.classList.add("hidden");
+    // Remove the loading screen from DOM after transition
+    setTimeout(() => {
+      loadingScreen.remove();
+    }, 500);
+  }
 }
 
 // Load resume data when the page loads
@@ -210,26 +246,4 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       });
     }
   });
-});
-
-// Nav logo SVG animation
-function animateLogo(delay, duration, timingFunction, repeat) {
-  document.querySelectorAll(".nav-logo-svg path").forEach((path, i) => {
-    const L = path.getTotalLength();
-    path.style.strokeDasharray = L;
-    path.style.strokeDashoffset = L;
-    path.getBoundingClientRect(); // force layout
-
-    path.animate([{ strokeDashoffset: L }, { strokeDashoffset: 0 }], {
-      duration: duration * 1000,
-      delay: i * delay * 1000,
-      easing: timingFunction,
-      iterations: repeat ? Infinity : 1,
-      fill: "forwards",
-    });
-  });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  animateLogo(0.1, 2.2, "ease", false);
 });
