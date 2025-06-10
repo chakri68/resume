@@ -1,0 +1,226 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": [
+        "personal",
+        "summary",
+        "skills",
+        "experience",
+        "projects",
+        "education",
+        "achievements",
+        "keywords",
+        "footer"
+    ],
+    "properties": {
+        "personal": {
+            "type": "object",
+            "required": [
+                "name",
+                "contact"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "contact": {
+                    "type": "object",
+                    "required": [
+                        "github",
+                        "linkedin",
+                        "email",
+                        "phone"
+                    ],
+                    "properties": {
+                        "github": {
+                            "$ref": "#/definitions/contact"
+                        },
+                        "linkedin": {
+                            "$ref": "#/definitions/contact"
+                        },
+                        "email": {
+                            "$ref": "#/definitions/contact"
+                        },
+                        "phone": {
+                            "$ref": "#/definitions/contact"
+                        }
+                    }
+                }
+            }
+        },
+        "summary": {
+            "type": "object",
+            "required": [
+                "text"
+            ],
+            "properties": {
+                "text": {
+                    "type": "string"
+                }
+            }
+        },
+        "skills": {
+            "type": "object",
+            "required": [
+                "categories"
+            ],
+            "properties": {
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "title",
+                            "items"
+                        ],
+                        "properties": {
+                            "title": {
+                                "type": "string"
+                            },
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "experience": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "company",
+                    "title",
+                    "location",
+                    "period",
+                    "achievements"
+                ],
+                "properties": {
+                    "company": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "location": {
+                        "type": "string"
+                    },
+                    "period": {
+                        "type": "string"
+                    },
+                    "achievements": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "projects": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "description",
+                    "url"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string",
+                        "format": "uri"
+                    }
+                }
+            }
+        },
+        "education": {
+            "type": "object",
+            "required": [
+                "institution",
+                "degree",
+                "gpa",
+                "period",
+                "location"
+            ],
+            "properties": {
+                "institution": {
+                    "type": "string"
+                },
+                "degree": {
+                    "type": "string"
+                },
+                "gpa": {
+                    "type": "string"
+                },
+                "period": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                }
+            }
+        },
+        "achievements": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "title",
+                    "description"
+                ],
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "keywords": {
+            "type": "string"
+        },
+        "footer": {
+            "type": "object",
+            "required": [
+                "copyright",
+                "lastUpdated"
+            ],
+            "properties": {
+                "copyright": {
+                    "type": "string"
+                },
+                "lastUpdated": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "definitions": {
+        "contact": {
+            "type": "object",
+            "required": [
+                "text",
+                "url"
+            ],
+            "properties": {
+                "text": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri"
+                }
+            }
+        }
+    }
+}
