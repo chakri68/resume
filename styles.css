@@ -50,6 +50,7 @@
 /* =====  LAYOUT  ===== */
 html {
   scroll-behavior: smooth;
+  cursor: default;
 }
 
 body {
