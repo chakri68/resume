@@ -108,7 +108,7 @@
   "education": {
     "institution": "Indian Institute of Information Technology, Lucknow",
     "degree": "B.Tech. in Computer Science",
-    "gpa": "9.15/10",
+    "gpa": "9.21/10",
     "period": "Dec 2021 – Jun 2025",
     "location": "Lucknow, India"
   },
@@ -133,6 +133,6 @@
   "keywords": "Frontend Engineering, React, TypeScript, Next.js, Redux, SvelteKit, Tailwind CSS, WebSockets, Canvas, UI/UX, Performance Optimization, Responsive Design, JavaScript, Go, CI/CD, AWS, Kubernetes, DevTools, Developer Experience",
   "footer": {
     "copyright": "© 2025 Chakradhar Reddy Devireddy",
-    "lastUpdated": "May 2025"
+    "lastUpdated": "July 2025"
   }
 }

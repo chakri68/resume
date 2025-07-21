@@ -112,7 +112,7 @@
   "education": {
     "institution": "Indian Institute of Information Technology, Lucknow",
     "degree": "B.Tech. in Computer Science",
-    "gpa": "9.15/10",
+    "gpa": "9.21/10",
     "period": "Dec 2021 – Jun 2025",
     "location": "Lucknow, India"
   },
@@ -137,6 +137,6 @@
   "keywords": "Distributed Systems, Microservices, Cloud‑Native, AWS, Kubernetes, Docker, REST, gRPC, SQL, PostgreSQL, Go, TypeScript, React, CI/CD, Observability, Scalability, Agile",
   "footer": {
     "copyright": "© 2025 Chakradhar Reddy Devireddy",
-    "lastUpdated": "May 2025"
+    "lastUpdated": "July 2025"
   }
 }
