@@ -2,7 +2,8 @@
 const resumeToLoad = new URLSearchParams(window.location.search).get("resume");
 
 function getResumeJson(name) {
-  if (["fullstack", "frontend"].includes(resumeToLoad)) return resumeToLoad;
+  if (["fullstack", "frontend", "example-positions"].includes(resumeToLoad))
+    return resumeToLoad;
   return "fullstack";
 }
 
@@ -72,8 +73,16 @@ function populateResume(data) {
   // Experience
   const experienceContainer = document.querySelector(".experience-container");
   data.experience.forEach((exp) => {
+    const containsPositions = exp.positions && exp.positions.length > 0;
     const article = document.createElement("article");
-    article.innerHTML = `
+
+    // Create the main company section
+    let experienceHTML;
+    if (containsPositions) {
+      article.classList.add("has-positions");
+      experienceHTML = `<h3>${exp.company}</h3>`;
+    } else {
+      experienceHTML = `
             <h3>${exp.company}</h3>
             <div class="job-header">
               <p class="job-title">${exp.title} — ${exp.location}</p>
@@ -85,6 +94,35 @@ function populateResume(data) {
                 .join("")}
             </ul>
           `;
+    }
+
+    // Add positions if they exist
+    if (exp.positions && exp.positions.length > 0) {
+      experienceHTML += `<div class="positions-timeline">`;
+      exp.positions.forEach((position, index) => {
+        experienceHTML += `
+          <div class="position-item">
+            <div class="position-marker screen-only">
+              <div class="position-circle"></div>
+            </div>
+            <div class="position-content">
+              <div class="job-header">
+                <p class="job-title">${position.title}</p>
+                <p class="job-date">${position.period}</p>
+              </div>
+              <ul>
+                ${position.achievements
+                  .map((achievement) => `<li>${achievement}</li>`)
+                  .join("")}
+              </ul>
+            </div>
+          </div>
+        `;
+      });
+      experienceHTML += `</div>`;
+    }
+
+    article.innerHTML = experienceHTML;
     experienceContainer.appendChild(article);
   });
 

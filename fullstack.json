@@ -57,11 +57,26 @@
       "title": "Software Development Engineer Intern",
       "location": "Gurugram, India",
       "period": "Jan 2025 – Present",
-      "achievements": [
-        "Migrated 200+ legacy JS components to TypeScript + Redux in Next.js; decreased build‑time errors 40% and boosted feature velocity 30%.",
-        "Authored a Go streaming SDK to pipe multi‑GB ZIP archives directly to AWS S3; reduced transfer latency 65% and halved memory overhead.",
-        "Built a GPS ingestion service (≈ 50 k msgs/s) with WebSocket dashboards; improved average delivery ETA 12%.",
-        "Refactored RPC layer using goroutines & gRPC batching; slashed P95 latency 95% under 2 k TPS."
+      "achievements": [],
+      "positions": [
+        {
+          "title": "Software Development Engineer - I",
+          "period": "July 2025 - Present",
+          "achievements": [
+            "Rolled out a new ticket workflow improving customer satisfaction with delayed orders and reducing order cancellations due to delays by 80%.",
+            "Migrated internal maps to Google decreasing costs by 25%."
+          ]
+        },
+        {
+          "title": "Software Development Intern",
+          "period": "Jan 2025 - June 2025",
+          "achievements": [
+            "Migrated 200+ legacy JS components to TypeScript + Redux in Next.js; decreased build‑time errors 40% and boosted feature velocity 30%.",
+            "Authored a Go streaming SDK to pipe multi‑GB ZIP archives directly to AWS S3; reduced transfer latency 65% and halved memory overhead.",
+            "Built a GPS ingestion service (≈ 50 k msgs/s) with WebSocket dashboards; improved average delivery ETA 12%.",
+            "Refactored RPC layer using goroutines & gRPC batching; slashed P95 latency 95% under 2 k TPS."
+          ]
+        }
       ]
     },
     {
@@ -137,6 +152,6 @@
   "keywords": "Distributed Systems, Microservices, Cloud‑Native, AWS, Kubernetes, Docker, REST, gRPC, SQL, PostgreSQL, Go, TypeScript, React, CI/CD, Observability, Scalability, Agile",
   "footer": {
     "copyright": "© 2025 Chakradhar Reddy Devireddy",
-    "lastUpdated": "July 2025"
+    "lastUpdated": "August 2025"
   }
 }

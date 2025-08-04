@@ -53,11 +53,27 @@
       "title": "Software Development Engineer Intern",
       "location": "Gurugram, India",
       "period": "Jan 2025 – Present",
-      "achievements": [
-        "Migrated 200+ legacy JS components to TypeScript + Redux in Next.js; decreased build‑time errors 40% and boosted feature velocity 30%.",
-        "Improved UI consistency and accessibility by refactoring shared components using best practices in design systems.",
-        "Built interactive WebSocket-powered dashboards for real-time GPS tracking and delivery analytics.",
-        "Collaborated with design team to improve UI responsiveness across devices and browsers."
+      "achievements": [],
+      "positions": [
+        {
+          "title": "Software Development Engineer - I",
+          "period": "July 2025 - Present",
+          "achievements": [
+            "Built multiple hooks for animation timings and transitions in React, improving UI responsiveness and reducing re-renders by 30%.",
+            "Developed a custom React component library built adhering to design language guidelines.",
+            "Designed and built a custom backend driven form builder using React, Redux Toolkit, and TypeScript, enabling dynamic form generation and validation."
+          ]
+        },
+        {
+          "title": "Software Development Intern",
+          "period": "Jan 2025 - June 2025",
+          "achievements": [
+            "Migrated 200+ legacy JS components to TypeScript + Redux in Next.js; decreased build‑time errors 40% and boosted feature velocity 30%.",
+            "Improved UI consistency and accessibility by refactoring shared components using best practices in design systems.",
+            "Built interactive WebSocket-powered dashboards for real-time GPS tracking and delivery analytics.",
+            "Collaborated with design team to improve UI responsiveness across devices and browsers."
+          ]
+        }
       ]
     },
     {
@@ -133,6 +149,6 @@
   "keywords": "Frontend Engineering, React, TypeScript, Next.js, Redux, SvelteKit, Tailwind CSS, WebSockets, Canvas, UI/UX, Performance Optimization, Responsive Design, JavaScript, Go, CI/CD, AWS, Kubernetes, DevTools, Developer Experience",
   "footer": {
     "copyright": "© 2025 Chakradhar Reddy Devireddy",
-    "lastUpdated": "July 2025"
+    "lastUpdated": "August 2025"
   }
 }
