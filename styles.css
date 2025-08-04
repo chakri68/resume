@@ -502,14 +502,12 @@ article:hover {
   width: 40px;
   height: 40px;
 
-  /* frosted‐glass background */
-  background: var(--clr-glass-bg);
-  backdrop-filter: blur(6px);
-  border: 1px solid var(--glass-border);
+  /* Subtle background */
+  background: var(--clr-card-bg);
+  border: 1px solid var(--clr-rule);
 
-  color: var(--clr-head);
-
-  border-radius: 50%;
+  color: var(--clr-text);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -517,12 +515,23 @@ article:hover {
 
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s, transform 0.2s, box-shadow 0.2s;
+  transition: all 0.2s ease;
 
-  box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.1);
-  font-size: 1.5rem;
+  box-shadow: 0 2px 8px var(--clr-card-shadow);
+  font-size: 1.2rem;
   line-height: 1;
   z-index: 200;
+}
+
+/* Dark mode back-to-top button */
+[data-theme="dark"] .back-to-top {
+  background: var(--clr-card-bg);
+  border: 1px solid var(--clr-rule);
+  color: var(--clr-text);
+}
+
+[data-theme="dark"] .back-to-top:hover {
+  background: var(--clr-hover-bg);
 }
 
 .back-to-top.visible {
@@ -531,8 +540,9 @@ article:hover {
 }
 
 .back-to-top:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--clr-card-shadow);
+  background: var(--clr-hover-bg);
 }
 
 /* Animations */
