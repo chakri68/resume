@@ -64,7 +64,8 @@
           "period": "July 2025 - Present",
           "achievements": [
             "Rolled out a new ticket workflow improving customer satisfaction with delayed orders and reducing order cancellations due to delays by 80%.",
-            "Migrated internal maps to Google decreasing costs by 25%."
+            "Migrated internal maps to Google decreasing costs by 25%.",
+            "Automated ~1M tickets syncing with a python script decreasing manual effort by 95%."
           ]
         },
         {
