@@ -2,8 +2,8 @@
 :root {
   --font-body: "Palatino Linotype", "Book Antiqua", Palatino, "EB Garamond",
     Georgia, serif;
-  --font-head: "Bebas Neue", "Source Sans Pro", "Helvetica Neue", Helvetica,
-    Arial, sans-serif;
+  --font-head: "Mako", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
   --font-code: "JetBrains Mono", Consolas, monospace;
 
   /* Light theme variables */
@@ -619,8 +619,7 @@ footer {
     --clr-code-bg: #f6f8fa !important;
     --clr-bg: #ffffff !important;
     --clr-hover-bg: #e9f0ff !important;
-    --font-head: "Helvetica Neue", "Source Sans Pro", Helvetica, Arial,
-      sans-serif !important;
+    --font-head: "Mako", "Source Sans Pro", Helvetica, Arial, sans-serif !important;
   }
 
   /* Hide web-only elements */
