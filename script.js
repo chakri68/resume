@@ -1,5 +1,6 @@
 // Load resume data based on the query param
 const resumeToLoad = new URLSearchParams(window.location.search).get("resume");
+const emailToUse = new URLSearchParams(window.location.search).get("email");
 
 function getResumeJson(name) {
   if (["fullstack", "frontend", "example-positions"].includes(resumeToLoad))
@@ -48,7 +49,11 @@ function populateResume(data) {
 
   // Contact Info
   const contactDiv = document.querySelector(".contact");
-  Object.values(data.personal.contact).forEach((contact) => {
+  Object.entries(data.personal.contact).forEach(([contactType, contact]) => {
+    if (contactType === "email" && emailToUse !== null) {
+      contact.url = `mailto:${emailToUse}`;
+      contact.text = emailToUse;
+    }
     const link = document.createElement("a");
     link.href = contact.url;
     link.target = "_blank";
