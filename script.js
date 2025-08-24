@@ -2,10 +2,18 @@
 const resumeToLoad = new URLSearchParams(window.location.search).get("resume");
 const emailToUse = new URLSearchParams(window.location.search).get("email");
 
-function getResumeJson(name) {
-  if (["fullstack", "frontend", "example-positions"].includes(resumeToLoad))
-    return resumeToLoad;
-  return "fullstack";
+async function getResumeJson(name) {
+  try {
+    const response = await fetch("manifest.json");
+    const manifest = await response.json();
+    if (manifest.resumes && manifest.resumes.includes(name)) {
+      return name;
+    }
+    return "fullstack";
+  } catch (error) {
+    console.error("Error fetching manifest.json:", error);
+    return "fullstack";
+  }
 }
 
 async function loadResumeData() {
@@ -13,7 +21,8 @@ async function loadResumeData() {
   const startTime = Date.now();
 
   try {
-    const response = await fetch(`${getResumeJson(resumeToLoad)}.json`);
+    const jsonPath = await getResumeJson(resumeToLoad);
+    const response = await fetch(`resumes/${jsonPath}.json`);
     const data = await response.json();
     populateResume(data);
 

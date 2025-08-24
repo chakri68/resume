@@ -1,14 +1,11 @@
 {
-    "json.schemas": [
-        {
-            "fileMatch": [
-                "frontend.json",
-                "fullstack.json"
-            ],
-            "url": "./schema.json"
-        }
-    ],
-    "json.validate.enable": true,
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "vscode.json-language-features"
+  "json.schemas": [
+    {
+      "fileMatch": ["resumes/*.json"],
+      "url": "./schema.json"
+    }
+  ],
+  "json.validate.enable": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "vscode.json-language-features"
 }
