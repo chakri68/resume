@@ -2,6 +2,11 @@
 const resumeToLoad = new URLSearchParams(window.location.search).get("resume");
 const emailToUse = new URLSearchParams(window.location.search).get("email");
 
+const isMobile =
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  ) || window.innerWidth <= 768;
+
 async function getResumeJson(name) {
   try {
     const response = await fetch("manifest.json");
@@ -299,3 +304,42 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+
+// Mouse highlight effect (desktop only)
+
+if (!isMobile) {
+  const highlightEffect = document.querySelector(".mouse-highlight");
+
+  if (highlightEffect) {
+    document.body.addEventListener("mousemove", (e) => {
+      highlightEffect.classList.add("active");
+      highlightEffect.style.left = `${e.clientX}px`;
+      highlightEffect.style.top = `${e.clientY}px`;
+    });
+
+    document.body.addEventListener("mouseleave", () => {
+      highlightEffect.classList.remove("active");
+    });
+  }
+
+  // Click ripple effect (desktop only)
+  document.body.addEventListener("mousedown", (e) => {
+    // Create ripple element
+    const ripple = document.createElement("div");
+    ripple.className = "ripple";
+    ripple.style.left = `${e.clientX}px`;
+    ripple.style.top = `${e.clientY}px`;
+    ripple.style.width = "50px";
+    ripple.style.height = "50px";
+
+    // Add to body
+    document.body.appendChild(ripple);
+
+    // Remove after animation completes
+    setTimeout(() => {
+      if (ripple.parentNode) {
+        ripple.parentNode.removeChild(ripple);
+      }
+    }, 600);
+  });
+}
