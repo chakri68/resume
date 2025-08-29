@@ -1,19 +1,33 @@
 // Load resume data based on the query param
-const resumeToLoad = new URLSearchParams(window.location.search).get("resume");
-const emailToUse = new URLSearchParams(window.location.search).get("email");
+const urlSearchParams = new URLSearchParams(window.location.search);
+const selectedResume = urlSearchParams.get("resume");
+const emailToUse = urlSearchParams.get("email");
+const selectedStyle = urlSearchParams.get("style");
 
-async function getResumeJson(name) {
-  try {
-    const response = await fetch("manifest.json");
-    const manifest = await response.json();
-    if (manifest.resumes && manifest.resumes.includes(name)) {
-      return name;
-    }
-    return "fullstack";
-  } catch (error) {
-    console.error("Error fetching manifest.json:", error);
-    return "fullstack";
+async function getManifest() {
+  const response = await fetch("manifest.json");
+  return await response.json();
+}
+
+function getStylesFileName(style, manifest) {
+  if (manifest && manifest.styles && manifest.styles.includes(style)) {
+    return manifest.styles;
   }
+  return "classic";
+}
+
+function setStyles(filePath) {
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = filePath;
+  document.head.appendChild(link);
+}
+
+function getResumePath(name, manifest) {
+  if (manifest && manifest.resumes && manifest.resumes.includes(name)) {
+    return name;
+  }
+  return "fullstack";
 }
 
 async function loadResumeData() {
@@ -21,8 +35,11 @@ async function loadResumeData() {
   const startTime = Date.now();
 
   try {
-    const jsonPath = await getResumeJson(resumeToLoad);
-    const response = await fetch(`resumes/${jsonPath}.json`);
+    const manifest = await getManifest();
+    const resumeJsonPath = getResumePath(selectedResume, manifest);
+    const stylesFileName = getStylesFileName(selectedStyle, manifest);
+    setStyles(`styles/${stylesFileName}.css`);
+    const response = await fetch(`resumes/${resumeJsonPath}.json`);
     const data = await response.json();
     populateResume(data);
 

@@ -1,3 +1,4 @@
 {
-  "resumes": ["fullstack", "frontend", "google"]
+  "resumes": ["fullstack", "frontend", "google"],
+  "styles": ["classic", "neon"]
 }

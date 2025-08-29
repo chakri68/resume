@@ -51,6 +51,7 @@
 html {
   scroll-behavior: smooth;
   cursor: default;
+  display: block;
 }
 
 body {
