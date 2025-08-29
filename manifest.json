@@ -1,4 +1,15 @@
 {
   "resumes": ["fullstack", "frontend", "google"],
-  "styles": ["classic", "terminal"]
+  "styles": {
+    "classic": {
+      "supportsThemeToggle": true,
+      "supportsPrint": true,
+      "defaultTheme": null
+    },
+    "terminal": {
+      "supportsThemeToggle": false,
+      "supportsPrint": false,
+      "defaultTheme": "dark"
+    }
+  }
 }

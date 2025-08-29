@@ -10,7 +10,11 @@ async function getManifest() {
 }
 
 function getStylesFileName(style, manifest) {
-  if (manifest && manifest.styles && manifest.styles.includes(style)) {
+  if (
+    manifest &&
+    manifest.styles &&
+    Object.keys(manifest.styles).includes(style)
+  ) {
     return style;
   }
   return "classic";
@@ -30,23 +34,12 @@ function getResumePath(name, manifest) {
   return "fullstack";
 }
 
-function setupStyleFeatures(styleName) {
+function setupStyleFeatures(styleName, manifest) {
   const themeToggle = document.querySelector(".theme-toggle");
   const printButton = document.querySelector(".print-button");
 
   // Style-specific feature configuration
-  const styleConfig = {
-    classic: {
-      supportsThemeToggle: true,
-      supportsPrint: true,
-      defaultTheme: null, // Will use system preference or saved theme
-    },
-    terminal: {
-      supportsThemeToggle: false,
-      supportsPrint: false,
-      defaultTheme: "dark", // Force dark theme
-    },
-  };
+  const styleConfig = manifest.styles;
 
   const config = styleConfig[styleName] || styleConfig.classic;
 
@@ -80,7 +73,7 @@ async function loadResumeData() {
     setStyles(`styles/${stylesFileName}.css`);
 
     // Setup style-specific features
-    setupStyleFeatures(stylesFileName);
+    setupStyleFeatures(stylesFileName, manifest);
 
     const response = await fetch(`resumes/${resumeJsonPath}.json`);
     const data = await response.json();
