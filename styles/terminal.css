@@ -1,0 +1,710 @@
+/* =====  TERMINAL/CRT STYLE - RETRO COMPUTING AESTHETIC  ===== */
+:root {
+  --font-body: "Fira Code", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono",
+    "Source Code Pro", monospace;
+  --font-head: "Fira Code", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono",
+    "Source Code Pro", monospace;
+  --font-code: "Fira Code", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono",
+    "Source Code Pro", monospace;
+
+  /* Terminal color scheme - inspired by classic green phosphor CRT */
+  --clr-text: #00ff41;
+  --clr-head: #00ff88;
+  --clr-accent: #ffff00;
+  --clr-rule: #00aa33;
+  --clr-code-bg: rgba(0, 255, 65, 0.08);
+  --clr-bg: #000a00;
+  --clr-hover-bg: rgba(0, 255, 65, 0.12);
+  --clr-nav-bg: rgba(0, 10, 0, 0.98);
+  --clr-card-bg: rgba(0, 0, 0, 0.6);
+  --clr-card-shadow: rgba(0, 255, 65, 0.4);
+
+  /* CRT Effect variables */
+  --scan-line-opacity: 0.125;
+  --scan-line-speed: 3s;
+  --flicker-intensity: 0.98;
+
+  /* Typography settings */
+  --transition-speed: 0.2s;
+  --fs-base: 0.875rem;
+  --lh-base: 1.6;
+  --page-max: 70rem;
+
+  /* Text glow effects */
+  --terminal-glow: 0 0 5px currentColor;
+  --terminal-glow-strong: 0 0 10px currentColor, 0 0 20px currentColor;
+  --clr-glass-bg: rgba(0, 10, 0, 0.85);
+  --glass-border: rgba(0, 255, 65, 0.2);
+}
+
+/* =====  CRT MONITOR EFFECTS  ===== */
+html {
+  /* Subtle CRT curvature */
+  filter: contrast(1.2) brightness(1.1) saturate(1.3);
+  background-color: var(--clr-bg) !important;
+
+  /* CRT phosphor background with subtle texture */
+  background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 65, var(--scan-line-opacity)) 2px,
+      rgba(0, 255, 65, var(--scan-line-opacity)) 4px
+    ),
+    radial-gradient(ellipse at center, #000a00 0%, #000500 70%, #000000 100%);
+
+  /* CRT screen curvature simulation */
+  border-radius: 8px;
+  box-shadow: inset 0 0 100px rgba(0, 255, 65, 0.03),
+    0 0 50px rgba(0, 0, 0, 0.8);
+
+  /* Subtle screen flicker */
+  animation: screenFlicker 3s ease-in-out infinite alternate;
+
+  /* Terminal text glow */
+  text-shadow: var(--terminal-glow);
+}
+
+body {
+  background: transparent;
+  /* Add padding to simulate CRT bezel */
+  margin: auto;
+  min-height: calc(100vh - 40px);
+}
+
+/* =====  CRT ANIMATIONS  ===== */
+@keyframes screenFlicker {
+  0%,
+  100% {
+    opacity: var(--flicker-intensity);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes scanLines {
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes textGlow {
+  0%,
+  100% {
+    text-shadow: var(--terminal-glow);
+  }
+  50% {
+    text-shadow: var(--terminal-glow-strong);
+  }
+}
+
+/* =====  TERMINAL TYPOGRAPHY  ===== */
+.name,
+h2,
+h3 {
+  text-shadow: var(--terminal-glow-strong);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  animation: textGlow 4s ease-in-out infinite;
+}
+
+.name {
+  color: var(--clr-head);
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  border-bottom: 2px solid var(--clr-accent);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  color: var(--clr-head);
+  border-bottom: 1px solid var(--clr-rule);
+  text-transform: uppercase;
+  font-weight: 400;
+  position: relative;
+}
+
+h2::before {
+  content: "> ";
+  color: var(--clr-accent);
+  font-weight: bold;
+}
+
+h3 {
+  color: var(--clr-accent);
+}
+
+/* =====  NAVIGATION TERMINAL STYLE  ===== */
+.nav-item a {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  position: relative;
+}
+
+.nav-item a::before {
+  content: "[";
+  color: var(--clr-accent);
+  margin-right: 0.2em;
+}
+
+.nav-item a::after {
+  content: "]";
+  color: var(--clr-accent);
+  margin-left: 0.2em;
+  width: auto;
+  height: auto;
+  background: none;
+  bottom: auto;
+  left: auto;
+  transition: all var(--transition-speed);
+}
+
+.nav-item a:hover::before,
+.nav-item a:hover::after {
+  text-shadow: var(--terminal-glow-strong);
+}
+
+/* =====  TERMINAL CARDS  ===== */
+.skills-item,
+article {
+  background: var(--clr-glass-bg);
+  border: 1px solid var(--clr-rule);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.1),
+    inset 0 0 20px rgba(0, 255, 65, 0.02);
+  backdrop-filter: blur(2px);
+  position: relative;
+}
+
+.skills-item::before,
+article::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(0, 255, 65, 0.02) 1px,
+    rgba(0, 255, 65, 0.02) 2px
+  );
+  pointer-events: none;
+}
+
+.skills-item:hover,
+article:hover {
+  border-color: var(--clr-accent);
+  box-shadow: 0 0 30px rgba(255, 255, 0, 0.2),
+    inset 0 0 20px rgba(255, 255, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+/* =====  TERMINAL CONTACT LINKS  ===== */
+.contact a {
+  text-shadow: var(--terminal-glow);
+  border-bottom: 1px dotted transparent;
+  transition: all var(--transition-speed);
+  position: relative;
+}
+
+.contact a::before {
+  content: "$ ";
+  color: var(--clr-accent);
+}
+
+.contact a:hover {
+  border-bottom-color: var(--clr-accent);
+  text-shadow: var(--terminal-glow-strong);
+  background: transparent;
+}
+
+/* =====  CODE BLOCKS TERMINAL STYLE  ===== */
+code {
+  border: 1px solid rgba(0, 255, 65, 0.3);
+  box-shadow: inset 0 0 5px rgba(0, 255, 65, 0.1);
+  color: var(--clr-accent);
+  text-shadow: var(--terminal-glow);
+  background: var(--clr-code-bg);
+  position: relative;
+}
+
+code::before {
+  content: "// ";
+  color: var(--clr-rule);
+  opacity: 0.7;
+}
+
+/* =====  LINKS WITH TERMINAL STYLING  ===== */
+a {
+  color: var(--clr-accent);
+  text-shadow: var(--terminal-glow);
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
+  transition: all var(--transition-speed);
+}
+
+a:hover {
+  border-bottom-color: var(--clr-accent);
+  text-shadow: var(--terminal-glow-strong);
+  background: transparent;
+}
+
+/* =====  HIDE THEME TOGGLE AND PRINT FOR TERMINAL  ===== */
+.theme-toggle,
+.print-button {
+  display: none;
+}
+
+/* =====  TERMINAL NAVBAR  ===== */
+@media screen {
+  .nav-wrapper {
+    background: var(--clr-glass-bg);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 2px 20px rgba(0, 255, 65, 0.1);
+    position: sticky;
+  }
+
+  .nav-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 1px,
+      rgba(0, 255, 65, 0.02) 1px,
+      rgba(0, 255, 65, 0.02) 2px
+    );
+    pointer-events: none;
+  }
+}
+
+/* =====  TIMELINE EFFECTS  ===== */
+.positions-timeline::before {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--clr-rule) 15%,
+    var(--clr-rule) 85%,
+    transparent 100%
+  );
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+  opacity: 0.8;
+}
+
+.position-circle {
+  background-color: var(--clr-accent);
+  border-color: var(--clr-bg);
+  box-shadow: 0 0 0 2px var(--clr-accent), 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+/* =====  BACK TO TOP TERMINAL STYLE  ===== */
+.back-to-top {
+  background: var(--clr-glass-bg);
+  border: 1px solid var(--clr-rule);
+  color: var(--clr-text);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.2),
+    inset 0 0 20px rgba(0, 255, 65, 0.02);
+  backdrop-filter: blur(8px);
+  position: relative;
+}
+
+.back-to-top::before {
+  content: "↑ TOP";
+  position: absolute;
+  font-size: 0.6rem;
+  font-family: var(--font-code);
+  color: var(--clr-accent);
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity var(--transition-speed);
+}
+
+.back-to-top:hover::before {
+  opacity: 1;
+}
+
+.back-to-top:hover {
+  border-color: var(--clr-accent);
+  box-shadow: 0 0 30px rgba(255, 255, 0, 0.3),
+    inset 0 0 20px rgba(255, 255, 0, 0.05);
+}
+
+/* =====  STRONG TEXT TERMINAL STYLE  ===== */
+strong {
+  color: var(--clr-accent);
+  text-shadow: var(--terminal-glow);
+  font-weight: 600;
+}
+
+strong::before {
+  content: ">>> ";
+  color: var(--clr-rule);
+  font-weight: normal;
+}
+
+/* =====  HR WITH TERMINAL EFFECT  ===== */
+hr {
+  border-top: 1px solid var(--clr-rule);
+  box-shadow: 0 1px 10px rgba(0, 255, 65, 0.3);
+  position: relative;
+}
+
+hr::before {
+  content: "================================================================================";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  color: var(--clr-rule);
+  opacity: 0.3;
+  font-family: var(--font-code);
+  font-size: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* =====  FOOTER TERMINAL STYLE  ===== */
+footer {
+  text-shadow: var(--terminal-glow);
+  opacity: 0.7;
+  position: relative;
+}
+
+footer::before {
+  content: "EOF - End of File";
+  display: block;
+  color: var(--clr-rule);
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+}
+
+/* =====  MOBILE TERMINAL ADJUSTMENTS  ===== */
+@media (max-width: 768px) {
+  :root {
+    --fs-base: 0.8rem;
+  }
+
+  body {
+    margin: 10px;
+    min-height: calc(100vh - 20px);
+  }
+
+  .name {
+    font-size: 1.3rem;
+  }
+
+  h2 {
+    font-size: 0.95rem;
+  }
+}
+
+/* =====  CUSTOM SCROLLBAR TERMINAL STYLE  ===== */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-rule);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--clr-rule);
+  border-radius: 0;
+  box-shadow: inset 0 0 5px rgba(0, 255, 65, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-accent);
+  box-shadow: inset 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--clr-bg);
+}
+
+/* =====  SELECTION STYLING  ===== */
+::selection {
+  background: rgba(255, 255, 0, 0.2);
+  color: var(--clr-text);
+  text-shadow: var(--terminal-glow-strong);
+}
+
+/* =====  TERMINAL CURSOR EFFECT  ===== */
+@keyframes cursor {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.name::after {
+  content: "_";
+  color: var(--clr-accent);
+  animation: cursor 1s infinite;
+  margin-left: 0.1em;
+}
+
+/* =====  OCCASIONAL SCAN LINES EFFECT  ===== */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(transparent 50%, rgba(0, 255, 65, 0.03) 50%);
+  background-size: 100% 4px;
+  animation: scanLines var(--scan-line-speed) linear infinite;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.6;
+}
+
+/* Neon text effects */
+.name,
+h2,
+h3 {
+  text-shadow: var(--neon-glow-strong);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+.name {
+  color: var(--clr-accent);
+  text-transform: uppercase;
+}
+
+h2 {
+  border-bottom: 2px solid var(--clr-rule);
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+/* Navigation with neon effects */
+.nav-item a {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+}
+
+.nav-item a::after {
+  height: 2px;
+  box-shadow: 0 0 10px var(--clr-accent);
+}
+
+/* Neon cards with borders */
+.skills-item,
+article {
+  background: var(--clr-glass-bg);
+  border: 1px solid var(--clr-rule);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.2),
+    inset 0 0 20px rgba(0, 255, 65, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.skills-item:hover,
+article:hover {
+  border-color: var(--clr-accent);
+  box-shadow: 0 0 30px rgba(255, 0, 128, 0.4),
+    inset 0 0 20px rgba(255, 0, 128, 0.1);
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Contact links with neon glow */
+.contact a {
+  text-shadow: var(--neon-glow);
+  border-bottom: 1px solid transparent;
+  transition: all var(--transition-speed);
+}
+
+.contact a:hover {
+  border-bottom-color: var(--clr-accent);
+  text-shadow: var(--neon-glow-strong);
+  background: transparent;
+}
+
+/* Code blocks with neon styling */
+code {
+  border: 1px solid rgba(0, 255, 65, 0.3);
+  box-shadow: inset 0 0 10px rgba(0, 255, 65, 0.1);
+  color: var(--clr-accent);
+  text-shadow: var(--neon-glow);
+}
+
+/* Accent links */
+a {
+  color: var(--clr-accent);
+  text-shadow: var(--neon-glow);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all var(--transition-speed);
+}
+
+a:hover {
+  border-bottom-color: var(--clr-accent);
+  text-shadow: var(--neon-glow-strong);
+  background: transparent;
+}
+
+/* Navigation controls - hide theme toggle for neon style */
+.theme-toggle {
+  display: none;
+}
+
+.print-button {
+  display: none;
+}
+
+/* Neon navbar */
+@media screen {
+  .nav-wrapper {
+    background: var(--clr-glass-bg);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 2px 20px rgba(0, 255, 65, 0.2);
+  }
+}
+
+/* Timeline effects */
+.positions-timeline::before {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--clr-rule) 15%,
+    var(--clr-rule) 85%,
+    transparent 100%
+  );
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+  opacity: 0.8;
+}
+
+.position-circle {
+  background-color: var(--clr-accent);
+  border-color: var(--clr-bg);
+  box-shadow: 0 0 0 2px var(--clr-accent), 0 0 10px rgba(255, 0, 128, 0.6);
+}
+
+/* Back to top with neon effect */
+.back-to-top {
+  background: var(--clr-glass-bg);
+  border: 1px solid var(--clr-rule);
+  color: var(--clr-text);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3),
+    inset 0 0 20px rgba(0, 255, 65, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.back-to-top:hover {
+  border-color: var(--clr-accent);
+  box-shadow: 0 0 30px rgba(255, 0, 128, 0.5),
+    inset 0 0 20px rgba(255, 0, 128, 0.1);
+}
+
+/* Strong text with neon effect */
+strong {
+  color: var(--clr-accent);
+  text-shadow: var(--neon-glow);
+}
+
+/* HR with neon glow */
+hr {
+  border-top: 1px solid var(--clr-rule);
+  box-shadow: 0 1px 10px rgba(0, 255, 65, 0.5);
+}
+
+/* Footer with subtle neon */
+footer {
+  text-shadow: var(--neon-glow);
+  opacity: 0.7;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  :root {
+    --fs-base: 0.85rem;
+  }
+
+  .name {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+}
+
+/* Scrollbar styling for neon theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--clr-rule);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-accent);
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.7);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(255, 0, 128, 0.3);
+  color: var(--clr-text);
+  text-shadow: var(--neon-glow-strong);
+}
+
+/* Additional neon effects for interactive elements */
+.nav-logo:hover logo-animated {
+  --stroke-color: var(--clr-accent);
+  filter: drop-shadow(0 0 10px var(--clr-accent));
+}
+
+/* Subtle animation for cards */
+@keyframes neonPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.2),
+      inset 0 0 20px rgba(0, 255, 65, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 255, 65, 0.3),
+      inset 0 0 25px rgba(0, 255, 65, 0.08);
+  }
+}
+
+.skills-item,
+article {
+  animation: neonPulse 4s ease-in-out infinite;
+}
+
+.skills-item:hover,
+article:hover {
+  animation: none;
+}

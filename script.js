@@ -11,7 +11,7 @@ async function getManifest() {
 
 function getStylesFileName(style, manifest) {
   if (manifest && manifest.styles && manifest.styles.includes(style)) {
-    return manifest.styles;
+    return style;
   }
   return "classic";
 }
@@ -30,6 +30,45 @@ function getResumePath(name, manifest) {
   return "fullstack";
 }
 
+function setupStyleFeatures(styleName) {
+  const themeToggle = document.querySelector(".theme-toggle");
+  const printButton = document.querySelector(".print-button");
+
+  // Style-specific feature configuration
+  const styleConfig = {
+    classic: {
+      supportsThemeToggle: true,
+      supportsPrint: true,
+      defaultTheme: null, // Will use system preference or saved theme
+    },
+    terminal: {
+      supportsThemeToggle: false,
+      supportsPrint: false,
+      defaultTheme: "dark", // Force dark theme
+    },
+  };
+
+  const config = styleConfig[styleName] || styleConfig.classic;
+
+  // Handle theme toggle visibility and functionality
+  if (!config.supportsThemeToggle) {
+    if (themeToggle) {
+      themeToggle.style.display = "none";
+    }
+    // Force the default theme for this style
+    if (config.defaultTheme) {
+      document.documentElement.setAttribute("data-theme", config.defaultTheme);
+    }
+  }
+
+  // Handle print button visibility
+  if (!config.supportsPrint) {
+    if (printButton) {
+      printButton.style.display = "none";
+    }
+  }
+}
+
 async function loadResumeData() {
   const ANIMATION_DURATION = 4.2; // Duration in seconds
   const startTime = Date.now();
@@ -39,6 +78,10 @@ async function loadResumeData() {
     const resumeJsonPath = getResumePath(selectedResume, manifest);
     const stylesFileName = getStylesFileName(selectedStyle, manifest);
     setStyles(`styles/${stylesFileName}.css`);
+
+    // Setup style-specific features
+    setupStyleFeatures(stylesFileName);
+
     const response = await fetch(`resumes/${resumeJsonPath}.json`);
     const data = await response.json();
     populateResume(data);
@@ -211,38 +254,62 @@ function hideLoadingScreen() {
 // Load resume data when the page loads
 document.addEventListener("DOMContentLoaded", loadResumeData);
 
-// Dark mode toggle
+// Dark mode toggle - will be configured based on style
 const themeToggle = document.querySelector(".theme-toggle");
 const themeIcon = document.querySelector(".theme-icon");
 
-// Check for saved theme preference or prefer-color-scheme
-const prefersDark =
-  window.matchMedia &&
-  window.matchMedia("(prefers-color-scheme: dark)").matches;
-const savedTheme = localStorage.getItem("theme");
+function setupThemeToggle() {
+  // Only setup theme toggle if it's visible and supported
+  if (!themeToggle || themeToggle.style.display === "none") {
+    return;
+  }
 
-// Set initial theme
-if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-  document.documentElement.setAttribute("data-theme", "dark");
-  themeIcon.textContent = "☀️";
+  // Check for saved theme preference or prefer-color-scheme
+  const prefersDark =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const savedTheme = localStorage.getItem("theme");
+
+  // Set initial theme
+  if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+    document.documentElement.setAttribute("data-theme", "dark");
+    if (themeIcon) themeIcon.textContent = "☀️";
+  }
+
+  // Theme toggle functionality
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+
+    // Update icon
+    if (themeIcon) {
+      themeIcon.textContent = newTheme === "dark" ? "☀️" : "🌙";
+    }
+  });
 }
 
-// Theme toggle functionality
-themeToggle.addEventListener("click", () => {
-  const currentTheme = document.documentElement.getAttribute("data-theme");
-  const newTheme = currentTheme === "dark" ? "light" : "dark";
-
-  document.documentElement.setAttribute("data-theme", newTheme);
-  localStorage.setItem("theme", newTheme);
-
-  // Update icon
-  themeIcon.textContent = newTheme === "dark" ? "☀️" : "🌙";
+// Setup theme toggle after DOM is loaded and style is configured
+document.addEventListener("DOMContentLoaded", () => {
+  // Small delay to ensure style setup is complete
+  setTimeout(setupThemeToggle, 100);
 });
 
-// Print button functionality
-const printButton = document.querySelector(".print-button");
-printButton.addEventListener("click", () => {
-  window.print();
+// Print button functionality - setup conditionally
+function setupPrintButton() {
+  const printButton = document.querySelector(".print-button");
+  if (printButton && printButton.style.display !== "none") {
+    printButton.addEventListener("click", () => {
+      window.print();
+    });
+  }
+}
+
+// Setup print button after DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(setupPrintButton, 100);
 });
 
 // Mobile menu toggle

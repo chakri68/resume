@@ -4,16 +4,47 @@ A clean, responsive, and modern resume template built with HTML, CSS, and JavaSc
 
 ## Features
 
-- 🎨 Clean and professional design
+- 🎨 Multiple style themes (Classic & Terminal)
 - 📱 Fully responsive layout
-- 🌓 Dark/Light mode toggle
-- 🖨️ Print-friendly
+- 🌓 Dark/Light mode toggle (Classic style only)
+- 🖨️ Print-friendly (Classic style only)
 - 📝 Easy to customize with JSON
 - 🚀 Fast loading and performance optimized
 - 🔍 SEO friendly
 - ♿ Accessibility features
 
+## Available Styles
+
+### Classic Style (`?style=classic`)
+- **Theme Support**: Light and Dark modes
+- **Print Support**: Yes, optimized for PDF generation
+- **Font**: Elegant serif fonts (Palatino, EB Garamond)
+- **Design**: Professional glassmorphism effect
+- **Best For**: Traditional resumes, professional applications
+
+### Terminal Style (`?style=terminal`) 
+- **Theme Support**: Dark mode only (retro green phosphor)
+- **Print Support**: No
+- **Font**: Monospace fonts (Fira Code, SF Mono, Monaco)
+- **Design**: Retro CRT terminal with scan lines, screen curvature, and phosphor glow effects
+- **Best For**: Tech portfolios, developer resumes, creative applications in gaming/tech industry
+
 ## Quick Start
+
+### Using Different Styles
+
+You can switch between styles using URL parameters:
+
+```
+# Classic style (default)
+index.html?style=classic
+
+# Terminal/CRT style
+index.html?style=terminal
+
+# Default (falls back to classic)
+index.html
+```
 
 1. Clone this repository:
 
