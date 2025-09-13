@@ -11,8 +11,8 @@
         "url": "https://www.linkedin.com/in/chakradhar-reddy-d"
       },
       "email": {
-        "text": "chakradharreddydevireddy@gmail.com",
-        "url": "mailto:chakradharreddydevireddy@gmail.com"
+        "text": "chakridevireddy69@gmail.com",
+        "url": "mailto:chakridevireddy69@gmail.com"
       },
       "phone": {
         "text": "+91 63037 08424",
@@ -63,6 +63,7 @@
           "title": "Software Development Engineer - I",
           "period": "July 2025 - Present",
           "achievements": [
+            "Migrated vehicle onboarding to an automated system to detect vehicle numbers, onboard new ones or mark their entry/exit reducing manual effort by 60% and errors by 80%. This flow included 15 screens with a custom engine to handle the complex flow between these screens.",
             "Rolled out a new ticket workflow improving customer satisfaction with delayed orders and reducing order cancellations due to delays by 80%.",
             "Migrated internal maps to Google decreasing costs by 25%.",
             "Automated ~1M tickets syncing with a python script decreasing manual effort by 95%."
@@ -121,7 +122,7 @@
     },
     {
       "name": "Pixel Drawing Simulator",
-      "description": "Canvas tool showcasing Bresenham, flood‑fill, and CRUD export; built for graphics coursework and still a personal favourite.",
+      "description": "Canvas tool showcasing Bresenham, flood‑fill, and CRUD export; built for graphics coursework.",
       "url": "https://github.com/chakri68/pixel-drawing-sim"
     }
   ],

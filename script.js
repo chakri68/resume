@@ -1,3 +1,10 @@
+const logoAnimatedComponent = document.querySelector("logo-animated");
+
+// CONSTANTS
+const ANIMATION_DURATION = parseFloat(
+  logoAnimatedComponent.getAttribute("duration")
+); // Duration in seconds
+
 // Load resume data based on the query param
 const resumeToLoad = new URLSearchParams(window.location.search).get("resume");
 const emailToUse = new URLSearchParams(window.location.search).get("email");
@@ -17,7 +24,6 @@ async function getResumeJson(name) {
 }
 
 async function loadResumeData() {
-  const ANIMATION_DURATION = 4.2; // Duration in seconds
   const startTime = Date.now();
 
   try {
@@ -108,7 +114,7 @@ function populateResume(data) {
       let experienceHTML;
       if (containsPositions) {
         article.classList.add("has-positions");
-        experienceHTML = `<h3>${exp.company}</h3>`;
+        experienceHTML = `<h3 class="screen-only">${exp.company}</h3>`;
       } else {
         experienceHTML = `
             <h3>${exp.company}</h3>
@@ -134,6 +140,7 @@ function populateResume(data) {
               <div class="position-circle"></div>
             </div>
             <div class="position-content">
+              <h3 class="print-only">${exp.company}</h3>
               <div class="job-header">
                 <p class="job-title">${position.title}</p>
                 <p class="job-date">${position.period}</p>
