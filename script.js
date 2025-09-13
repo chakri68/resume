@@ -85,18 +85,32 @@ function populateResume(data) {
   });
 
   // Experience
-  const experienceContainer = document.querySelector(".experience-container");
-  data.experience.forEach((exp) => {
-    const containsPositions = exp.positions && exp.positions.length > 0;
-    const article = document.createElement("article");
+  if (!data.experience || data.experience.length === 0) {
+    // Delete experience section
+    document.querySelector("#experience").remove();
+    // Also remove from nav
+    document
+      .querySelector('.nav-item a[href="#experience"]')
+      .parentElement.remove();
+    // Remove separator if exists
+    const navItems = document.querySelectorAll(".nav-item");
+    if (navItems.length > 0) {
+      navItems[navItems.length - 1].classList.remove("with-separator");
+    }
+    // Exit the function as there's no experience to display
+  } else {
+    const experienceContainer = document.querySelector(".experience-container");
+    data.experience.forEach((exp) => {
+      const containsPositions = exp.positions && exp.positions.length > 0;
+      const article = document.createElement("article");
 
-    // Create the main company section
-    let experienceHTML;
-    if (containsPositions) {
-      article.classList.add("has-positions");
-      experienceHTML = `<h3>${exp.company}</h3>`;
-    } else {
-      experienceHTML = `
+      // Create the main company section
+      let experienceHTML;
+      if (containsPositions) {
+        article.classList.add("has-positions");
+        experienceHTML = `<h3>${exp.company}</h3>`;
+      } else {
+        experienceHTML = `
             <h3>${exp.company}</h3>
             <div class="job-header">
               <p class="job-title">${exp.title} — ${exp.location}</p>
@@ -108,13 +122,13 @@ function populateResume(data) {
                 .join("")}
             </ul>
           `;
-    }
+      }
 
-    // Add positions if they exist
-    if (exp.positions && exp.positions.length > 0) {
-      experienceHTML += `<div class="positions-timeline">`;
-      exp.positions.forEach((position, index) => {
-        experienceHTML += `
+      // Add positions if they exist
+      if (exp.positions && exp.positions.length > 0) {
+        experienceHTML += `<div class="positions-timeline">`;
+        exp.positions.forEach((position, index) => {
+          experienceHTML += `
           <div class="position-item">
             <div class="position-marker screen-only">
               <div class="position-circle"></div>
@@ -132,42 +146,58 @@ function populateResume(data) {
             </div>
           </div>
         `;
-      });
-      experienceHTML += `</div>`;
-    }
+        });
+        experienceHTML += `</div>`;
+      }
 
-    article.innerHTML = experienceHTML;
-    experienceContainer.appendChild(article);
-  });
+      article.innerHTML = experienceHTML;
+      experienceContainer.appendChild(article);
+    });
+  }
 
   // Projects
   const projectsList = document.querySelector(".projects-list");
-  data.projects.forEach((project) => {
-    const li = document.createElement("li");
-    li.innerHTML = `
+  if (data.projects && data.projects.length && data.projects.length === 0) {
+    // Delete projects section
+    projectsList.parentElement.parentElement.remove();
+  } else {
+    data.projects.forEach((project) => {
+      const li = document.createElement("li");
+      li.innerHTML = `
             <strong>${project.name}</strong> — ${project.description}
             <a href="${project.url}" target="_blank" rel="noopener noreferrer">GitHub</a>
           `;
-    projectsList.appendChild(li);
-  });
+      projectsList.appendChild(li);
+    });
+  }
 
   // Education
   const education = data.education;
-  document.querySelector("#education p").innerHTML = `
+  if (!education || Object.keys(education).length === 0) {
+    // Delete education section
+    document.querySelector("#education").remove();
+  } else {
+    document.querySelector("#education p").innerHTML = `
           <strong>${education.institution}</strong> —
           <em>${education.degree}</em> (CGPA ${education.gpa})<br />
           ${education.period} • ${education.location}
         `;
+  }
 
   // Achievements
   const achievementsList = document.querySelector(".achievements-list");
-  data.achievements.forEach((achievement) => {
-    const li = document.createElement("li");
-    li.innerHTML = `
+  if (!data.achievements || data.achievements.length === 0) {
+    // Delete achievements section
+    achievementsList.parentElement.parentElement.remove();
+  } else {
+    data.achievements.forEach((achievement) => {
+      const li = document.createElement("li");
+      li.innerHTML = `
             <strong>${achievement.title}</strong> — ${achievement.description}
           `;
-    achievementsList.appendChild(li);
-  });
+      achievementsList.appendChild(li);
+    });
+  }
 
   // Keywords
   document.querySelector(
