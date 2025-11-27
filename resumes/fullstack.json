@@ -2,10 +2,7 @@
   "personal": {
     "name": "CHAKRADHAR REDDY DEVIREDDY",
     "contact": {
-      "github": {
-        "text": "GitHub",
-        "url": "https://github.com/chakri68"
-      },
+      "github": { "text": "GitHub", "url": "https://github.com/chakri68" },
       "linkedin": {
         "text": "LinkedIn",
         "url": "https://www.linkedin.com/in/chakradhar-reddy-d"
@@ -14,14 +11,11 @@
         "text": "chakridevireddy69@gmail.com",
         "url": "mailto:chakridevireddy69@gmail.com"
       },
-      "phone": {
-        "text": "+91 63037 08424",
-        "url": "tel:+916303708424"
-      }
+      "phone": { "text": "+91 63037 08424", "url": "tel:+916303708424" }
     }
   },
   "summary": {
-    "text": "Backend‑leaning Full‑Stack / Platform Engineer with 2 years of internship experience building distributed, cloud‑native microservices on AWS. Proficient in Go, TypeScript/Node.js, React, PostgreSQL and container‑driven DevOps (Docker, Kubernetes, CI/CD). Designed systems processing 75 k req/min, cut P95 latency 95%, and automated pipelines that slashed deploy times 75%. Passionate about low‑latency data paths, observability, and developer‑centric tooling."
+    "text": "Backend-focused Full-Stack / Platform Engineer with 2 years of experience building distributed, cloud-native systems at scale. Skilled in Go, TypeScript/Node.js, React, PostgreSQL, and AWS-driven DevOps. Built systems handling 75k req/min, cut P95 latency 95%, and automated pipelines reducing deploy times by 75%. Strong interest in low-latency data paths, observability, and developer-first tooling."
   },
   "skills": {
     "categories": [
@@ -30,7 +24,7 @@
         "items": "Go, TypeScript, JavaScript, Java, Python, SQL, Bash"
       },
       {
-        "title": "Backend / Frameworks",
+        "title": "Backend",
         "items": "Node.js, Express, Fastify, NestJS, gRPC, REST, GraphQL"
       },
       {
@@ -38,45 +32,51 @@
         "items": "React, Next.js, Redux Toolkit, SvelteKit"
       },
       {
-        "title": "Cloud & DevOps",
-        "items": "AWS (S3, EC2, Lambda, RDS, SQS, SNS, CloudWatch), Docker, Kubernetes, Nginx, GitHub Actions, Redis, Kafka"
-      },
-      {
         "title": "Databases",
-        "items": "PostgreSQL, MySQL, MSSQL, Prisma ORM, Strapi CMS, Sanity"
+        "items": "PostgreSQL, MySQL, MSSQL, Prisma ORM, Strapi CMS, Sanity, Firestore"
       },
       {
-        "title": "Practices",
-        "items": "Distributed Systems, Microservices, Scalability, CI/CD, TDD, Agile/Scrum"
+        "title": "Cloud & DevOps",
+        "items": "AWS (S3, EC2, Lambda, RDS, CloudWatch), Docker, Kubernetes, Redis, Kafka, Nginx, Bazel, Gerrit, GCP (Cloud Run, Cloud Functions)"
       }
     ]
   },
   "experience": [
     {
+      "company": "Even Healthcare",
+      "title": "Software Development Engineer - I",
+      "location": "Bengaluru",
+      "period": "Nov 2024 – Present",
+      "achievements": [
+        "Repaired 80k+ faulty PDV records out of 150k and stabilised ingestion of 17k+ lab reports/week, ensuring full data completeness for medical sanity checks.",
+        "Resolved 900+ weekly document reupload failures, unblocking accurate creation of 300+ post-hospital forms every week across care-manager workflows.",
+        "Refactored core frontend modules for true parallel data loading, improving render times by ~25% and enhancing stability across high-traffic screens."
+      ]
+    },
+    {
       "company": "Zomato",
-      "title": "Software Development Engineer Intern",
-      "location": "Gurugram, India",
-      "period": "Jan 2025 – Present",
-      "achievements": [],
+      "title": "Software Development Engineer",
+      "location": "Gurugram",
+      "period": "Jan 2025 – Oct 2025",
       "positions": [
         {
-          "title": "Software Development Engineer - I",
-          "period": "July 2025 - Present",
+          "title": "SDE-I",
+          "period": "Jul 2025 – Oct 2025",
           "achievements": [
-            "Migrated vehicle onboarding to an automated system to detect vehicle numbers, onboard new ones or mark their entry/exit reducing manual effort by 60% and errors by 80%. This flow included 15 screens with a custom engine to handle the complex flow between these screens.",
-            "Rolled out a new ticket workflow improving customer satisfaction with delayed orders and reducing order cancellations due to delays by 80%.",
-            "Migrated internal maps to Google decreasing costs by 25%.",
-            "Automated ~1M tickets syncing with a python script decreasing manual effort by 95%."
+            "Automated vehicle onboarding using plate-detection and dynamic flow control (15-screen engine); reduced manual effort 60% and onboarding errors 80%.",
+            "Rolled out a redesigned ticketing workflow for delayed orders; boosted customer satisfaction and reduced cancellations by 80%.",
+            "Migrated internal maps to Google Maps, lowering operating costs by 25% across logistics tooling.",
+            "Automated syncing of ~1M tickets with a Python-based pipeline, removing 95% of manual ops work for the team."
           ]
         },
         {
           "title": "Software Development Intern",
-          "period": "Jan 2025 - June 2025",
+          "period": "Jan 2025 – Jun 2025",
           "achievements": [
-            "Migrated 200+ legacy JS components to TypeScript + Redux in Next.js; decreased build‑time errors 40% and boosted feature velocity 30%.",
-            "Authored a Go streaming SDK to pipe multi‑GB ZIP archives directly to AWS S3; reduced transfer latency 65% and halved memory overhead.",
-            "Built a GPS ingestion service (≈ 50 k msgs/s) with WebSocket dashboards; improved average delivery ETA 12%.",
-            "Refactored RPC layer using goroutines & gRPC batching; slashed P95 latency 95% under 2 k TPS."
+            "Migrated 200+ legacy JS components to TypeScript + Redux within a Next.js monorepo; reduced build-time errors 40% and improved dev velocity 30%.",
+            "Built a production-safe Go streaming SDK to pipe multi-GB ZIP archives directly into S3; cut transfer latency 65% and halved memory usage.",
+            "Developed a GPS ingestion service handling ~50k messages/s with live dashboards; improved ETA prediction accuracy by 12%.",
+            "Refactored RPC and service-to-service communication with goroutines and gRPC batching; slashed P95 latency by 95% at 2k TPS."
           ]
         }
       ]
@@ -87,42 +87,42 @@
       "location": "Remote",
       "period": "Dec 2023 – Apr 2024",
       "achievements": [
-        "Scaled Strapi‑based ERM to ~1 k RPS; in‑memory caching and query tuning lifted throughput 80%.",
-        "Containerised micro‑services with Docker & AWS EC2; trimmed CI/CD duration 75% and cut infra costs 63%.",
-        "Restructured React component hierarchy; reduced client re‑renders 40%, keeping First‑Input Delay < 50 ms."
+        "Scaled a Strapi-based ERM from mid-load to ~1k RPS; in-memory caching and SQL tuning lifted throughput by 80%.",
+        "Containerised microservices with Docker on AWS EC2; reduced CI/CD times by 75% and cut infra spending by 63%.",
+        "Redesigned React component structure; reduced unnecessary re-renders by 40% and kept First Input Delay < 50ms."
       ]
     },
     {
       "company": "WCARL — IIIT Lucknow",
-      "title": "Full‑Stack Web Developer Intern",
-      "location": "Lucknow, India",
+      "title": "Full-Stack Web Developer Intern",
+      "location": "Lucknow",
       "period": "Oct 2022 – Mar 2023",
       "achievements": [
-        "Engineered Next.js backend for the UP Commercial Tax Dept.; sustained 75 k req/min with JWT + HTTPOnly cookies and WAF rules.",
-        "Indexed MSSQL and wrote stored procedures; cut query latency 95% and CPU utilisation 90%.",
-        "Automated discrepancy reports with PDFMake & Mammoth; eliminated 60% of manual formatting effort."
+        "Developed a Next.js backend for the UP Commercial Tax Dept., handling 75k req/min using JWT + HTTPOnly auth and WAF protections.",
+        "Optimised MSSQL workloads using indexes + stored procedures, reducing query latency 95% and CPU use 90%.",
+        "Automated PDF-based discrepancy reports using PDFMake & Mammoth, eliminating 60% of manual formatting effort."
       ]
     }
   ],
   "projects": [
     {
       "name": "codeCollab",
-      "description": "Real‑time code‑sharing IDE (Next.js, WebSockets, CodeMirror); syncs 20+ concurrent users with operational‑transform logic.",
+      "description": "Real-time collaborative IDE built with Next.js, WebSockets, and OT; supports 20+ concurrent users with conflict-free syncing.",
       "url": "https://github.com/chakri68/codeCollab"
     },
     {
-      "name": "get‑proctored.ai",
-      "description": "AI‑powered exam proctoring (TensorFlow, MediaPipe, WebRTC); cut false‑positive rate 30%.",
+      "name": "get-proctored.ai",
+      "description": "AI-powered exam-proctoring using TensorFlow + MediaPipe; lowered false positives by 30% with smart rule pipelines.",
       "url": "https://github.com/chakri68/get-proctered-public"
     },
     {
-      "name": "TS‑ML Algorithms",
-      "description": "TypeScript library of classic ML & search algorithms (K‑Means, GA, A*).",
+      "name": "TS-ML Algorithms",
+      "description": "TypeScript implementations of classic ML/search algorithms including K-Means, GA, and A* with visual demos.",
       "url": "https://github.com/chakri68/machine-learning-algos"
     },
     {
       "name": "Pixel Drawing Simulator",
-      "description": "Canvas tool showcasing Bresenham, flood‑fill, and CRUD export; built for graphics coursework.",
+      "description": "Interactive canvas tool demonstrating Bresenham, flood-fill, and pixel-level operations; includes CRUD & export tools.",
       "url": "https://github.com/chakri68/pixel-drawing-sim"
     }
   ],
@@ -139,21 +139,21 @@
       "description": "Top 6% worldwide • 2024"
     },
     {
-      "title": "Amazon HackOn Season 3",
-      "description": "Top 50 / 5,000+ teams • 2023"
+      "title": "Amazon HackOn S3",
+      "description": "Top 50 of 5,000+ teams • 2023"
     },
     {
-      "title": "Contributor, WCARL Drone",
-      "description": "Featured in The Times of India • 2023"
+      "title": "WCARL Drone Contributor",
+      "description": "Project featured in The Times of India • 2023"
     },
     {
-      "title": "Executive Member, GDSC IIIT Lucknow",
-      "description": "Organised 15+ tech events & mentored 50+ juniors • 2022–24"
+      "title": "Executive Member, GDSC",
+      "description": "Organised 15+ tech events; mentored 50+ juniors • 2022–24"
     }
   ],
-  "keywords": "Distributed Systems, Microservices, Cloud‑Native, AWS, Kubernetes, Docker, REST, gRPC, SQL, PostgreSQL, Go, TypeScript, React, CI/CD, Observability, Scalability, Agile",
+  "keywords": "Go, Node.js, React, AWS, Kubernetes, PostgreSQL, Distributed Systems, Microservices, gRPC, Scalability, CI/CD",
   "footer": {
     "copyright": "© 2025 Chakradhar Reddy Devireddy",
-    "lastUpdated": "August 2025"
+    "lastUpdated": "Aug 2025"
   }
 }

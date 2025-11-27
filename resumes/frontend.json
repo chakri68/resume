@@ -27,27 +27,38 @@
     "categories": [
       {
         "title": "Languages",
-        "items": "TypeScript, JavaScript, Go, Java, Python, SQL, Bash"
+        "items": "Go, TypeScript, JavaScript, Java, Python, SQL, Bash"
+      },
+      {
+        "title": "Backend",
+        "items": "Node.js, Express, Fastify, NestJS, gRPC, REST, GraphQL"
       },
       {
         "title": "Frontend",
         "items": "React, Next.js, Redux Toolkit, SvelteKit, Tailwind CSS, Chakra UI, Zustand, CodeMirror, WebSockets, HTML5, CSS3, Canvas API"
       },
       {
-        "title": "Backend / Frameworks",
-        "items": "Node.js, Express, Fastify, NestJS, gRPC, REST, GraphQL"
+        "title": "Databases",
+        "items": "PostgreSQL, MySQL, MSSQL, Prisma ORM, Strapi CMS, Sanity, Firestore"
       },
       {
         "title": "Cloud & DevOps",
-        "items": "AWS (S3, EC2, Lambda, RDS, SQS, SNS, CloudWatch), Docker, Kubernetes, Nginx, GitHub Actions, Redis, Kafka"
-      },
-      {
-        "title": "Databases",
-        "items": "PostgreSQL, MySQL, MSSQL, Prisma ORM, Strapi CMS, Sanity"
+        "items": "AWS (S3, EC2, Lambda, RDS, CloudWatch), Docker, Kubernetes, Redis, Kafka, Nginx, Bazel, Gerrit, GCP (Cloud Run, Cloud Functions)"
       }
     ]
   },
   "experience": [
+    {
+      "company": "Even Healthcare",
+      "title": "Software Development Engineer - I",
+      "location": "Bengaluru, India",
+      "period": "Nov 2024 – Present",
+      "achievements": [
+        "Optimized core React components and layout structure, cutting load and render times by ~25% across critical care-manager pages.",
+        "Delivered UX fixes for clinical report views, ensuring stable rendering of 17k+/week documents and eliminating edge cases that broke the UI.",
+        "Improved frontend reliability of fulfilment flows by fixing 900+/week UI failures, enabling seamless creation of 300+/week post-hospital forms."
+      ]
+    },
     {
       "company": "Zomato",
       "title": "Software Development Engineer Intern",
@@ -112,12 +123,12 @@
     },
     {
       "name": "TS‑ML Algorithms",
-      "description": "Interactive frontend TS library visualizing classic ML & search algorithms (K‑Means, GA, A*, A*).",
+      "description": "Interactive frontend TS library visualizing classic ML & search algorithms (K‑Means, GA, A*).",
       "url": "https://github.com/chakri68/machine-learning-algos"
     },
     {
       "name": "Pixel Drawing Simulator",
-      "description": "Canvas-based pixel drawing and animation tool showcasing graphics algorithms with an intuitive UI; includes export, zoom, and history tools.",
+      "description": "Canvas-based pixel drawing and animation tool for graphics algorithms; includes export, history tool.",
       "url": "https://github.com/chakri68/pixel-drawing-sim"
     }
   ],

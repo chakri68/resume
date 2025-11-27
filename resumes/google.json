@@ -30,7 +30,7 @@
         "items": "Go, TypeScript, JavaScript, Java, Python, SQL, Bash"
       },
       {
-        "title": "Backend / Frameworks",
+        "title": "Backend",
         "items": "Node.js, Express, Fastify, NestJS, gRPC, REST, GraphQL"
       },
       {
@@ -38,29 +38,36 @@
         "items": "React, Next.js, Redux Toolkit, SvelteKit"
       },
       {
-        "title": "Cloud & DevOps",
-        "items": "AWS (S3, EC2, Lambda, RDS, SQS, SNS, CloudWatch), Docker, Kubernetes, Nginx, GitHub Actions, Redis, Kafka"
-      },
-      {
         "title": "Databases",
-        "items": "PostgreSQL, MySQL, MSSQL, Prisma ORM, Strapi CMS, Sanity"
+        "items": "PostgreSQL, MySQL, MSSQL, Prisma ORM, Strapi CMS, Sanity, Firestore"
       },
       {
-        "title": "Practices",
-        "items": "Distributed Systems, Microservices, Scalability, CI/CD, TDD, Agile/Scrum"
+        "title": "Cloud & DevOps",
+        "items": "AWS (S3, EC2, Lambda, RDS, CloudWatch), Docker, Kubernetes, Redis, Kafka, Nginx, Bazel, Gerrit, GCP (Cloud Run, Cloud Functions)"
       }
     ]
   },
   "experience": [
     {
+      "company": "Even Healthcare",
+      "title": "Software Development Engineer - I",
+      "location": "Bengaluru, India",
+      "period": "Nov 2024 – Present",
+      "achievements": [
+        "Fixed 80k+ faulty PDV records (out of 150k); repaired document-mapping issues affecting 17k+ weekly processed lab reports.",
+        "Reduced document reupload failures by resolving 900+ weekly ingestion errors and improved fulfilment workflows, enabling accurate creation of 300+ post-hospital forms per week.",
+        "Refactored core frontend modules to enable parallel loading, cutting render times by ~25% and improving UX stability across high-traffic care-manager flows."
+      ]
+    },
+    {
       "company": "Zomato",
       "title": "Software Development Engineer Intern",
       "location": "Gurugram, India",
-      "period": "Jan 2025 – Present",
+      "period": "Jan 2025 – Oct 2025",
       "positions": [
         {
           "title": "Software Development Engineer - I",
-          "period": "Jul 2025 – Present",
+          "period": "Jul 2025 – Oct 2025",
           "achievements": [
             "Rolled out a new ticketing workflow improving delayed-order handling; cut cancellations 80% and boosted CSAT.",
             "Integrated internal maps with Google APIs; reduced third-party costs 25%.",
