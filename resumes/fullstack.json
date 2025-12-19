@@ -106,6 +106,11 @@
   ],
   "projects": [
     {
+      "name": "JScratch (VS Code Extension)",
+      "description": "ETL scratchpad for data transformations using TS. Published on the VS Code Marketplace.",
+      "url": "https://github.com/chakri68/jscratch"
+    },
+    {
       "name": "codeCollab",
       "description": "Real-time collaborative IDE built with Next.js, WebSockets, and OT; supports 20+ concurrent users with conflict-free syncing.",
       "url": "https://github.com/chakri68/codeCollab"
@@ -114,11 +119,6 @@
       "name": "get-proctored.ai",
       "description": "AI-powered exam-proctoring using TensorFlow + MediaPipe; lowered false positives by 30% with smart rule pipelines.",
       "url": "https://github.com/chakri68/get-proctered-public"
-    },
-    {
-      "name": "TS-ML Algorithms",
-      "description": "TypeScript implementations of classic ML/search algorithms including K-Means, GA, and A* with visual demos.",
-      "url": "https://github.com/chakri68/machine-learning-algos"
     },
     {
       "name": "Pixel Drawing Simulator",
