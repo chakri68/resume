@@ -1,9 +1,9 @@
 /* =====  PALETTE & FONTS  ===== */
 :root {
-  --font-body: "Palatino Linotype", "Book Antiqua", Palatino, "EB Garamond",
-    Georgia, serif;
-  --font-head: "Mako", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  --font-body:
+    "Palatino Linotype", "Book Antiqua", Palatino, "EB Garamond", Georgia, serif;
+  --font-head:
+    "Mako", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-code: "JetBrains Mono", Consolas, monospace;
 
   /* Light theme variables */
@@ -61,7 +61,8 @@ body {
   -webkit-font-smoothing: antialiased;
   color: var(--clr-text);
   background-color: var(--clr-bg);
-  transition: background-color var(--transition-speed),
+  transition:
+    background-color var(--transition-speed),
     color var(--transition-speed);
 }
 
@@ -77,7 +78,9 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+  transition:
+    opacity 0.5s ease-out,
+    visibility 0.5s ease-out;
 }
 
 .loading-screen.hidden {
@@ -136,7 +139,9 @@ body {
   stroke-linejoin: round; /* smooth joins */
   shape-rendering: geometricPrecision;
   vector-effect: non-scaling-stroke;
-  transition: fill var(--transition-speed), stroke var(--transition-speed),
+  transition:
+    fill var(--transition-speed),
+    stroke var(--transition-speed),
     stroke-opacity var(--transition-speed);
 }
 
@@ -186,7 +191,9 @@ body {
   color: var(--clr-head);
   border-radius: 6px;
   padding: 0.25rem;
-  transition: background-color var(--transition-speed), transform 0.2s ease,
+  transition:
+    background-color var(--transition-speed),
+    transform 0.2s ease,
     box-shadow 0.2s ease;
   font-size: 1.2rem;
   cursor: pointer;
@@ -243,7 +250,9 @@ body {
 .contact a {
   color: var(--clr-accent);
   text-decoration: none;
-  transition: color var(--transition-speed), transform 0.2s;
+  transition:
+    color var(--transition-speed),
+    transform 0.2s;
 }
 
 .contact a:hover {
@@ -272,7 +281,8 @@ h2 {
   color: var(--clr-head);
   border-bottom: 1px solid var(--clr-rule);
   padding-bottom: 0.15rem;
-  transition: color var(--transition-speed),
+  transition:
+    color var(--transition-speed),
     border-color var(--transition-speed);
 }
 
@@ -329,7 +339,8 @@ hr {
 a {
   text-decoration: underline;
   color: var(--clr-accent);
-  transition: color var(--transition-speed),
+  transition:
+    color var(--transition-speed),
     background-color var(--transition-speed);
 }
 
@@ -484,7 +495,9 @@ a:hover {
   background-color: var(--clr-card-bg);
   border-radius: 6px;
   box-shadow: 0 2px 8px var(--clr-card-shadow);
-  transition: transform 0.2s, box-shadow 0.2s,
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
     background-color var(--transition-speed);
 }
 
@@ -501,7 +514,9 @@ article {
   border-radius: 6px;
   background-color: var(--clr-card-bg);
   box-shadow: 0 2px 8px var(--clr-card-shadow);
-  transition: transform 0.2s, box-shadow 0.2s,
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
     background-color var(--transition-speed);
 
   &.has-positions {
@@ -587,7 +602,9 @@ article:hover {
 section {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.5s, transform 0.5s;
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
 }
 
 section.visible {
@@ -640,7 +657,7 @@ footer {
   body {
     width: 100%;
     max-width: none;
-    font-size: 7.35pt;
+    font-size: 7.25pt;
     line-height: 1.25;
     padding: 0;
     -webkit-print-color-adjust: exact;
@@ -659,7 +676,8 @@ footer {
     --clr-code-bg: #f6f8fa !important;
     --clr-bg: #ffffff !important;
     --clr-hover-bg: #e9f0ff !important;
-    --font-head: "Mako", "Source Sans Pro", Helvetica, Arial, sans-serif !important;
+    --font-head:
+      "Mako", "Source Sans Pro", Helvetica, Arial, sans-serif !important;
   }
 
   /* Hide web-only elements */

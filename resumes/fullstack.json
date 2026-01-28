@@ -44,13 +44,14 @@
   "experience": [
     {
       "company": "Even Healthcare",
-      "title": "Software Development Engineer - I",
+      "title": "Software Development Engineer",
       "location": "Bengaluru",
       "period": "Nov 2025 – Present",
       "achievements": [
-        "Repaired 80k+ faulty PDV records out of 150k and stabilised ingestion of 17k+ lab reports/week, ensuring full data completeness for medical sanity checks.",
-        "Resolved 900+ weekly document reupload failures, unblocking accurate creation of 300+ post-hospital forms every week across care-manager workflows.",
-        "Refactored core frontend modules for true parallel data loading, improving render times by ~25% and enhancing stability across high-traffic screens."
+        "Designed and built an AI calling framework integrating LLMs into clinical workflows, enabling automated report summarization, smart care-manager suggestions, and fully automated follow-up calls—reducing manual effort by ~40%.",
+        "Built a generalized onboarding package for new insurance providers and automated CI/CD pipelines, cutting integration time from 6 weeks to 2 weeks.",
+        "Resolved 900+ weekly document re-upload failures, unblocking reliable generation of 300+ post-hospitalization forms per week across care manager workflows.",
+        "Refactored core frontend modules to enable true parallel data loading, reducing render times by ~25% and improving stability on high-traffic screens."
       ]
     },
     {
@@ -60,7 +61,7 @@
       "period": "Jan 2025 – Oct 2025",
       "positions": [
         {
-          "title": "SDE-I",
+          "title": "Software Development Engineer",
           "period": "Jul 2025 – Oct 2025",
           "achievements": [
             "Automated vehicle onboarding using plate-detection and dynamic flow control (15-screen engine); reduced manual effort 60% and onboarding errors 80%.",

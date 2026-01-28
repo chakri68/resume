@@ -50,10 +50,11 @@
   "experience": [
     {
       "company": "Even Healthcare",
-      "title": "Software Development Engineer - I",
+      "title": "Software Development Engineer",
       "location": "Bengaluru, India",
       "period": "Nov 2025 – Present",
       "achievements": [
+        "Added dashboards for monitoring stats like success rates, latency, and cost per call for AI calls reducing manual monitoring effort by 70%.",
         "Optimized core React components and layout structure, cutting load and render times by ~25% across critical care-manager pages.",
         "Delivered UX fixes for clinical report views, ensuring stable rendering of 17k+/week documents and eliminating edge cases that broke the UI.",
         "Improved frontend reliability of fulfilment flows by fixing 900+/week UI failures, enabling seamless creation of 300+/week post-hospital forms."
@@ -67,7 +68,7 @@
       "achievements": [],
       "positions": [
         {
-          "title": "Software Development Engineer - I",
+          "title": "Software Development Engineer",
           "period": "July 2025 - Oct 2025",
           "achievements": [
             "Built multiple hooks for animation timings and transitions in React, improving UI responsiveness and reducing re-renders by 30%.",
