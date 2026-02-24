@@ -51,6 +51,8 @@
 html {
   scroll-behavior: smooth;
   cursor: default;
+  scrollbar-color: grey transparent;
+  scrollbar-width: thin;
 }
 
 body {
