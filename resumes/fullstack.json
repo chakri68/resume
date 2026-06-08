@@ -2,7 +2,10 @@
   "personal": {
     "name": "CHAKRADHAR REDDY DEVIREDDY",
     "contact": {
-      "github": { "text": "GitHub", "url": "https://github.com/chakri68" },
+      "github": {
+        "text": "GitHub",
+        "url": "https://github.com/chakri68"
+      },
       "linkedin": {
         "text": "LinkedIn",
         "url": "https://www.linkedin.com/in/chakradhar-reddy-d"
@@ -11,7 +14,10 @@
         "text": "chakridevireddy69@gmail.com",
         "url": "mailto:chakridevireddy69@gmail.com"
       },
-      "phone": { "text": "+91 63037 08424", "url": "tel:+916303708424" }
+      "phone": {
+        "text": "+91 63037 08424",
+        "url": "tel:+916303708424"
+      }
     }
   },
   "summary": {
@@ -46,8 +52,9 @@
       "company": "Even Healthcare",
       "title": "Software Development Engineer",
       "location": "Bengaluru",
-      "period": "Nov 2025 – Present",
+      "period": "Oct 2025 - Present",
       "achievements": [
+        "Built and led backend systems for Even Infinite's Hospital Pass, simplifying hospital-service access and driving a 65%+ increase in user engagement.",
         "Designed and built an AI calling framework integrating LLMs into clinical workflows, enabling automated report summarization, smart care-manager suggestions, and fully automated follow-up calls—reducing manual effort by ~40%.",
         "Built a generalized onboarding package for new insurance providers and automated CI/CD pipelines, cutting integration time from 6 weeks to 2 weeks.",
         "Resolved 900+ weekly document re-upload failures, unblocking reliable generation of 300+ post-hospitalization forms per week across care manager workflows.",
@@ -58,11 +65,11 @@
       "company": "Zomato",
       "title": "Software Development Engineer",
       "location": "Gurugram",
-      "period": "Jan 2025 – Oct 2025",
+      "period": "Jan 2025 - Oct 2025",
       "positions": [
         {
           "title": "Software Development Engineer",
-          "period": "Jul 2025 – Oct 2025",
+          "period": "Jul 2025 - Oct 2025",
           "achievements": [
             "Automated vehicle onboarding using plate-detection and dynamic flow control (15-screen engine); reduced manual effort 60% and onboarding errors 80%.",
             "Rolled out a redesigned ticketing workflow for delayed orders; boosted customer satisfaction and reduced cancellations by 80%.",
@@ -72,7 +79,7 @@
         },
         {
           "title": "Software Development Intern",
-          "period": "Jan 2025 – Jun 2025",
+          "period": "Jan 2025 - Jun 2025",
           "achievements": [
             "Migrated 200+ legacy JS components to TypeScript + Redux within a Next.js monorepo; reduced build-time errors 40% and improved dev velocity 30%.",
             "Built a production-safe Go streaming SDK to pipe multi-GB ZIP archives directly into S3; cut transfer latency 65% and halved memory usage.",
@@ -86,7 +93,7 @@
       "company": "Shinpo Engineering Pvt. Ltd.",
       "title": "Backend Developer Intern",
       "location": "Remote",
-      "period": "Dec 2023 – Apr 2024",
+      "period": "Dec 2023 - Apr 2024",
       "achievements": [
         "Scaled a Strapi-based ERM from mid-load to ~1k RPS; in-memory caching and SQL tuning lifted throughput by 80%.",
         "Containerised microservices with Docker on AWS EC2; reduced CI/CD times by 75% and cut infra spending by 63%.",
@@ -97,7 +104,7 @@
       "company": "WCARL — IIIT Lucknow",
       "title": "Full-Stack Web Developer Intern",
       "location": "Lucknow",
-      "period": "Oct 2022 – Mar 2023",
+      "period": "Oct 2022 - Mar 2023",
       "achievements": [
         "Developed a Next.js backend for the UP Commercial Tax Dept., handling 75k req/min using JWT + HTTPOnly auth and WAF protections.",
         "Optimised MSSQL workloads using indexes + stored procedures, reducing query latency 95% and CPU use 90%.",
@@ -131,7 +138,7 @@
     "institution": "Indian Institute of Information Technology, Lucknow",
     "degree": "B.Tech. in Computer Science",
     "gpa": "9.21/10",
-    "period": "Dec 2021 – Jun 2025",
+    "period": "Dec 2021 - Jun 2025",
     "location": "Lucknow, India"
   },
   "achievements": [
@@ -149,12 +156,12 @@
     },
     {
       "title": "Executive Member, GDSC",
-      "description": "Organised 15+ tech events; mentored 50+ juniors • 2022–24"
+      "description": "Organised 15+ tech events; mentored 50+ juniors • 2022-24"
     }
   ],
   "keywords": "Go, Node.js, React, AWS, Kubernetes, PostgreSQL, Distributed Systems, Microservices, gRPC, Scalability, CI/CD",
   "footer": {
-    "copyright": "© 2025 Chakradhar Reddy Devireddy",
-    "lastUpdated": "Aug 2025"
+    "copyright": "© 2026 Chakradhar Reddy Devireddy",
+    "lastUpdated": "Jun 2026"
   }
 }
