@@ -273,6 +273,30 @@
       </svg>
     </a>
 
+    <!-- Debug tool: type the password anywhere to open (see DEBUG_PASSWORD in script.js) -->
+    <div class="debug-overlay" aria-hidden="true">
+      <div class="debug-panel" role="dialog" aria-label="Debug JSON editor">
+        <div class="debug-header">
+          <strong>Debug — Resume JSON source</strong>
+          <button class="debug-close" aria-label="Close debug panel">✕</button>
+        </div>
+        <p class="debug-hint">
+          Paste resume JSON below and hit Render. It's stored for this tab only
+          and used as the data source. Clear to go back to the default.
+        </p>
+        <textarea
+          class="debug-textarea"
+          spellcheck="false"
+          placeholder="{ &quot;personal&quot;: { ... }, ... }"
+        ></textarea>
+        <div class="debug-error" role="alert"></div>
+        <div class="debug-actions">
+          <button class="debug-render">Render</button>
+          <button class="debug-clear">Clear &amp; reset</button>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

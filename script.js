@@ -11,6 +11,12 @@ const emailToUse = new URLSearchParams(window.location.search).get("email");
 
 const DEFAULT_RESUME = "backend";
 
+// Debug tool: type this password anywhere on the page to open the JSON editor.
+// Change this to whatever you like.
+const DEBUG_PASSWORD = "jsondebug";
+// Key under which debug-injected JSON is stashed for the current tab session.
+const DEBUG_STORAGE_KEY = "debugResumeData";
+
 async function getResumeJson(name) {
   try {
     const response = await fetch("manifest.json");
@@ -29,9 +35,16 @@ async function loadResumeData() {
   const startTime = Date.now();
 
   try {
-    const jsonPath = await getResumeJson(resumeToLoad);
-    const response = await fetch(`resumes/${jsonPath}.json`);
-    const data = await response.json();
+    let data;
+    const debugData = sessionStorage.getItem(DEBUG_STORAGE_KEY);
+    if (debugData) {
+      // Debug tool override: render the JSON the user pasted in instead of fetching.
+      data = JSON.parse(debugData);
+    } else {
+      const jsonPath = await getResumeJson(resumeToLoad);
+      const response = await fetch(`resumes/${jsonPath}.json`);
+      data = await response.json();
+    }
     populateResume(data);
 
     // Calculate remaining time to ensure minimum display duration
@@ -338,3 +351,87 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+
+// ===== Debug tool =====
+// Type DEBUG_PASSWORD anywhere on the page to open a panel where you can paste
+// resume JSON. The JSON is stashed in sessionStorage and the page reloads so it
+// renders through the normal populateResume() path (cleared when the tab closes).
+(function setupDebugTool() {
+  const overlay = document.querySelector(".debug-overlay");
+  if (!overlay) return;
+
+  const textarea = overlay.querySelector(".debug-textarea");
+  const errorBox = overlay.querySelector(".debug-error");
+  const renderBtn = overlay.querySelector(".debug-render");
+  const clearBtn = overlay.querySelector(".debug-clear");
+  const closeBtn = overlay.querySelector(".debug-close");
+
+  const openPanel = () => {
+    // Pre-fill with whatever is currently being rendered, if anything.
+    const current = sessionStorage.getItem(DEBUG_STORAGE_KEY);
+    if (current && !textarea.value) {
+      try {
+        textarea.value = JSON.stringify(JSON.parse(current), null, 2);
+      } catch {
+        textarea.value = current;
+      }
+    }
+    errorBox.textContent = "";
+    overlay.classList.add("visible");
+    textarea.focus();
+  };
+
+  const closePanel = () => overlay.classList.remove("visible");
+
+  // Listen for the secret password being typed (ignored while typing in a field).
+  let typed = "";
+  document.addEventListener("keydown", (e) => {
+    const tag = (e.target.tagName || "").toLowerCase();
+    const isField =
+      tag === "input" || tag === "textarea" || e.target.isContentEditable;
+    if (overlay.classList.contains("visible") || isField) {
+      if (e.key === "Escape") closePanel();
+      return;
+    }
+    if (e.key.length === 1) {
+      typed = (typed + e.key).slice(-DEBUG_PASSWORD.length);
+      if (typed.toLowerCase() === DEBUG_PASSWORD.toLowerCase()) {
+        typed = "";
+        openPanel();
+      }
+    }
+  });
+
+  renderBtn.addEventListener("click", () => {
+    const raw = textarea.value.trim();
+    if (!raw) {
+      errorBox.textContent = "Paste some JSON first.";
+      return;
+    }
+    try {
+      JSON.parse(raw); // validate before storing
+    } catch (err) {
+      errorBox.textContent = `Invalid JSON: ${err.message}`;
+      return;
+    }
+    sessionStorage.setItem(DEBUG_STORAGE_KEY, raw);
+    window.location.reload();
+  });
+
+  clearBtn.addEventListener("click", () => {
+    sessionStorage.removeItem(DEBUG_STORAGE_KEY);
+    window.location.reload();
+  });
+
+  closeBtn.addEventListener("click", closePanel);
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closePanel();
+  });
+
+  // Surface that an override is active so it isn't a mystery later.
+  if (sessionStorage.getItem(DEBUG_STORAGE_KEY)) {
+    console.info(
+      `[debug] Rendering custom JSON from sessionStorage. Type "${DEBUG_PASSWORD}" to edit/clear.`
+    );
+  }
+})();
