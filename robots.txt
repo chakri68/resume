@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chakri68.github.io/resume/sitemap.xml

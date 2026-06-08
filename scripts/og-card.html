@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mako&family=Source+Code+Pro:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+      .card {
+        width: 1200px;
+        height: 630px;
+        position: relative;
+        background: radial-gradient(
+            130% 110% at 82% 8%,
+            rgba(122, 162, 255, 0.16) 0%,
+            rgba(122, 162, 255, 0) 48%
+          ),
+          radial-gradient(
+            120% 120% at 0% 100%,
+            rgba(122, 162, 255, 0.08) 0%,
+            rgba(122, 162, 255, 0) 45%
+          ),
+          #0c0d10;
+        color: #e8e8ea;
+        font-family: "Mako", "Helvetica Neue", Arial, sans-serif;
+        overflow: hidden;
+      }
+      /* faint dotted grid */
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.05) 1px,
+          transparent 1px
+        );
+        background-size: 26px 26px;
+        mask-image: linear-gradient(
+          120deg,
+          rgba(0, 0, 0, 0.9),
+          rgba(0, 0, 0, 0.15)
+        );
+        -webkit-mask-image: linear-gradient(
+          120deg,
+          rgba(0, 0, 0, 0.9),
+          rgba(0, 0, 0, 0.15)
+        );
+      }
+      .accent-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(90deg, #7aa2ff, #395b9c 70%, transparent);
+      }
+      .inner {
+        position: absolute;
+        inset: 0;
+        padding: 72px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .top {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+      .monogram {
+        width: 78px;
+        height: 78px;
+        border: 1.5px solid rgba(122, 162, 255, 0.45);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(122, 162, 255, 0.06);
+        box-shadow: 0 0 40px rgba(122, 162, 255, 0.12);
+      }
+      .monogram svg {
+        width: 40px;
+        height: 40px;
+      }
+      .monogram path {
+        fill: #7aa2ff;
+      }
+      .handle {
+        font-family: "Source Code Pro", monospace;
+        font-size: 22px;
+        color: #8a8f9a;
+        letter-spacing: 0.5px;
+      }
+      .handle b {
+        color: #7aa2ff;
+        font-weight: 600;
+      }
+      .mid {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .eyebrow {
+        font-family: "Source Code Pro", monospace;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #7aa2ff;
+      }
+      .name {
+        font-size: 76px;
+        line-height: 1.02;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        color: #ffffff;
+        max-width: 940px;
+      }
+      .role {
+        font-size: 30px;
+        color: #c2c5cc;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+      }
+      .stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 6px;
+      }
+      .chip {
+        font-family: "Source Code Pro", monospace;
+        font-size: 19px;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(122, 162, 255, 0.28);
+        background: rgba(122, 162, 255, 0.07);
+        color: #bcc7e6;
+      }
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-family: "Source Code Pro", monospace;
+        font-size: 20px;
+        color: #777c87;
+      }
+      .bottom .stats {
+        display: flex;
+        gap: 28px;
+      }
+      .bottom .stats span b {
+        color: #d7dae0;
+        font-weight: 600;
+      }
+      .url b {
+        color: #7aa2ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="accent-bar"></div>
+      <div class="inner">
+        <div class="top">
+          <div class="monogram">
+            <svg viewBox="0 0 109.351 108.002" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M 0.001 82.201 L 0.001 25.801 A 39.099 39.099 0 0 1 0.671 18.327 Q 1.526 13.94 3.472 10.526 A 20.573 20.573 0 0 1 6.226 6.751 A 20.005 20.005 0 0 1 15.901 1.031 Q 19.142 0.146 23.016 0.021 A 40.016 40.016 0 0 1 24.301 0.001 Q 36.151 0.001 42.376 6.751 Q 47.884 12.723 48.518 23.04 A 44.977 44.977 0 0 1 48.601 25.801 L 48.601 36.901 L 33.001 36.901 L 33.001 24.751 Q 33.001 16.208 26.668 15.151 A 11.64 11.64 0 0 0 24.751 15.001 A 9.91 9.91 0 0 0 21.239 15.573 Q 16.881 17.219 16.531 23.6 A 21.026 21.026 0 0 0 16.501 24.751 L 16.501 83.401 Q 16.501 93.001 24.751 93.001 A 10.063 10.063 0 0 0 28.251 92.442 Q 32.688 90.801 32.98 84.337 A 20.722 20.722 0 0 0 33.001 83.401 L 33.001 67.351 L 48.601 67.351 L 48.601 82.201 A 39.099 39.099 0 0 1 47.931 89.675 Q 47.076 94.062 45.13 97.476 A 20.573 20.573 0 0 1 42.376 101.251 A 20.005 20.005 0 0 1 32.7 106.971 Q 29.46 107.856 25.586 107.981 A 40.016 40.016 0 0 1 24.301 108.001 Q 12.451 108.001 6.226 101.251 Q 0.718 95.279 0.084 84.962 A 44.977 44.977 0 0 1 0.001 82.201 Z"
+              />
+              <path
+                d="M 58.501 106.501 L 58.501 1.501 L 82.951 1.501 A 54.532 54.532 0 0 1 83.15 1.501 Q 90.919 1.53 96.104 3.777 A 17.108 17.108 0 0 1 101.551 7.426 A 18.267 18.267 0 0 1 105.725 14.312 Q 106.72 17.136 107.124 20.604 A 43.662 43.662 0 0 1 107.401 25.651 L 107.401 32.101 A 37.889 37.889 0 0 1 106.767 39.317 Q 105.995 43.286 104.281 46.21 A 15.264 15.264 0 0 1 96.601 52.801 L 96.601 53.101 A 13.838 13.838 0 0 1 101.451 55.612 A 12.946 12.946 0 0 1 105.076 60.451 A 24.647 24.647 0 0 1 106.584 65.141 Q 107.551 69.489 107.551 75.301 L 107.551 93.751 A 112.078 112.078 0 0 0 107.58 96.395 Q 107.645 99.118 107.851 101.026 A 18.2 18.2 0 0 0 109.277 106.332 A 20.379 20.379 0 0 0 109.351 106.501 L 92.551 106.501 A 27.228 27.228 0 0 1 91.764 103.876 A 20.917 20.917 0 0 1 91.351 101.701 Q 91.051 99.451 91.051 93.601 L 91.051 74.401 A 35.299 35.299 0 0 0 90.906 71.073 Q 90.47 66.489 88.726 64.351 A 6.834 6.834 0 0 0 85.926 62.353 Q 84.773 61.887 83.319 61.676 A 18.261 18.261 0 0 0 80.701 61.501 L 75.001 61.501 L 75.001 106.501 L 58.501 106.501 Z M 75.001 46.501 L 81.001 46.501 A 15.284 15.284 0 0 0 83.82 46.258 Q 86.715 45.714 88.426 43.951 A 7.352 7.352 0 0 0 89.958 41.493 Q 90.901 39.104 90.901 35.401 L 90.901 27.301 A 25.437 25.437 0 0 0 90.749 24.419 Q 90.408 21.432 89.294 19.646 A 6.39 6.39 0 0 0 88.876 19.051 A 6.358 6.358 0 0 0 85.652 16.922 Q 84.571 16.593 83.256 16.521 A 13.824 13.824 0 0 0 82.501 16.501 L 75.001 16.501 L 75.001 46.501 Z"
+              />
+            </svg>
+          </div>
+          <div class="handle">github.com/<b>chakri68</b></div>
+        </div>
+
+        <div class="mid">
+          <div class="eyebrow">Software Engineer</div>
+          <div class="name">Chakradhar Reddy<br />Devireddy</div>
+          <div class="role">
+            Backend-focused engineer building Go &amp; TypeScript systems at scale
+          </div>
+          <div class="stack">
+            <span class="chip">Go</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">AWS</span>
+            <span class="chip">Kafka</span>
+            <span class="chip">Redis</span>
+            <span class="chip">gRPC</span>
+            <span class="chip">Distributed Systems</span>
+          </div>
+        </div>
+
+        <div class="bottom">
+          <div class="stats">
+            <span><b>Even Healthcare</b> &middot; ex-Zomato</span>
+            <span><b>IIIT Lucknow</b></span>
+          </div>
+          <div class="url"><b>chakri68.github.io</b>/resume</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
