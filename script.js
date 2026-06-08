@@ -9,6 +9,8 @@ const ANIMATION_DURATION = parseFloat(
 const resumeToLoad = new URLSearchParams(window.location.search).get("resume");
 const emailToUse = new URLSearchParams(window.location.search).get("email");
 
+const DEFAULT_RESUME = "backend";
+
 async function getResumeJson(name) {
   try {
     const response = await fetch("manifest.json");
@@ -16,10 +18,10 @@ async function getResumeJson(name) {
     if (manifest.resumes && manifest.resumes.includes(name)) {
       return name;
     }
-    return "fullstack";
+    return DEFAULT_RESUME;
   } catch (error) {
     console.error("Error fetching manifest.json:", error);
-    return "fullstack";
+    return DEFAULT_RESUME;
   }
 }
 
@@ -124,8 +126,8 @@ function populateResume(data) {
             </div>
             <ul>
               ${exp.achievements
-                .map((achievement) => `<li>${achievement}</li>`)
-                .join("")}
+            .map((achievement) => `<li>${achievement}</li>`)
+            .join("")}
             </ul>
           `;
       }
@@ -147,8 +149,8 @@ function populateResume(data) {
               </div>
               <ul>
                 ${position.achievements
-                  .map((achievement) => `<li>${achievement}</li>`)
-                  .join("")}
+              .map((achievement) => `<li>${achievement}</li>`)
+              .join("")}
               </ul>
             </div>
           </div>

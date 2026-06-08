@@ -114,24 +114,24 @@
   ],
   "projects": [
     {
-      "name": "JScratch (VS Code Extension)",
-      "description": "ETL scratchpad for data transformations using TS. Published on the VS Code Marketplace.",
+      "name": "JScratch",
+      "description": "Published VS Code extension for writing and testing TypeScript-based ETL/data transformation scripts inside the editor.",
       "url": "https://github.com/chakri68/jscratch"
     },
     {
       "name": "codeCollab",
-      "description": "Real-time collaborative IDE built with Next.js, WebSockets, and OT; supports 20+ concurrent users with conflict-free syncing.",
+      "description": "Real-time collaborative IDE built with Next.js, WebSockets, CodeMirror, and conflict-free syncing for multi-user editing.",
       "url": "https://github.com/chakri68/codeCollab"
     },
     {
-      "name": "get-proctored.ai",
-      "description": "AI-powered exam-proctoring using TensorFlow + MediaPipe; lowered false positives by 30% with smart rule pipelines.",
-      "url": "https://github.com/chakri68/get-proctered-public"
+      "name": "systems-node",
+      "description": "Low-level Node.js systems playground implementing worker-thread multithreading, semaphores, geohashes, and concurrency primitives in TypeScript.",
+      "url": "https://github.com/chakri68/systems-node"
     },
     {
-      "name": "Pixel Drawing Simulator",
-      "description": "Interactive canvas tool demonstrating Bresenham, flood-fill, and pixel-level operations; includes CRUD & export tools.",
-      "url": "https://github.com/chakri68/pixel-drawing-sim"
+      "name": "get-proctored.ai",
+      "description": "AI-powered exam-proctoring platform using TensorFlow and MediaPipe, with rule-based violation detection and screenshot-based review flows to reduce false positives.",
+      "url": "https://github.com/chakri68/get-proctered-public"
     }
   ],
   "education": {
