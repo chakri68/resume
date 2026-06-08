@@ -21,7 +21,7 @@
     }
   },
   "summary": {
-    "text": "Backend-focused Software Engineer with experience building Go and TypeScript systems across healthcare, logistics, and internal platforms. Worked on high-throughput data pipelines, S3 streaming workflows, onboarding automation, CI/CD tooling, and latency-sensitive service communication. Strong in distributed systems, PostgreSQL, AWS, Kafka, Redis, and developer-first backend tooling."
+    "text": "Backend-focused Software Engineer with 2 years of experience building Go/TypeScript systems across healthcare, logistics, and internal platforms. Strong in distributed systems, PostgreSQL, AWS, Kafka, Redis, observability, and developer-first backend tooling."
   },
   "skills": {
     "categories": [
@@ -31,7 +31,7 @@
       },
       {
         "title": "Backend",
-        "items": "Go services, Node.js, Express, Fastify, NestJS, gRPC, REST, GraphQL, distributed workflows"
+        "items": "Node.js, Express, NestJS, gRPC, REST, GraphQL"
       },
       {
         "title": "Frontend",
@@ -39,11 +39,11 @@
       },
       {
         "title": "Databases",
-        "items": "PostgreSQL, MySQL, MSSQL, Firestore, Prisma ORM, Strapi CMS, Sanity CMS"
+        "items": "PostgreSQL, MySQL, MSSQL, Prisma ORM, Strapi CMS, Sanity, Firestore"
       },
       {
         "title": "Cloud & DevOps",
-        "items": "AWS S3, EC2, Lambda, RDS, CloudWatch, Docker, Kubernetes, Redis, Kafka, Nginx, Bazel, Gerrit, GCP Cloud Run"
+        "items": "AWS, Docker, Kubernetes, Redis, Kafka, Nginx, Bazel, Gerrit, GCP"
       }
     ]
   },
