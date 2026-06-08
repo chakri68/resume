@@ -57,8 +57,7 @@
         "Owned backend development for Even Infinite's Hospital Pass, simplifying member access to partner-hospital services and increasing pass engagement by 65%+.",
         "Designed an AI calling framework for clinical follow-ups using LLM-based report summarization, care-manager suggestions, and automated call flows, reducing manual follow-up effort by ~40%.",
         "Built a reusable onboarding package for insurance providers and automated CI/CD workflows, reducing provider integration time from 6 weeks to 2 weeks.",
-        "Fixed recurring document re-upload failures across post-hospitalization workflows, restoring reliable generation of 300+ weekly forms for care managers.",
-        "Refactored high-traffic frontend modules to support parallel data loading, reducing render times by ~25% and improving page stability."
+        "Fixed recurring document re-upload failures across post-hospitalization workflows, restoring reliable generation of 300+ weekly forms for care managers."
       ]
     },
     {
@@ -96,9 +95,7 @@
       "period": "Dec 2023 - Apr 2024",
       "achievements": [
         "Scaled a Strapi-based ERM platform to support ~1k RPS by adding in-memory caching, optimizing SQL queries, and restructuring backend routes.",
-        "Containerized backend services with Docker and deployed them on AWS EC2 with RDS and S3, reducing CI/CD runtime by 75%.",
-        "Automated hosting and deployment setup with Nginx, Certbot, and reusable scripts, reducing manual configuration effort by 90%.",
-        "Redesigned React component boundaries and state flow, reducing unnecessary re-renders by 40% on frequently used admin screens."
+        "Automated hosting and deployment setup with Nginx, Certbot, and reusable scripts."
       ]
     },
     {
@@ -107,9 +104,7 @@
       "location": "Lucknow",
       "period": "Oct 2022 - Mar 2023",
       "achievements": [
-        "Developed backend and dashboard flows for a Next.js platform used by the UP Commercial Tax Department, supporting high-volume public-service workflows with JWT and HTTPOnly cookie auth.",
-        "Optimized MSSQL workloads using indexes, stored procedures, and query restructuring, reducing latency on critical database paths by up to 95%.",
-        "Built automated PDF-based discrepancy report generation using PDFMake and Mammoth, reducing manual formatting effort by 60%.",
+        "Developed backend and dashboard flows for a Next.js platform used by the UP Commercial Tax Department with automated PDF-based discrepancy tax report generation, reducing manual effort by 60%.",
         "Implemented WAF protections, API validation, and access-control improvements for sensitive government-facing workflows."
       ]
     }
@@ -127,12 +122,12 @@
     },
     {
       "name": "systems-node",
-      "description": "Low-level Node.js systems playground implementing worker-thread multithreading, semaphores, geohashes, and concurrency primitives in TypeScript.",
+      "description": "Low-level Node.js systems playground implementing worker-thread multithreading, and concurrency primitives in TypeScript.",
       "url": "https://github.com/chakri68/systems-node"
     },
     {
       "name": "get-proctored.ai",
-      "description": "AI-powered exam-proctoring platform using TensorFlow and MediaPipe, with rule-based violation detection and screenshot-based review flows to reduce false positives.",
+      "description": "AI-powered exam-proctoring platform using TensorFlow and MediaPipe, with rule-based violation detection and review flows to reduce false positives.",
       "url": "https://github.com/chakri68/get-proctered-public"
     }
   ],

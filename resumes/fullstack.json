@@ -21,7 +21,7 @@
     }
   },
   "summary": {
-    "text": "Backend-focused Full-Stack / Platform Engineer with 2 years of experience building distributed, cloud-native systems at scale. Skilled in Go, TypeScript/Node.js, React, PostgreSQL, and AWS-driven DevOps. Built systems handling 75k req/min, cut P95 latency 95%, and automated pipelines reducing deploy times by 75%. Strong interest in low-latency data paths, observability, and developer-first tooling."
+    "text": "Backend-focused Software Engineer with 2 years of experience building Go/TypeScript systems across healthcare, logistics, and internal platforms. Strong in distributed systems, PostgreSQL, AWS, Kafka, Redis, observability, and developer-first backend tooling."
   },
   "skills": {
     "categories": [
@@ -95,9 +95,8 @@
       "location": "Remote",
       "period": "Dec 2023 - Apr 2024",
       "achievements": [
-        "Scaled a Strapi-based ERM from mid-load to ~1k RPS; in-memory caching and SQL tuning lifted throughput by 80%.",
-        "Containerised microservices with Docker on AWS EC2; reduced CI/CD times by 75% and cut infra spending by 63%.",
-        "Redesigned React component structure; reduced unnecessary re-renders by 40% and kept First Input Delay < 50ms."
+        "Scaled a Strapi-based ERM platform to support ~1k RPS by adding in-memory caching, optimizing SQL queries, and restructuring backend routes.",
+        "Automated hosting and deployment setup with Nginx, Certbot, and reusable scripts."
       ]
     },
     {
@@ -106,9 +105,8 @@
       "location": "Lucknow",
       "period": "Oct 2022 - Mar 2023",
       "achievements": [
-        "Developed a Next.js backend for the UP Commercial Tax Dept., handling 75k req/min using JWT + HTTPOnly auth and WAF protections.",
-        "Optimised MSSQL workloads using indexes + stored procedures, reducing query latency 95% and CPU use 90%.",
-        "Automated PDF-based discrepancy reports using PDFMake & Mammoth, eliminating 60% of manual formatting effort."
+        "Developed backend and dashboard flows for a Next.js platform used by the UP Commercial Tax Department with automated PDF-based discrepancy tax report generation, reducing manual effort by 60%.",
+        "Implemented WAF protections, API validation, and access-control improvements for sensitive government-facing workflows."
       ]
     }
   ],
@@ -125,12 +123,12 @@
     },
     {
       "name": "systems-node",
-      "description": "Low-level Node.js systems playground implementing worker-thread multithreading, semaphores, geohashes, and concurrency primitives in TypeScript.",
+      "description": "Low-level Node.js systems playground implementing worker-thread multithreading, and concurrency primitives in TypeScript.",
       "url": "https://github.com/chakri68/systems-node"
     },
     {
       "name": "get-proctored.ai",
-      "description": "AI-powered exam-proctoring platform using TensorFlow and MediaPipe, with rule-based violation detection and screenshot-based review flows to reduce false positives.",
+      "description": "AI-powered exam-proctoring platform using TensorFlow and MediaPipe, with rule-based violation detection and review flows to reduce false positives.",
       "url": "https://github.com/chakri68/get-proctered-public"
     }
   ],

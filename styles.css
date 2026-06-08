@@ -339,7 +339,7 @@ hr {
 
 /* =====  LINKS ===== */
 a {
-  text-decoration: underline;
+  text-decoration: none;
   color: var(--clr-accent);
   transition:
     color var(--transition-speed),
@@ -735,7 +735,6 @@ footer {
   /* Remove underlines / colours for a cleaner PDF */
   a {
     text-decoration: none;
-    color: inherit;
   }
 
   /* Subtle background for inline code when printed */
