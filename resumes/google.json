@@ -11,8 +11,8 @@
         "url": "https://www.linkedin.com/in/chakradhar-reddy-d"
       },
       "email": {
-        "text": "chakradharreddydevireddy@gmail.com",
-        "url": "mailto:chakradharreddydevireddy@gmail.com"
+        "text": "chakridevireddy69@gmail.com",
+        "url": "mailto:chakridevireddy69@gmail.com"
       },
       "phone": {
         "text": "+91 63037 08424",
@@ -21,29 +21,33 @@
     }
   },
   "summary": {
-    "text": "Backend-leaning Full-Stack / Platform Engineer with strong systems and tooling focus. 2+ years building high-throughput, cloud-native microservices and developer platforms on AWS. Skilled in Go, TypeScript/Node.js, React, PostgreSQL, Docker/Kubernetes, CI/CD. Designed and scaled pipelines handling 75k req/min, cut P95 latency 95%, automated ticket workflows reducing manual ops 95%. Passionate about low-latency data paths, distributed architectures, and making engineers faster."
+    "text": "Software Engineer from IIIT Lucknow with production experience at Zomato and Even Healthcare, building backend systems in Go, TypeScript, gRPC, Kafka, Redis, PostgreSQL, and AWS. Codeforces Expert with strong DSA/problem-solving background and experience improving high-throughput logistics, healthcare, and internal platform systems."
   },
   "skills": {
     "categories": [
       {
         "title": "Languages",
-        "items": "Go, TypeScript, JavaScript, Java, Python, SQL, Bash"
+        "items": "Go, TypeScript, JavaScript, Java, Python, C++, SQL, Bash"
+      },
+      {
+        "title": "Core CS",
+        "items": "Data Structures, Algorithms, Object-Oriented Programming, Operating Systems, DBMS, Distributed Systems"
       },
       {
         "title": "Backend",
-        "items": "Node.js, Express, Fastify, NestJS, gRPC, REST, GraphQL"
+        "items": "gRPC, REST, GraphQL, Node.js, Express, NestJS, Microservices, API Design"
+      },
+      {
+        "title": "Databases & Caching",
+        "items": "PostgreSQL, MySQL, MSSQL, Firestore, Prisma ORM, Redis, Query Optimization"
+      },
+      {
+        "title": "Cloud & Infrastructure",
+        "items": "AWS, GCP, Docker, Kubernetes, Kafka, Nginx, Bazel, Gerrit, CI/CD"
       },
       {
         "title": "Frontend",
         "items": "React, Next.js, Redux Toolkit, SvelteKit"
-      },
-      {
-        "title": "Databases",
-        "items": "PostgreSQL, MySQL, MSSQL, Prisma ORM, Strapi CMS, Sanity, Firestore"
-      },
-      {
-        "title": "Cloud & DevOps",
-        "items": "AWS (S3, EC2, Lambda, RDS, CloudWatch), Docker, Kubernetes, Redis, Kafka, Nginx, Bazel, Gerrit, GCP (Cloud Run, Cloud Functions)"
       }
     ]
   },
@@ -51,37 +55,39 @@
     {
       "company": "Even Healthcare",
       "title": "Software Development Engineer",
-      "location": "Bengaluru, India",
-      "period": "Nov 2025 – Present",
+      "location": "Bengaluru",
+      "period": "Oct 2025 - Present",
       "achievements": [
-        "Fixed 80k+ faulty PDV records (out of 150k); repaired document-mapping issues affecting 17k+ weekly processed lab reports.",
-        "Reduced document reupload failures by resolving 900+ weekly ingestion errors and improved fulfilment workflows, enabling accurate creation of 300+ post-hospital forms per week.",
-        "Refactored core frontend modules to enable parallel loading, cutting render times by ~25% and improving UX stability across high-traffic care-manager flows."
+        "Owned backend development for Even Infinite's Hospital Pass, improving member access to partner-hospital services and increasing pass engagement by 65%+.",
+        "Designed an AI-assisted clinical follow-up framework using LLM-based report summarization, care-manager recommendations, and automated call flows, reducing manual follow-up effort by ~40%.",
+        "Built reusable onboarding infrastructure for insurance providers with automated CI/CD workflows, reducing provider integration time from 6 weeks to 2 weeks.",
+        "Resolved recurring document generation and re-upload failures in post-hospitalization workflows, restoring reliable generation of 300+ weekly care-manager forms."
       ]
     },
     {
       "company": "Zomato",
-      "title": "Software Development Engineer Intern",
-      "location": "Gurugram, India",
-      "period": "Jan 2025 – Oct 2025",
+      "title": "Software Development Engineer",
+      "location": "Gurugram",
+      "period": "Jan 2025 - Oct 2025",
       "positions": [
         {
           "title": "Software Development Engineer",
-          "period": "Jul 2025 – Oct 2025",
+          "period": "Jul 2025 - Oct 2025",
           "achievements": [
-            "Rolled out a new ticketing workflow improving delayed-order handling; cut cancellations 80% and boosted CSAT.",
-            "Integrated internal maps with Google APIs; reduced third-party costs 25%.",
-            "Automated ~1M ticket sync via Python, reducing manual ops 95%."
+            "Built an automated vehicle onboarding workflow with plate detection and dynamic step routing across 15 screens, reducing manual review effort by 60% and onboarding errors by 80%.",
+            "Redesigned delayed-order ticketing workflows with automated escalation states and operator actions, reducing cancellation-prone cases by 80%.",
+            "Migrated logistics map tooling to Google Maps and optimized API usage patterns, reducing map-related operating costs by 25%.",
+            "Built a Python-based sync pipeline for ~1M support tickets, automating recurring operations workflows and eliminating 95% of manual sync effort."
           ]
         },
         {
           "title": "Software Development Intern",
-          "period": "Jan 2025 – Jun 2025",
+          "period": "Jan 2025 - Jun 2025",
           "achievements": [
-            "Migrated 200+ JS components to TypeScript + Redux; decreased build errors 40%, improved release velocity 30%.",
-            "Built Go streaming SDK piping multi-GB ZIPs to S3; halved memory use and cut transfer time 65%.",
-            "Designed GPS ingestion service (≈50k msgs/s) with live WebSocket dashboards; improved ETA accuracy 12%.",
-            "Refactored RPC/gRPC layer with goroutines and batching; slashed P95 latency 95% at 2k TPS."
+            "Migrated 200+ legacy JavaScript components to TypeScript and Redux inside a large Next.js monorepo, reducing build-time errors by 40% and improving development velocity by 30%.",
+            "Built a production-safe Go SDK to stream multi-GB ZIP archives directly to S3, reducing transfer latency by 65% and cutting peak memory usage by 50%.",
+            "Developed a GPS ingestion service processing ~50k location events/sec with monitoring dashboards, improving ETA prediction accuracy by 12%.",
+            "Refactored service-to-service RPC flows using goroutines and gRPC batching, reducing P95 latency by 95% at ~2k TPS."
           ]
         }
       ]
@@ -90,75 +96,73 @@
       "company": "Shinpo Engineering Pvt. Ltd.",
       "title": "Backend Developer Intern",
       "location": "Remote",
-      "period": "Dec 2023 – Apr 2024",
+      "period": "Dec 2023 - Apr 2024",
       "achievements": [
-        "Scaled Strapi-based ERM to ~1k RPS via caching and query tuning; throughput up 80%.",
-        "Containerized services on AWS EC2/Docker; cut CI/CD time 75%, infra spend 63%.",
-        "Restructured React components; reduced re-renders 40%, kept FID < 50ms."
+        "Scaled a Strapi-based ERM platform to support ~1k RPS by adding in-memory caching, optimizing SQL queries, and restructuring backend routes.",
+        "Automated deployment and hosting setup using AWS, Docker, Nginx, Certbot, and reusable scripts, reducing manual infrastructure setup effort."
       ]
     },
     {
       "company": "WCARL — IIIT Lucknow",
       "title": "Full-Stack Web Developer Intern",
-      "location": "Lucknow, India",
-      "period": "Oct 2022 – Mar 2023",
+      "location": "Lucknow",
+      "period": "Oct 2022 - Mar 2023",
       "achievements": [
-        "Architected Next.js backend for UP Commercial Tax; sustained 75k req/min with JWT + WAF.",
-        "Optimized MSSQL with indices & procs; cut query latency 95%, CPU 90%.",
-        "Automated discrepancy PDFs via PDFMake & Mammoth; removed 60% manual effort."
+        "Developed backend and dashboard workflows for a Next.js platform used by the UP Commercial Tax Department, including automated PDF-based discrepancy tax report generation that reduced manual effort by 60%.",
+        "Implemented WAF protections, API validation, and access-control improvements for sensitive government-facing workflows."
       ]
     }
   ],
   "projects": [
     {
-      "name": "JScratch (VS Code Extension)",
-      "description": "ETL scratchpad for data transformations using TS. Published on the VS Code Marketplace.",
-      "url": "https://github.com/chakri68/jscratch"
+      "name": "systems-node",
+      "description": "Low-level systems playground implementing worker-thread multithreading, task scheduling, and concurrency primitives in TypeScript.",
+      "url": "https://github.com/chakri68/systems-node"
     },
     {
       "name": "codeCollab",
-      "description": "Real-time code-sharing IDE (Next.js, WebSockets, CodeMirror); syncs 20+ users with OT logic.",
+      "description": "Real-time collaborative IDE built with Next.js, WebSockets, CodeMirror, and conflict-free syncing for multi-user editing.",
       "url": "https://github.com/chakri68/codeCollab"
     },
     {
-      "name": "get-proctored.ai",
-      "description": "AI exam proctoring (TensorFlow, MediaPipe, WebRTC); reduced false positives 30%.",
-      "url": "https://github.com/chakri68/get-proctered-public"
+      "name": "JScratch",
+      "description": "Published VS Code extension for writing, testing, and running TypeScript-based ETL/data transformation scripts inside the editor.",
+      "url": "https://github.com/chakri68/jscratch"
     },
     {
-      "name": "Pixel Drawing Simulator",
-      "description": "Canvas graphics tool (Bresenham, flood-fill, export); coursework project turned personal tool.",
-      "url": "https://github.com/chakri68/pixel-drawing-sim"
+      "name": "get-proctored.ai",
+      "description": "AI-powered exam-proctoring platform using TensorFlow and MediaPipe, with rule-based violation detection and review flows to reduce false positives.",
+      "url": "https://github.com/chakri68/get-proctered-public"
     }
   ],
   "education": {
     "institution": "Indian Institute of Information Technology, Lucknow",
     "degree": "B.Tech. in Computer Science",
     "gpa": "9.21/10",
-    "period": "Dec 2021 – Jun 2025",
+    "period": "Dec 2021 - Jun 2025",
     "location": "Lucknow, India"
   },
   "achievements": [
     {
-      "title": "Codeforces Expert (1667)",
-      "description": "Top 6% worldwide • 2024"
+      "title": "Codeforces Expert",
+      "description": "Max rating 1667 • Top 6% worldwide • 2024"
     },
     {
-      "title": "Amazon HackOn Season 3",
-      "description": "Top 50 / 5,000+ teams • 2023"
+      "title": "Amazon HackOn S3",
+      "description": "Top 50 of 5,000+ teams • 2023"
     },
     {
-      "title": "Contributor, WCARL Drone",
-      "description": "Featured in The Times of India • 2023"
+      "title": "WCARL Drone Contributor",
+      "description": "Contributed to a drone research project featured in The Times of India • 2023"
     },
     {
-      "title": "Exec Member, GDSC IIIT Lucknow",
-      "description": "Organized 15+ tech events, mentored 50+ juniors • 2022–24"
+      "title": "Executive Member, GDSC",
+      "description": "Organized 15+ tech events and mentored 50+ juniors • 2022-24"
     }
   ],
-  "keywords": "Systems Design, Distributed Systems, Cloud, AWS, GCP (learning), Kubernetes, Docker, REST, gRPC, SQL, PostgreSQL, Go, TypeScript, React, CI/CD, Observability, Scalability, Agile",
+  "keywords": "Software Engineer, SDE1, Google, Backend Engineering, Go, TypeScript, Java, C++, Python, Data Structures, Algorithms, DSA, Distributed Systems, Microservices, gRPC, Kafka, Redis, PostgreSQL, AWS, GCP, Kubernetes, Docker, System Design, Codeforces Expert, IIIT Lucknow, Zomato, Even Healthcare",
   "footer": {
-    "copyright": "© 2025 Chakradhar Reddy Devireddy",
-    "lastUpdated": "August 2025"
+    "copyright": "© 2026 Chakradhar Reddy Devireddy",
+    "lastUpdated": "Jun 2026"
   }
 }
