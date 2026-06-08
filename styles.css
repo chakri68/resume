@@ -747,6 +747,11 @@ footer {
   footer {
     display: none;
   }
+
+  /* Remove keywords in the PDF */
+  #keywords {
+    display: none;
+  }
 }
 
 /* =====  MOBILE  ===== */
