@@ -128,9 +128,9 @@
       "url": "https://github.com/chakri68/get-proctered-public"
     },
     {
-      "name": "Pixel Drawing Simulator",
-      "description": "Canvas-based pixel drawing and animation tool for graphics algorithms; includes export, history tool.",
-      "url": "https://github.com/chakri68/pixel-drawing-sim"
+      "name": "life-sim",
+      "description": "Interactive cellular-automata playground (Conway's Life and beyond) in TypeScript + Canvas2D; brush painting, pan/zoom camera, live population charts, a CodeMirror rule editor, and base64 URL-shareable universes.",
+      "url": "https://github.com/chakri68/life-sim"
     }
   ],
   "education": {
@@ -160,7 +160,7 @@
   ],
   "keywords": "Frontend Engineering, React, TypeScript, Next.js, Redux, SvelteKit, Tailwind CSS, WebSockets, Canvas, UI/UX, Performance Optimization, Responsive Design, JavaScript, Go, CI/CD, AWS, Kubernetes, DevTools, Developer Experience",
   "footer": {
-    "copyright": "© 2025 Chakradhar Reddy Devireddy",
-    "lastUpdated": "August 2025"
+    "copyright": "© 2026 Chakradhar Reddy Devireddy",
+    "lastUpdated": "Jun 2026"
   }
 }

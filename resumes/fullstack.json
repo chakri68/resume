@@ -122,9 +122,9 @@
       "url": "https://github.com/chakri68/codeCollab"
     },
     {
-      "name": "systems-node",
-      "description": "Low-level Node.js systems playground implementing worker-thread multithreading, and concurrency primitives in TypeScript.",
-      "url": "https://github.com/chakri68/systems-node"
+      "name": "life-sim",
+      "description": "Framework-free cellular-automata engine in TypeScript with four pluggable simulators (totalistic, agent-based ecosystem, Gray-Scott reaction-diffusion, and live JS rules); Canvas2D pan/zoom renderer with base64 URL-shareable state.",
+      "url": "https://github.com/chakri68/life-sim"
     },
     {
       "name": "get-proctored.ai",

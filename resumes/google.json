@@ -130,9 +130,9 @@
       "url": "https://github.com/chakri68/jscratch"
     },
     {
-      "name": "get-proctored.ai",
-      "description": "AI-powered exam-proctoring platform using TensorFlow and MediaPipe, with rule-based violation detection and review flows to reduce false positives.",
-      "url": "https://github.com/chakri68/get-proctered-public"
+      "name": "life-sim",
+      "description": "TypeScript cellular-automata engine with four pluggable simulators (totalistic automata, agent-based ecosystem, Gray-Scott reaction-diffusion, custom JS rules) on a toroidal grid; Canvas2D pan/zoom renderer with base64 URL-encoded state, ~17KB gzipped and framework-free.",
+      "url": "https://github.com/chakri68/life-sim"
     }
   ],
   "education": {

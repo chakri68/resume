@@ -126,9 +126,9 @@
       "url": "https://github.com/chakri68/systems-node"
     },
     {
-      "name": "get-proctored.ai",
-      "description": "AI-powered exam-proctoring platform using TensorFlow and MediaPipe, with rule-based violation detection and review flows to reduce false positives.",
-      "url": "https://github.com/chakri68/get-proctered-public"
+      "name": "life-sim",
+      "description": "TypeScript cellular-automata engine with a pluggable simulator architecture (totalistic, agent-based ecosystem, Gray-Scott reaction-diffusion, custom JS rules) over a toroidal grid; Canvas2D renderer in ~17KB gzipped with no framework.",
+      "url": "https://github.com/chakri68/life-sim"
     }
   ],
   "education": {
