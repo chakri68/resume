@@ -21,7 +21,7 @@
     }
   },
   "summary": {
-    "text": "Backend-focused Software Engineer with 2 years of experience building Go/TypeScript systems across healthcare, logistics, and internal platforms. Strong in distributed systems, PostgreSQL, AWS, Kafka, Redis, observability, and developer-first backend tooling."
+    "text": "Backend-focused Software Engineer building Go and TypeScript systems across healthcare and logistics, with experience spanning internships and full-time engineering at Zomato and Even Healthcare. Strong in distributed systems, PostgreSQL, AWS, Kafka, Redis, and observability, with a bias toward reliable, developer-first backend tooling."
   },
   "skills": {
     "categories": [
@@ -35,15 +35,15 @@
       },
       {
         "title": "Frontend",
-        "items": "React, Next.js, Redux Toolkit, SvelteKit"
+        "items": "React, Next.js, Redux Toolkit"
       },
       {
         "title": "Databases",
-        "items": "PostgreSQL, MySQL, MSSQL, Prisma ORM, Strapi CMS, Sanity, Firestore"
+        "items": "PostgreSQL, MySQL, MSSQL, Prisma ORM, Strapi CMS, Firestore"
       },
       {
         "title": "Cloud & DevOps",
-        "items": "AWS, Docker, Kubernetes, Redis, Kafka, Nginx, Bazel, Gerrit, GCP"
+        "items": "AWS, GCP, Docker, Kubernetes, Redis, Kafka, Nginx, Bazel, Gerrit"
       }
     ]
   },
@@ -54,9 +54,9 @@
       "location": "Bengaluru",
       "period": "Oct 2025 - Present",
       "achievements": [
-        "Owned backend development for Even Infinite's Hospital Pass, simplifying member access to partner-hospital services and increasing pass engagement by 65%+.",
-        "Designed an AI calling framework for clinical follow-ups using LLM-based report summarization, care-manager suggestions, and automated call flows, reducing manual follow-up effort by ~40%.",
-        "Built a reusable onboarding package for insurance providers and automated CI/CD workflows, reducing provider integration time from 6 weeks to 2 weeks.",
+        "Owned backend for Even Infinite's Hospital Pass, simplifying member access to partner-hospital services and lifting pass engagement by 65%+.",
+        "Designed an AI calling framework for clinical follow-ups — LLM-based report summarization, care-manager suggestions, and automated call flows — cutting manual follow-up effort by ~40%.",
+        "Built a reusable onboarding package for insurance providers with automated CI/CD, cutting provider integration time from 6 weeks to 2.",
         "Fixed recurring document re-upload failures across post-hospitalization workflows, restoring reliable generation of 300+ weekly forms for care managers."
       ]
     },
@@ -70,20 +70,19 @@
           "title": "Software Development Engineer",
           "period": "Jul 2025 - Oct 2025",
           "achievements": [
-            "Built an automated vehicle onboarding flow with plate detection and dynamic step routing across a 15-screen workflow, reducing manual review effort by 60% and onboarding errors by 80%.",
-            "Redesigned delayed-order ticketing workflows with automated escalation states and operator actions, reducing cancellation-prone cases by 80%.",
-            "Migrated logistics map tooling to Google Maps and optimized usage patterns, reducing map-related operating costs by 25%.",
-            "Built a Python-based sync pipeline for ~1M support tickets, automating recurring ops workflows and eliminating 95% of manual sync effort."
+            "Built an automated vehicle onboarding flow with plate detection and dynamic step routing across a 15-screen journey, cutting manual review effort by 60% and onboarding errors by 80%.",
+            "Redesigned delayed-order ticketing with automated escalation states and operator actions, reducing cancellation-prone cases by 80%.",
+            "Built a Python sync pipeline for ~1M support tickets, automating recurring ops workflows and removing ~95% of manual sync work.",
+            "Migrated logistics map tooling to Google Maps and optimized usage patterns, lowering map-related operating costs by 25%."
           ]
         },
         {
           "title": "Software Development Intern",
           "period": "Jan 2025 - Jun 2025",
           "achievements": [
-            "Migrated 200+ legacy JavaScript components to TypeScript and Redux inside a Next.js monorepo, reducing build-time errors by 40% and improving development velocity by 30%.",
-            "Built a production-safe Go SDK to stream multi-GB ZIP archives directly to S3, reducing transfer latency by 65% and cutting peak memory usage by 50%.",
-            "Developed a GPS ingestion service processing ~50k location events/sec with live monitoring dashboards, improving ETA prediction accuracy by 12%.",
-            "Refactored service-to-service RPC flows using goroutines and gRPC batching, reducing P95 latency by 95% at ~2k TPS."
+            "Built a production-safe Go SDK to stream multi-GB ZIP archives directly to S3, reducing transfer latency by 65% and peak memory usage by 50%.",
+            "Developed a GPS ingestion service handling ~50k location events/sec with live monitoring dashboards, improving ETA prediction accuracy by 12%.",
+            "Refactored service-to-service RPC flows with goroutine fan-out and gRPC request batching, cutting P95 latency by ~95% at ~2k TPS by collapsing chatty per-item calls into batched requests."
           ]
         }
       ]
@@ -94,8 +93,7 @@
       "location": "Remote",
       "period": "Dec 2023 - Apr 2024",
       "achievements": [
-        "Scaled a Strapi-based ERM platform to support ~1k RPS by adding in-memory caching, optimizing SQL queries, and restructuring backend routes.",
-        "Automated hosting and deployment setup with Nginx, Certbot, and reusable scripts."
+        "Scaled a Strapi-based ERM platform to ~1k RPS by adding in-memory caching, optimizing SQL queries, and restructuring backend routes."
       ]
     },
     {
@@ -104,8 +102,7 @@
       "location": "Lucknow",
       "period": "Oct 2022 - Mar 2023",
       "achievements": [
-        "Developed backend and dashboard flows for a Next.js platform used by the UP Commercial Tax Department with automated PDF-based discrepancy tax report generation, reducing manual effort by 60%.",
-        "Implemented WAF protections, API validation, and access-control improvements for sensitive government-facing workflows."
+        "Developed backend and dashboard flows for a Next.js platform used by the UP Commercial Tax Department, with automated PDF-based discrepancy tax report generation that cut manual effort by 60%."
       ]
     }
   ],
@@ -117,17 +114,17 @@
     },
     {
       "name": "codeCollab",
-      "description": "Real-time collaborative IDE built with Next.js, WebSockets, CodeMirror, and conflict-free syncing for multi-user editing.",
+      "description": "Real-time collaborative IDE built with Next.js, WebSockets, and CodeMirror, with conflict-free syncing for multi-user editing.",
       "url": "https://github.com/chakri68/codeCollab"
     },
     {
       "name": "systems-node",
-      "description": "Low-level Node.js systems playground implementing worker-thread multithreading, and concurrency primitives in TypeScript.",
+      "description": "Low-level Node.js systems playground implementing worker-thread multithreading and concurrency primitives in TypeScript.",
       "url": "https://github.com/chakri68/systems-node"
     },
     {
       "name": "life-sim",
-      "description": "TypeScript cellular-automata engine with a pluggable simulator architecture (totalistic, agent-based ecosystem, Gray-Scott reaction-diffusion, custom JS rules) over a toroidal grid; Canvas2D renderer in ~17KB gzipped with no framework.",
+      "description": "Framework-free TypeScript cellular-automata engine with a pluggable simulator architecture (totalistic, agent-based ecosystem, Gray-Scott reaction-diffusion, custom rules) over a toroidal grid, with a Canvas2D renderer in ~17KB gzipped.",
       "url": "https://github.com/chakri68/life-sim"
     }
   ],
@@ -156,7 +153,7 @@
       "description": "Organized 15+ tech events and mentored 50+ juniors • 2022-24"
     }
   ],
-  "keywords": "Go, TypeScript, Node.js, React, AWS, PostgreSQL, Redis, Kafka, gRPC, Distributed Systems, Microservices, CI/CD, Backend Engineering",
+  "keywords": "Go, TypeScript, JavaScript, Node.js, NestJS, Express, React, Next.js, SvelteKit, AWS, GCP, PostgreSQL, MySQL, Redis, Kafka, gRPC, GraphQL, Docker, Kubernetes, Strapi, Sanity, Distributed Systems, Microservices, Observability, CI/CD, Backend Engineering",
   "footer": {
     "copyright": "© 2026 Chakradhar Reddy Devireddy",
     "lastUpdated": "Jun 2026"
