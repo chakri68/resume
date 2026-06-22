@@ -444,7 +444,18 @@ a:hover {
   }
 
   .position-item {
-    margin-bottom: 0rem;
+    /* Space sub-roles like top-level entries (matches .experience-container gap). */
+    margin-bottom: 0.5rem;
+    /* CRITICAL for PDF/ATS reading order: drop the relative positioning used by
+       the on-screen timeline. Positioned elements (even position:relative with
+       z-index:auto) paint in a LATER phase than in-flow blocks, so Chrome wrote
+       the Zomato block at the very end of the print content stream — after
+       Education/Achievements. Static positioning keeps it in source order. */
+    position: static;
+  }
+
+  .position-item:last-child {
+    margin-bottom: 0;
   }
 
   .positions-timeline::before {
@@ -461,6 +472,9 @@ a:hover {
 
   .positions-timeline {
     padding-left: 0;
+    /* See .position-item above: remove the relative positioning context so the
+       timeline content paints in normal flow / source order, not last. */
+    position: static;
   }
 
   .resume-header {
@@ -477,10 +491,11 @@ a:hover {
     flex-direction: column;
     gap: 0.5rem;
 
-    article.has-positions,
-    .positions-timeline {
-      display: contents;
-    }
+    /* Keep multi-role entries in normal flow so source order == paint order.
+       display: contents here removed the article/timeline boxes and promoted
+       the position-items, which Chrome painted at the END of the print content
+       stream — pushing the Zomato block below Education/Achievements in the
+       PDF text layer and for ATS parsers. Rendering them inline fixes that. */
   }
 }
 
