@@ -657,10 +657,12 @@ footer {
 
   html,
   body {
-    width: 100%;
+    width: auto;
     max-width: none;
+    box-sizing: border-box;
     font-size: 7.25pt;
     line-height: 1.25;
+    margin: 0;
     padding: 0;
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
