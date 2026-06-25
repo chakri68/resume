@@ -87,6 +87,42 @@ Each section can be customized in the JSON file. Refer to the example JSON files
 2. Or use your browser's print function (Ctrl/Cmd + P)
 3. The template is optimized for A4 paper size
 
+## Generating a PDF from the CLI
+
+There's a Node CLI in [`cli/`](cli/README.md) that turns a resume JSON file into
+a PDF without opening a browser yourself. It drives headless Chrome, injects your
+JSON the same way the in-page `jsondebug` tool does (via `sessionStorage`, see
+`script.js`), and prints the page using the site's A4 print styles.
+
+```bash
+npm install                                # installs puppeteer (bundles Chromium)
+
+# Run it locally
+node cli/resume-to-pdf.js resumes/backend.json -o backend.pdf
+npm run pdf -- resumes/backend.json        # same thing, via the npm script
+cat resumes/google.json | node cli/resume-to-pdf.js -   # or from stdin
+```
+
+By default it drives the live site (`https://resume.chakri.me`). Point it at a
+local server with `--url http://localhost:<port>` to render unpushed changes.
+
+### Install it globally
+
+To get a system-wide `resume-to-pdf` command you can run from any directory:
+
+```bash
+npm link            # symlinks this checkout (picks up your edits) …
+npm install -g .    # … or installs a copy globally
+```
+
+Then:
+
+```bash
+resume-to-pdf ./my-resume.json -o my-resume.pdf
+```
+
+See [`cli/README.md`](cli/README.md) for all options and details.
+
 ## Development
 
 ### Project Structure

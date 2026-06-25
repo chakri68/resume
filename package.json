@@ -1,9 +1,19 @@
 {
+  "name": "resume-to-pdf",
+  "version": "1.0.0",
+  "description": "Render resume JSON to a PDF via headless Chrome",
+  "bin": {
+    "resume-to-pdf": "cli/resume-to-pdf.js"
+  },
+  "dependencies": {
+    "puppeteer": "^24.15.0"
+  },
   "devDependencies": {
     "husky": "^9.1.7"
   },
   "scripts": {
     "prepare": "husky",
-    "update-copyright-footer": "node scripts/update-copyright-footer.js"
+    "update-copyright-footer": "node scripts/update-copyright-footer.js",
+    "pdf": "node cli/resume-to-pdf.js"
   }
 }
