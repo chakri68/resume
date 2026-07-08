@@ -1,40 +1,32 @@
-# Modern Resume Template
+# Resume
 
-A clean, responsive, and modern resume template built with HTML, CSS, and JavaScript. This template is designed to be easily customizable and maintainable, perfect for developers and technical professionals.
+My resume, as a webpage. Plain HTML, CSS, and JS — no framework, no build step. The content lives in JSON, so I can keep one codebase and swap in a different data file depending on which flavor of me a given job wants to see (frontend, full-stack, whatever). It renders to screen, toggles dark/light, and prints to a clean A4 PDF.
 
-## Features
+## What it does
 
-- 🎨 Clean and professional design
-- 📱 Fully responsive layout
-- 🌓 Dark/Light mode toggle
-- 🖨️ Print-friendly
-- 📝 Easy to customize with JSON
-- 🚀 Fast loading and performance optimized
-- 🔍 SEO friendly
-- ♿ Accessibility features
+- Clean, responsive layout that reads fine on a phone
+- Dark/light toggle
+- Print-friendly — the on-screen version and the printed A4 are the same thing, styled differently
+- Content is JSON, so editing your resume never means touching markup
+- No dependencies to load, so it's quick
+- Reasonable SEO and accessibility
 
-## Quick Start
+## Quick start
 
-1. Clone this repository:
+Clone it:
 
 ```bash
-git clone https://github.com/yourusername/resume.git
+git clone https://github.com/chakri68/resume.git
 cd resume
 ```
 
-2. Choose your resume data file:
+Pick a data file — `resumes/frontend.json`, `resumes/fullstack.json`, or roll your own following the same shape. Then open `index.html` in a browser and you're looking at your resume. You can find the schema at [`schema.json`](schema.json).
 
-   - Use `frontend.json` for frontend-focused roles
-   - Use `fullstack.json` for full-stack roles
-   - Or create your own JSON file following the same structure
+## Customizing it
 
-3. Open `index.html` in your browser to preview your resume
+### Personal info
 
-## Customization
-
-### 1. Personal Information
-
-Edit the JSON file to update your personal information:
+Everything comes from the JSON. Contact block looks like this:
 
 ```json
 {
@@ -62,9 +54,9 @@ Edit the JSON file to update your personal information:
 }
 ```
 
-### 2. Sections
+### Sections
 
-The template includes the following sections:
+The template renders these:
 
 - Professional Summary
 - Technical Skills
@@ -73,46 +65,37 @@ The template includes the following sections:
 - Education
 - Achievements
 
-Each section can be customized in the JSON file. Refer to the example JSON files for the structure.
+All of them come from the JSON. The example files show the structure — copy one and edit.
 
-### 3. Styling
+### Styling
 
-- Edit `styles.css` to customize colors, fonts, and layout
-- The template uses Source Sans Pro font by default
-- Dark/Light mode colors can be customized in the CSS variables
+`styles.css` is where colors, fonts, and layout live. Default font is Source Sans Pro. Dark/light colors are CSS variables at the top, so you don't have to go hunting.
 
 ## Printing
 
-1. Click the print button (🖨️) in the navigation bar
-2. Or use your browser's print function (Ctrl/Cmd + P)
-3. The template is optimized for A4 paper size
+Hit the print button (🖨️) in the nav, or just `Ctrl/Cmd + P`. It's tuned for A4.
 
 ## Generating a PDF from the CLI
 
-There's a Node CLI in [`cli/`](cli/README.md) that turns a resume JSON file into
-a PDF without opening a browser yourself. It drives headless Chrome, injects your
-JSON the same way the in-page `jsondebug` tool does (via `sessionStorage`, see
-`script.js`), and prints the page using the site's A4 print styles.
+Opening a browser and hitting print gets old. There's a Node CLI in [`cli/`](cli/README.md) that turns a resume JSON into a PDF for you. It drives headless Chrome, injects your JSON the same way the in-page `jsondebug` tool does (through `sessionStorage` — see `script.js`), and prints the page using the site's A4 print styles. So the PDF is byte-for-byte what you'd get hitting print yourself, minus the clicking.
 
 ```bash
-npm install                                # installs puppeteer (bundles Chromium)
+npm install                                # pulls puppeteer (bundles Chromium)
 
-# Run it locally
 node cli/resume-to-pdf.js resumes/backend.json -o backend.pdf
-npm run pdf -- resumes/backend.json        # same thing, via the npm script
-cat resumes/google.json | node cli/resume-to-pdf.js -   # or from stdin
+npm run pdf -- resumes/backend.json        # same thing, via npm script
+cat resumes/google.json | node cli/resume-to-pdf.js -   # or pipe it in
 ```
 
-By default it drives the live site (`https://resume.chakri.me`). Point it at a
-local server with `--url http://localhost:<port>` to render unpushed changes.
+By default it renders against the live site (`https://resume.chakri.me`). Point it at a local server with `--url http://localhost:<port>` if you want to see changes you haven't pushed yet.
 
 ### Install it globally
 
-To get a system-wide `resume-to-pdf` command you can run from any directory:
+If you want a `resume-to-pdf` command that works from anywhere:
 
 ```bash
-npm link            # symlinks this checkout (picks up your edits) …
-npm install -g .    # … or installs a copy globally
+npm link            # symlinks this checkout, so it picks up your edits …
+npm install -g .    # … or install a frozen copy
 ```
 
 Then:
@@ -121,36 +104,26 @@ Then:
 resume-to-pdf ./my-resume.json -o my-resume.pdf
 ```
 
-See [`cli/README.md`](cli/README.md) for all options and details.
+Full options are in [`cli/README.md`](cli/README.md).
 
-## Development
-
-### Project Structure
+## Project structure
 
 ```
 resume/
-├── index.html          # Main HTML file
-├── styles.css          # Styles
-├── script.js           # JavaScript functionality
-├── frontend.json       # Frontend-focused resume data
-└── fullstack.json      # Full-stack resume data
+├── index.html          # markup
+├── styles.css          # styles (screen + print)
+├── script.js           # rendering + JSON injection
+└── resumes/            # your data files (frontend.json, fullstack.json, …)
 ```
 
-### Adding New Features
-
-1. Edit `index.html` to add new sections
-2. Update `styles.css` for styling
-3. Modify `script.js` for new functionality
+Adding a feature is the usual: markup in `index.html`, styles in `styles.css`, logic in `script.js`.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+PRs welcome.
 
-## License
+## Credits
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Fonts: [Source Sans Pro](https://fonts.google.com/specimen/Source+Sans+Pro)
-- Icons: Custom SVG and emoji-based icons
+- Font: [Source Sans Pro](https://fonts.google.com/specimen/Source+Sans+Pro)
+- Icons: custom SVG and a few emoji
+- me :)
