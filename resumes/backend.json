@@ -56,6 +56,7 @@
       "achievements": [
         "Owned backend for Even Infinite's Hospital Pass, simplifying member access to partner-hospital services and lifting pass engagement by 65%+.",
         "Designed an AI calling framework for clinical follow-ups — LLM-based report summarization, care-manager suggestions, and automated call flows — cutting manual follow-up effort by ~40%.",
+        "Built an in-house product analytics and user-event tracking platform processing 100+ events/min, enabling teams to capture, query, and analyze user behavior without relying on third-party tooling.",
         "Built a reusable onboarding package for insurance providers with automated CI/CD, cutting provider integration time from 6 weeks to 2.",
         "Fixed recurring document re-upload failures across post-hospitalization workflows, restoring reliable generation of 300+ weekly forms for care managers."
       ]
@@ -156,6 +157,6 @@
   "keywords": "Go, TypeScript, JavaScript, Node.js, NestJS, Express, React, Next.js, SvelteKit, AWS, GCP, PostgreSQL, MySQL, Redis, Kafka, gRPC, GraphQL, Docker, Kubernetes, Strapi, Sanity, Distributed Systems, Microservices, Observability, CI/CD, Backend Engineering",
   "footer": {
     "copyright": "© 2026 Chakradhar Reddy Devireddy",
-    "lastUpdated": "Jun 2026"
+    "lastUpdated": "Sep 2026"
   }
 }
