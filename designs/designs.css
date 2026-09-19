@@ -1,0 +1,45 @@
+/* ===== Alternate designs: the switch =====
+   Only the plumbing lives here. Each design's own styles sit in designs/<id>.css
+   and load inside the shadow root, so nothing in this file styles a design. */
+
+#design-root {
+  display: none;
+}
+
+@media screen {
+  /* A non-classic design is active: clear the stage. The classic DOM stays
+     populated underneath — it's still what prints. */
+  html[data-design]:not([data-design="classic"]) body {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background-color: var(--design-bg, var(--clr-bg));
+  }
+
+  html[data-design]:not([data-design="classic"]) body > :not(#design-root, .loading-screen, .debug-overlay) {
+    display: none !important;
+  }
+
+  html[data-design]:not([data-design="classic"]) #design-root {
+    display: block;
+  }
+}
+
+/* ----- picker, classic edition -----
+   The button borrows .theme-toggle's look over in styles.css; this just feeds the
+   shared menu (designs/picker.css) the classic page's own tokens, dark mode included. */
+.nav-controls .design-picker {
+  --picker-bg: var(--clr-card-bg);
+  --picker-fg: var(--clr-text);
+  --picker-border: 1px solid var(--clr-rule);
+  --picker-radius: 8px;
+  --picker-hover: var(--clr-hover-bg);
+  --picker-shadow: 0 8px 24px var(--clr-card-shadow), 0 2px 8px rgba(0, 0, 0, 0.12);
+  --picker-font: 600 0.85rem/1.25 var(--font-head);
+}
+
+@media print {
+  #design-root {
+    display: none !important;
+  }
+}

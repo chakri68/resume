@@ -1,6 +1,7 @@
 {
   "personal": {
     "name": "CHAKRADHAR REDDY DEVIREDDY",
+    "tagline": "Backend engineer · Go & TypeScript · Distributed systems",
     "contact": {
       "github": {
         "text": "GitHub",
@@ -23,6 +24,24 @@
   "summary": {
     "text": "Backend-focused Software Engineer building Go and TypeScript systems across healthcare and logistics, with experience spanning internships and full-time engineering at Zomato and Even Healthcare. Strong in distributed systems, PostgreSQL, AWS, Kafka, Redis, and observability, with a bias toward reliable, developer-first backend tooling."
   },
+  "highlights": [
+    {
+      "value": "−95%",
+      "label": "P95 latency at ~2k TPS, after collapsing chatty per-item RPCs into batched gRPC requests.",
+      "source": "Zomato"
+    },
+    {
+      "value": "6 weeks → 2",
+      "label": "Insurance-provider integration time, after a reusable onboarding package with automated CI/CD.",
+      "source": "Even Healthcare",
+      "quote": "Provider integration used to take six weeks. Now it takes two."
+    },
+    {
+      "value": "+65%",
+      "label": "Hospital Pass engagement",
+      "source": "Even Healthcare"
+    }
+  ],
   "skills": {
     "categories": [
       {
@@ -53,6 +72,7 @@
       "title": "Software Development Engineer",
       "location": "Bengaluru",
       "period": "Oct 2025 - Present",
+      "headline": "Hospital Pass engagement jumps 65% under new backend owner",
       "achievements": [
         "Owned backend for Even Infinite's Hospital Pass, simplifying member access to partner-hospital services and lifting pass engagement by 65%+.",
         "Designed an AI calling framework for clinical follow-ups — LLM-based report summarization, care-manager suggestions, and automated call flows — cutting manual follow-up effort by ~40%.",
@@ -66,6 +86,8 @@
       "title": "Software Development Engineer",
       "location": "Gurugram",
       "period": "Jan 2025 - Oct 2025",
+      "headline": "P95 latency falls 95% as chatty RPC calls get batched",
+      "deck": "From intern to engineer in six months; vehicle onboarding, ticketing and GPS ingestion along the way",
       "positions": [
         {
           "title": "Software Development Engineer",
@@ -93,6 +115,7 @@
       "title": "Backend Developer Intern",
       "location": "Remote",
       "period": "Dec 2023 - Apr 2024",
+      "headline": "Strapi platform scaled to 1k requests a second",
       "achievements": [
         "Scaled a Strapi-based ERM platform to ~1k RPS by adding in-memory caching, optimizing SQL queries, and restructuring backend routes."
       ]
@@ -102,6 +125,7 @@
       "title": "Full-Stack Web Developer Intern",
       "location": "Lucknow",
       "period": "Oct 2022 - Mar 2023",
+      "headline": "Tax department reports now write themselves",
       "achievements": [
         "Developed backend and dashboard flows for a Next.js platform used by the UP Commercial Tax Department, with automated PDF-based discrepancy tax report generation that cut manual effort by 60%."
       ]

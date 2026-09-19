@@ -1,0 +1,691 @@
+/* Riso poster */
+.dz-riso {
+  --paper: #f1e9d8;
+  --blue: #2335a8;
+  --ink: #1e2a8a;
+  --deep: #161c4f;
+  --accent: #f24b2b;
+  --clr-accent: var(--accent);
+  --display: "Caprasimo", Georgia, serif;
+  --radius: 28px;
+
+  padding: 0 40px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 15.5px/24px "DM Sans", system-ui, sans-serif;
+
+  h2 {
+    font: 400 40px/44px var(--display);
+  }
+
+  .kicker {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .strong {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  /* ----- nav ----- */
+  .dz-nav {
+    height: 72px;
+  }
+
+  .dz-nav__links {
+    gap: 36px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .dz-nav__links a:hover {
+    color: var(--accent);
+  }
+
+  .dz-nav__btn {
+    padding: 0 20px;
+    border: 3px solid var(--ink);
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: translate 0.15s ease;
+  }
+
+  .dz-nav__btn:hover {
+    translate: 0 -2px;
+  }
+
+  .dz-nav__print {
+    border-color: var(--blue);
+    background: var(--blue);
+    color: var(--paper);
+  }
+
+  /* picker menu, in the poster's own materials */
+  --picker-bg: var(--paper);
+  --picker-fg: var(--ink);
+  --picker-border: 3px solid var(--ink);
+  --picker-radius: 22px;
+  --picker-item-radius: 14px;
+  --picker-hover: var(--blue);
+  --picker-hover-fg: var(--paper);
+  --picker-shadow: 6px 6px 0 var(--accent);
+  --picker-font: 500 13.5px/1.25 "DM Sans", system-ui, sans-serif;
+
+  /* ----- shared boxes ----- */
+  .panel,
+  .block {
+    border-radius: var(--radius);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .panel {
+    border: 3px solid var(--ink);
+  }
+
+  .panel > h2 {
+    color: var(--accent);
+  }
+
+  .block--blue {
+    background: var(--blue);
+    color: var(--paper);
+  }
+
+  .block--blue .kicker {
+    color: #ff9c85;
+  }
+
+  .block--accent {
+    background: var(--accent);
+    color: var(--deep);
+  }
+
+  /* ----- hero ----- */
+  .hero,
+  .main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) min(452px, 33cqw);
+    gap: 16px;
+  }
+
+  .hero__name {
+    position: relative;
+    overflow: hidden;
+    border: 3px solid var(--ink);
+    border-radius: var(--radius);
+    padding: 36px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .hero__name > * {
+    position: relative;
+  }
+
+  h1 {
+    display: flex;
+    flex-direction: column;
+    font: 400 min(120px, 8.2cqw) / 0.97 var(--display);
+    letter-spacing: -0.01em;
+    color: var(--accent);
+  }
+
+  .shape {
+    position: absolute;
+    mix-blend-mode: multiply;
+  }
+
+  .shape--circle {
+    right: -4cqw;
+    top: -5cqw;
+    width: min(380px, 26cqw);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--blue);
+  }
+
+  .shape--half {
+    right: min(150px, 10cqw);
+    top: min(190px, 13cqw);
+    width: min(200px, 14cqw);
+    aspect-ratio: 2;
+    border-radius: 0 0 999px 999px;
+    background: var(--accent);
+  }
+
+  .hero__side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hero__side .block {
+    flex-grow: 1;
+    gap: 14px;
+    font-size: 16.5px;
+    line-height: 26px;
+  }
+
+  .hero__side h2 {
+    font-size: 28px;
+    line-height: 32px;
+    color: #ff9c85;
+  }
+
+  .contacts {
+    border: 3px solid var(--ink);
+    border-radius: var(--radius);
+    padding: 14px 28px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 16px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .contacts a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+
+  .contacts a:hover {
+    color: var(--accent);
+  }
+
+  .contacts .wide {
+    grid-column: span 2;
+    border-top: 2px dashed var(--ink);
+  }
+
+  /* ----- ticker ----- */
+  .ticker {
+    margin-block: 16px;
+    height: 84px;
+    background: var(--accent);
+    color: var(--deep);
+    font: 400 40px/1 var(--display);
+  }
+
+  .ticker svg {
+    color: var(--paper);
+  }
+
+  /* ----- experience ----- */
+  #experience {
+    padding: 36px 40px 40px;
+    gap: 28px;
+  }
+
+  #experience > h2,
+  .projects > h2 {
+    font-size: 56px;
+    line-height: 60px;
+    color: var(--accent);
+  }
+
+  .rule {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-top: 2px dashed var(--ink);
+  }
+
+  .job {
+    display: grid;
+    grid-template-columns: 168px minmax(0, 1fr);
+    column-gap: 24px;
+  }
+
+  .job__when {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding-top: 6px;
+  }
+
+  .pill {
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--blue);
+    color: var(--paper);
+    font-size: 11.5px;
+    font-weight: 700;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+
+  .job__where {
+    padding-left: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .job__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .job h3 {
+    font: 400 30px/36px var(--display);
+  }
+
+  .job h3 + .kicker {
+    margin-top: -8px;
+  }
+
+  .role {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    padding-top: 6px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .dz-bullets {
+    --bullet-gutter: 18px;
+    color: var(--deep);
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    margin-top: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* ----- side column ----- */
+  .side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .side .block > div > p:last-child,
+  .side .panel > div > p:last-child {
+    font-size: 15px;
+  }
+
+  #achievements {
+    color: var(--deep);
+  }
+
+  .school {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+  }
+
+  .grade {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .gpa {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  .gpa b {
+    font: 400 64px/60px var(--display);
+  }
+
+  .ornament {
+    flex-grow: 1;
+    min-height: 140px;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid var(--ink);
+    border-radius: var(--radius);
+  }
+
+  .ornament i {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+  }
+
+  .ornament i:nth-child(1) {
+    left: -70px;
+    bottom: -70px;
+    background: var(--accent);
+  }
+
+  .ornament i:nth-child(2) {
+    left: 90px;
+    bottom: -110px;
+    background: var(--blue);
+  }
+
+  .ornament i:nth-child(3) {
+    right: -40px;
+    top: -40px;
+    width: 160px;
+    height: 160px;
+    border-radius: 0 0 0 160px;
+    background: var(--blue);
+    mix-blend-mode: normal;
+  }
+
+  /* ----- projects ----- */
+  .projects {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .tile {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 26px 28px 28px;
+    border: 3px solid var(--ink);
+    border-radius: var(--radius);
+    font-size: 15px;
+    line-height: 23px;
+    text-decoration: none;
+    text-wrap: pretty;
+    transition:
+      transform 0.2s ease,
+      var(--reveal-transition);
+  }
+
+  .tile:hover {
+    transform: translateY(-4px) rotate(-0.6deg);
+  }
+
+  .tile:nth-child(4n + 1) {
+    background: var(--blue);
+    color: var(--paper);
+  }
+
+  .tile:nth-child(4n + 3) {
+    background: var(--accent);
+    color: var(--deep);
+  }
+
+  .tile:nth-child(4n + 4) {
+    background: var(--deep);
+    color: var(--paper);
+  }
+
+  .tile__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .tile__top b {
+    font: 400 60px/60px var(--display);
+  }
+
+  .tile__name {
+    font: 400 28px/34px var(--display);
+    overflow-wrap: anywhere;
+  }
+
+  /* ----- footer ----- */
+  .foot {
+    flex-grow: 1;
+    min-height: 96px;
+    margin-top: 40px;
+    padding: 0 max(40px, calc(50cqw - 680px));
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--blue);
+    color: var(--paper);
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .foot span {
+    position: relative;
+  }
+
+  .foot i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 220px;
+    height: 220px;
+    margin-left: -110px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+}
+
+/* ----- motion -----
+   Entrances fire on .dz--live (once the loading screen is gone). After that the two
+   inks never quite sit still — a press that's slightly out of register. */
+.dz-riso.dz--motion {
+  h1 span {
+    opacity: 0;
+  }
+
+  .shape,
+  .hero .kicker {
+    opacity: 0;
+  }
+}
+
+.dz-riso.dz--live {
+  h1 span {
+    animation: riso-rise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  h1 span:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  h1 span:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  .hero .kicker {
+    animation: riso-rise 0.8s 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .shape--circle {
+    animation:
+      riso-roll-in 1s 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) both,
+      riso-register 7s 1.3s ease-in-out infinite alternate;
+  }
+
+  .shape--half {
+    animation:
+      riso-drop-in 0.9s 0.5s cubic-bezier(0.3, 1.4, 0.5, 1) both,
+      riso-register 9s 1.5s ease-in-out infinite alternate-reverse;
+  }
+
+  .ornament i,
+  .foot i {
+    animation: riso-register 8s ease-in-out infinite alternate;
+  }
+
+  .ornament i:nth-child(2) {
+    animation-duration: 11s;
+    animation-direction: alternate-reverse;
+  }
+
+  .ticker svg {
+    animation: riso-spin 6s linear infinite;
+  }
+}
+
+@keyframes riso-rise {
+  from {
+    opacity: 0;
+    translate: 0 45%;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes riso-roll-in {
+  from {
+    opacity: 0;
+    translate: 45% -45%;
+    scale: 0.6;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+
+@keyframes riso-drop-in {
+  from {
+    opacity: 0;
+    translate: 0 -140%;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes riso-register {
+  from {
+    translate: -5px 3px;
+  }
+  to {
+    translate: 6px -4px;
+  }
+}
+
+@keyframes riso-spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* ----- narrower sheets ----- */
+@container dz (max-width: 1000px) {
+  .dz-riso {
+    .hero,
+    .main {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    h1 {
+      font-size: 12.5cqw;
+    }
+
+    .shape--circle {
+      width: 34cqw;
+    }
+
+    .tiles {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ornament {
+      display: none;
+    }
+  }
+}
+
+@container dz (max-width: 640px) {
+  .dz-riso {
+    padding: 0 16px;
+
+    .hero__name,
+    #experience,
+    .panel,
+    .block {
+      padding: 24px 20px;
+    }
+
+    h1 {
+      font-size: 13.5cqw;
+    }
+
+    .ticker {
+      height: 60px;
+      font-size: 28px;
+    }
+
+    .foot {
+      padding-inline: 16px;
+    }
+
+    .job {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 10px;
+    }
+
+    .job__when {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .tiles {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .grade {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    #experience > h2,
+    .projects > h2 {
+      font-size: 40px;
+      line-height: 44px;
+    }
+
+    .foot {
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .foot i {
+      display: none;
+    }
+  }
+}

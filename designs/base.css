@@ -1,0 +1,190 @@
+/* Shared reset for every alternate design. Loaded inside the shadow root, so these
+   element selectors only ever see a design's own markup. */
+:host {
+  display: block;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+figure,
+blockquote {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+/* Designs are drawn for a 1440px sheet. The frame is the query container, so
+   display type can size itself in cqw and layouts can collapse with @container. */
+.dz-frame {
+  container: dz / inline-size;
+  overflow-x: clip;
+}
+
+.dz {
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ----- shared top bar (each design restyles it) ----- */
+.dz-nav {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.dz-nav__logo {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.dz-nav__links {
+  display: flex;
+  gap: 2rem;
+}
+
+.dz-nav__links a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.dz-nav__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Print and Design share this; a design restyles .dz-nav__btn once and both follow. */
+.dz-nav__btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  border: 0;
+  background: none;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+/* ----- full-bleed: break out of the 1440px sheet to the viewport edges -----
+   Works for direct children of .dz (its padding is symmetric, so 50% is the centre). */
+.dz-bleed {
+  width: 100cqw;
+  max-width: none;
+  margin-inline: calc(50% - 50cqw) !important;
+}
+
+/* ----- marquee: two identical tracks, each sliding one full width left ----- */
+.dz-marquee {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.dz-marquee__track {
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--marquee-gap, 28px);
+  padding-right: var(--marquee-gap, 28px);
+}
+
+.dz-marquee__track > * {
+  flex-shrink: 0;
+}
+
+@keyframes dz-marquee {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* ----- motion -----
+   .dz--motion is only ever added when the visitor hasn't asked for reduced motion
+   (see startMotion in designs.js), so everything below is opt-out by construction. */
+.dz--live .dz-marquee__track {
+  animation: dz-marquee var(--marquee-seconds, 40s) linear infinite;
+}
+
+.dz--live .dz-marquee--reverse .dz-marquee__track {
+  animation-direction: reverse;
+}
+
+.dz-marquee:hover .dz-marquee__track {
+  animation-play-state: paused;
+}
+
+/* Scroll reveal. `translate` (not `transform`) so tilted blocks keep their tilt. */
+.dz {
+  --reveal-transition: opacity 0.7s ease var(--reveal-delay, 0ms), translate 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay, 0ms);
+}
+
+.dz--motion [data-reveal] {
+  opacity: 0;
+  translate: 0 22px;
+  transition: var(--reveal-transition);
+}
+
+.dz--motion [data-reveal].is-in {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* ----- bullets: marker + text on a two-column grid ----- */
+.dz-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dz-bullets li {
+  display: grid;
+  grid-template-columns: var(--bullet-gutter, 20px) minmax(0, 1fr);
+  text-wrap: pretty;
+}
+
+@container dz (max-width: 760px) {
+  .dz-nav__links,
+  .design-toggle__label {
+    display: none;
+  }
+}

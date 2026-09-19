@@ -187,7 +187,8 @@ body {
 }
 
 .theme-toggle,
-.print-button {
+.print-button,
+.design-toggle {
   background: inherit;
   border: 1px solid var(--glass-border);
   color: var(--clr-head);
@@ -205,7 +206,8 @@ body {
 }
 
 .theme-toggle:hover,
-.print-button:hover {
+.print-button:hover,
+.design-toggle:hover {
   background-color: var(--clr-hover-bg);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.15);

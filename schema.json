@@ -20,6 +20,10 @@
         "name": {
           "type": "string"
         },
+        "tagline": {
+          "type": "string",
+          "description": "Optional. Short role line, parts separated by ' · '. Used by the alternate designs; falls back to the first job title."
+        },
         "contact": {
           "type": "object",
           "required": ["github", "linkedin", "email", "phone"],
@@ -70,6 +74,32 @@
         }
       }
     },
+    "highlights": {
+      "type": "array",
+      "description": "Optional. Headline numbers the alternate designs use as pull quotes. Omit it and those blocks simply don't render.",
+      "items": {
+        "type": "object",
+        "required": ["value", "label"],
+        "properties": {
+          "value": {
+            "type": "string",
+            "description": "The number, set large, e.g. '−95%'."
+          },
+          "label": {
+            "type": "string",
+            "description": "What the number measures."
+          },
+          "source": {
+            "type": "string",
+            "description": "Company it came from; matched against experience[].company."
+          },
+          "quote": {
+            "type": "string",
+            "description": "Optional sentence form, for designs that want a quote instead of a number."
+          }
+        }
+      }
+    },
     "experience": {
       "type": "array",
       "items": {
@@ -87,6 +117,14 @@
           },
           "period": {
             "type": "string"
+          },
+          "headline": {
+            "type": "string",
+            "description": "Optional. Newspaper-style headline for this job (Broadsheet design). Falls back to '<title>, <company>'."
+          },
+          "deck": {
+            "type": "string",
+            "description": "Optional. One-line standfirst under the headline (Broadsheet design)."
           },
           "achievements": {
             "type": "array",

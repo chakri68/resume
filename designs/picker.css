@@ -1,0 +1,81 @@
+/* The design picker's menu. Loaded twice: by index.html for the classic nav, and
+   inside the shadow root for every other design. Structure only — the look comes
+   from --picker-* variables, which the classic page and each design set for
+   themselves, so the menu always reads as part of whatever page it's on. */
+.design-picker {
+  position: relative;
+  display: flex;
+}
+
+.design-picker__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 400;
+  width: 15.5rem;
+  padding: 0.35rem;
+  border: var(--picker-border, 1px solid #c6c6c6);
+  border-radius: var(--picker-radius, 10px);
+  background: var(--picker-bg, #ffffff);
+  color: var(--picker-fg, #181818);
+  box-shadow: var(--picker-shadow, 0 12px 32px rgba(0, 0, 0, 0.18));
+  font: var(--picker-font, 500 13px/1.25 system-ui, sans-serif);
+  letter-spacing: 0;
+  text-align: left;
+  text-transform: none;
+  rotate: var(--picker-tilt, 0deg);
+}
+
+.design-picker__menu[hidden] {
+  display: none;
+}
+
+.design-picker__item {
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  column-gap: 0.65rem;
+  align-items: center;
+  width: 100%;
+  padding: 0.45rem 0.55rem;
+  border: 0;
+  border-radius: var(--picker-item-radius, 6px);
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.design-picker__item:hover,
+.design-picker__item:focus-visible {
+  background: var(--picker-hover, rgba(0, 0, 0, 0.07));
+  color: var(--picker-hover-fg, inherit);
+  outline: none;
+}
+
+.design-picker__swatch {
+  grid-row: span 2;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: var(--picker-swatch-radius, 50%);
+  box-shadow: 0 0 0 1px var(--picker-fg, #181818);
+}
+
+.design-picker__item[aria-checked="true"] .design-picker__swatch {
+  box-shadow:
+    0 0 0 2px var(--picker-bg, #ffffff),
+    0 0 0 4px var(--picker-fg, #181818);
+}
+
+.design-picker__note {
+  font-size: 0.86em;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+@media print {
+  .design-picker {
+    display: none !important;
+  }
+}

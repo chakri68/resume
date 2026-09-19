@@ -46,6 +46,8 @@ async function loadResumeData() {
       data = await response.json();
     }
     populateResume(data);
+    // Hand the same data to the alternate designs (designs/designs.js).
+    document.dispatchEvent(new CustomEvent("resume:data", { detail: data }));
 
     // Calculate remaining time to ensure minimum display duration
     const elapsedTime = (Date.now() - startTime) / 1000; // Convert to seconds

@@ -1,0 +1,557 @@
+/* Broadside */
+.dz-broadside {
+  --paper: #ede3cc;
+  --ink: #1a1613;
+  --accent: #b5271c;
+  --clr-accent: var(--accent);
+  --fat: "Abril Fatface", Georgia, serif;
+  --slab: "Ultra", Georgia, serif;
+  --cond: "Stint Ultra Condensed", Georgia, serif;
+
+  padding: 24px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 16px/25px "Old Standard TT", Georgia, serif;
+
+  .frame,
+  .frame__inner {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .frame {
+    border: 6px solid var(--ink);
+    padding: 6px;
+  }
+
+  .frame__inner {
+    border: 2px solid var(--ink);
+    padding: 0 36px;
+  }
+
+  .cond {
+    font: 400 25px/30px var(--cond);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .red,
+  .dz-bullets svg,
+  .bill__top svg,
+  .band svg,
+  .foot svg {
+    color: var(--accent);
+  }
+
+  .ital {
+    font-style: italic;
+  }
+
+  a:hover {
+    color: var(--accent);
+  }
+
+  /* ----- nav ----- */
+  .dz-nav {
+    height: 56px;
+    border-bottom: 2px solid var(--ink);
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .dz-nav__links {
+    gap: 36px;
+  }
+
+  /* ----- the bill ----- */
+  .bill {
+    padding-top: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bill__top {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: min(34px, 3.2cqw);
+    line-height: 1.2;
+    letter-spacing: 0.22em;
+  }
+
+  h1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .bill__first {
+    font: 400 min(150px, 10.6cqw) / 1 var(--fat);
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .bill__middle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font: 400 min(116px, 9cqw) / 0.97 var(--cond);
+    letter-spacing: 0.3em;
+  }
+
+  .bill__middle > span {
+    margin-right: -0.3em;
+  }
+
+  .rules {
+    flex-grow: 1;
+    height: 14px;
+    border-top: 6px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .bill__last {
+    font: 400 min(138px, 9.8cqw) / 1.06 var(--slab);
+    white-space: nowrap;
+  }
+
+  .band {
+    margin-top: 10px;
+    height: 68px;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: min(42px, 6cqw);
+    line-height: 1.1;
+    letter-spacing: 0.16em;
+    --marquee-gap: 26px;
+  }
+
+  /* picker menu: a ticket with the poster's double frame */
+  --picker-bg: var(--paper);
+  --picker-fg: var(--ink);
+  --picker-border: 2px solid var(--ink);
+  --picker-radius: 0;
+  --picker-item-radius: 0;
+  --picker-hover: var(--accent);
+  --picker-hover-fg: var(--paper);
+  --picker-shadow: 0 0 0 4px var(--paper), 0 0 0 8px var(--ink);
+  --picker-font: 700 14px/1.3 "Old Standard TT", Georgia, serif;
+
+  .summary {
+    align-self: center;
+    max-width: 1040px;
+    margin: 24px 0 20px;
+    text-align: center;
+    font-size: 19px;
+    font-style: italic;
+    line-height: 30px;
+    text-wrap: pretty;
+  }
+
+  .contacts {
+    min-height: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 32px;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .contacts a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    text-underline-offset: 4px;
+  }
+
+  /* ----- section titles ----- */
+  .title {
+    margin: 26px 0 22px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font: 400 min(54px, 6.4cqw) / 1.05 var(--fat);
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .title--slab {
+    margin: 22px 0 18px;
+    font: 400 min(40px, 5.4cqw) / 1.1 var(--slab);
+    letter-spacing: 0;
+  }
+
+  .line {
+    flex-grow: 1;
+    border-top: 2px solid var(--ink);
+  }
+
+  /* ----- acts ----- */
+  .acts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .acts__col {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding-inline: 24px;
+    border-left: 1px solid var(--ink);
+  }
+
+  .acts__col:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .acts__col:last-child {
+    padding-right: 0;
+  }
+
+  .act {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .act__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--ink);
+    text-align: center;
+    font-size: 16.5px;
+  }
+
+  .act h3 {
+    margin: 2px 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+  }
+
+  /* a different wood type per act, the way a job printer would set it */
+  .act--0 h3 {
+    font: 400 40px/44px var(--fat);
+  }
+
+  .act--1 h3 {
+    font: 400 38px/44px var(--slab);
+  }
+
+  .act--2 h3 {
+    font: 400 50px/52px var(--cond);
+    letter-spacing: 0.04em;
+  }
+
+  .act--3 h3 {
+    font: 400 32px/38px var(--fat);
+  }
+
+  .role {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    font-size: 16.5px;
+  }
+
+  .role .ital {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .dz-bullets svg {
+    margin-top: 7px;
+  }
+
+  .ticket {
+    margin-top: auto;
+    border: 2px solid var(--ink);
+    padding: 4px;
+  }
+
+  .ticket > div {
+    border: 1px solid var(--ink);
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .ticket__school {
+    font: 400 24px/30px var(--fat);
+  }
+
+  .honours {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 6px solid var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .honours h2 {
+    font: 400 34px/38px var(--slab);
+    text-transform: uppercase;
+  }
+
+  .honours .ital {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  /* ----- skills ----- */
+  .company {
+    margin-top: 28px;
+  }
+
+  .company h2 {
+    min-height: 56px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: var(--paper);
+    font-size: min(40px, 5cqw);
+    line-height: 1.1;
+    letter-spacing: 0.3em;
+    text-align: center;
+  }
+
+  .company__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .company__grid > div {
+    padding: 16px 14px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+    font-size: 15.5px;
+    line-height: 23px;
+    box-shadow: -1px 0 0 var(--ink);
+  }
+
+  .company__name {
+    font: 400 22px/28px var(--fat);
+    text-transform: uppercase;
+  }
+
+  /* ----- projects ----- */
+  .bills {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .bills__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 16px 18px 18px;
+    border: 2px solid var(--ink);
+    text-align: center;
+    font-size: 15px;
+    line-height: 23px;
+    text-decoration: none;
+    text-wrap: pretty;
+  }
+
+  .bills__item .cond {
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.2em;
+  }
+
+  .bills__name {
+    font: 400 30px/36px var(--slab);
+    overflow-wrap: anywhere;
+  }
+
+  .bills__item:nth-child(4n + 2) .bills__name {
+    font: 400 32px/36px var(--fat);
+  }
+
+  .bills__item:nth-child(4n + 3) .bills__name {
+    font: 400 44px/44px var(--cond);
+    letter-spacing: 0.04em;
+  }
+
+  /* ----- footer ----- */
+  .foot {
+    flex-grow: 1;
+    min-height: 64px;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-top: 2px solid var(--ink);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+}
+
+@container dz (max-width: 1100px) {
+  .dz-broadside {
+    .acts {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 28px;
+    }
+
+    .acts__col {
+      padding-inline: 0;
+      border-left: 0;
+    }
+
+    .ticket,
+    .honours {
+      margin-top: 0;
+    }
+
+    .bills {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+@container dz (max-width: 640px) {
+  .dz-broadside {
+    padding: 10px;
+
+    .frame {
+      border-width: 4px;
+      padding: 4px;
+    }
+
+    .frame__inner {
+      padding: 0 14px;
+    }
+
+    .bill__middle {
+      gap: 12px;
+    }
+
+    .bill__top {
+      gap: 8px;
+      font-size: 20px;
+      letter-spacing: 0.12em;
+    }
+
+    .bill__top svg {
+      display: none;
+    }
+
+    .band {
+      height: 52px;
+    }
+
+    .summary {
+      font-size: 17px;
+      line-height: 27px;
+    }
+
+    .title {
+      gap: 12px;
+    }
+
+    .bills {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .foot {
+      flex-direction: column;
+      justify-content: center;
+      padding: 16px 0;
+      text-align: center;
+    }
+  }
+}
+
+/* ----- motion: each line of type is stamped on, heaviest last ----- */
+.dz-broadside.dz--motion {
+  .bill__top,
+  h1 > span,
+  .band {
+    opacity: 0;
+  }
+}
+
+.dz-broadside.dz--live {
+  .bill__top {
+    animation: broadside-stamp 0.5s 0.1s cubic-bezier(0.2, 1.3, 0.4, 1) both;
+  }
+
+  h1 > span {
+    animation: broadside-stamp 0.55s cubic-bezier(0.2, 1.3, 0.4, 1) both;
+  }
+
+  h1 > span:nth-child(1) {
+    animation-delay: 0.35s;
+  }
+
+  h1 > span:nth-child(2) {
+    animation-delay: 0.6s;
+  }
+
+  h1 > span:nth-child(3) {
+    animation-delay: 0.85s;
+  }
+
+  .band {
+    animation: broadside-stamp 0.5s 1.15s cubic-bezier(0.2, 1.3, 0.4, 1) both;
+  }
+
+  .bill__top svg,
+  .foot svg {
+    animation: broadside-turn 14s linear infinite;
+  }
+}
+
+@keyframes broadside-stamp {
+  from {
+    opacity: 0;
+    scale: 1.18;
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes broadside-turn {
+  to {
+    rotate: 360deg;
+  }
+}

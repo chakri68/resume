@@ -6,6 +6,7 @@ My resume, as a webpage. Plain HTML, CSS, and JS — no framework, no build step
 
 - Clean, responsive layout that reads fine on a phone
 - Dark/light toggle
+- Six alternate designs behind a tiny picker, for when classy isn't the mood (see [Designs](#designs))
 - Print-friendly — the on-screen version and the printed A4 are the same thing, styled differently
 - Content is JSON, so editing your resume never means touching markup
 - No dependencies to load, so it's quick
@@ -71,6 +72,33 @@ All of them come from the JSON. The example files show the structure — copy on
 
 `styles.css` is where colors, fonts, and layout live. Default font is Source Sans Pro. Dark/light colors are CSS variables at the top, so you don't have to go hunting.
 
+## Designs
+
+The page you get by default is the classic one. There's a design button in the top bar — 🎨, next to the theme toggle — that swaps the whole thing for something louder. Every design carries the same button in its own nav, dressed to match (the menu too: riso gets a pill with an offset shadow, dada gets a crooked black card, the almanac gets an errata slip):
+
+| id | what it is |
+| --- | --- |
+| `classic` | the original. still the default |
+| `riso` | two-ink risograph poster, shapes overprinted on the name |
+| `magazine` | Bodoni masthead, three ruled columns, one highlighter |
+| `broadsheet` | newspaper front page — jobs are stories, projects are classifieds |
+| `broadside` | wood-type letterpress show poster, jobs billed as acts |
+| `dada` | the name broken three ways, blocks a degree or two off true |
+| `almanac` | 18th-century title page. "printed for the author" |
+
+Your pick sticks (localStorage) and lands in the URL, so `?design=broadsheet` is a shareable link. It composes with the other params: `?resume=frontend&design=almanac`.
+
+How it works, since it's the only non-obvious part of the repo:
+
+- `designs/designs.js` runs in `<head>` and stamps `data-design` on `<html>` before first paint, so there's no flash of the wrong page. Everything else loads lazily — pick `dada` and only then do `designs/dada.js`, `designs/dada.css` and its fonts get fetched. The default page pays for none of it.
+- Each design is a renderer (JSON in, HTML string out) mounted in a **shadow root**. That's deliberate: `styles.css` styles bare `section`, `article`, `h2`… and those would bleed straight into a design otherwise.
+- **Motion is opt-out by construction.** Marquees, hero entrances and scroll reveals only arm when the visitor *hasn't* asked for reduced motion, and only fire once the loading screen is gone (otherwise every entrance plays behind it). A renderer opts elements into scroll reveal with `{ reveal: "<selector>" }` as the third argument to `define`; `h.marquee()` builds a seamless ticker, and `.dz-bleed` breaks a band out of the 1440px sheet to the viewport edges.
+- **Print is always classic.** The classic DOM stays populated underneath and every design is `@media screen` only, so `Ctrl+P`, the CLI and the ATS reading order are exactly what they were. The posters are for humans; the PDF is for parsers.
+
+The designs read a few optional fields (all in [`schema.json`](schema.json)): `personal.tagline`, per-job `headline` / `deck` (the newspaper needs headlines), and a top-level `highlights` array for pull quotes. Leave them out and the designs fall back to sensible text or just skip the block — `resumes/backend.json` has the full set if you want an example.
+
+Adding one: drop `designs/<id>.js` (call `ResumeDesigns.define("<id>", (data, h) => html, options)`) and `designs/<id>.css`, then add a line to the `DESIGNS` list at the top of `designs/designs.js`. Set the `--picker-*` variables in your CSS and the design menu follows suit.
+
 ## Printing
 
 Hit the print button (🖨️) in the nav, or just `Ctrl/Cmd + P`. It's tuned for A4.
@@ -113,6 +141,7 @@ resume/
 ├── index.html          # markup
 ├── styles.css          # styles (screen + print)
 ├── script.js           # rendering + JSON injection
+├── designs/            # alternate designs: loader + picker, then one .js/.css pair each
 └── resumes/            # your data files (frontend.json, fullstack.json, …)
 ```
 

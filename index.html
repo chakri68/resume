@@ -138,7 +138,11 @@
     />
 
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="designs/designs.css" />
+    <link rel="stylesheet" href="designs/picker.css" />
     <script src="logo-animated.js"></script>
+    <!-- Alternate designs: sets data-design before first paint, loads the rest lazily -->
+    <script src="designs/designs.js"></script>
 
     <!-- Cloudflare Web Analytics -->
     <script
@@ -272,6 +276,9 @@
         <path d="M18 15l-6-6-6 6" />
       </svg>
     </a>
+
+    <!-- Alternate designs render in here (shadow root); see designs/designs.js -->
+    <div id="design-root"></div>
 
     <!-- Debug tool: type the password anywhere to open (see DEBUG_PASSWORD in script.js) -->
     <div class="debug-overlay" aria-hidden="true">

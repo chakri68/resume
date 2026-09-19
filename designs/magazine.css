@@ -1,0 +1,460 @@
+/* Magazine */
+.dz-magazine {
+  --paper: #f3f0e8;
+  --ink: #121212;
+  --accent: #ddf247;
+  --clr-accent: #5b5b5b;
+  --display: "Bodoni Moda", "Bodoni 72", Didot, serif;
+
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 15.5px/24px "Newsreader", Georgia, serif;
+
+  > * {
+    margin-inline: 56px;
+  }
+
+  /* the highlighter is a background so it can be drawn on, left to right */
+  .mark {
+    background: linear-gradient(var(--accent), var(--accent)) no-repeat 0 100% / 100% 0.42em;
+  }
+
+  /* picker menu: a boxed sidebar item */
+  --picker-bg: var(--paper);
+  --picker-fg: var(--ink);
+  --picker-border: 1px solid var(--ink);
+  --picker-radius: 0;
+  --picker-item-radius: 0;
+  --picker-hover: var(--accent);
+  --picker-shadow: 5px 5px 0 var(--ink);
+  --picker-font: 500 15px/1.25 "Newsreader", Georgia, serif;
+
+  .kicker {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font: italic 500 34px/40px var(--display);
+  }
+
+  a:hover {
+    color: #5b5b5b;
+  }
+
+  /* ----- nav ----- */
+  .topbar {
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .dz-nav {
+    height: 56px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .dz-nav__print span {
+    box-shadow: inset 0 -0.55em 0 var(--accent);
+  }
+
+  /* ----- masthead ----- */
+  .masthead {
+    position: relative;
+    padding: 20px 0 12px;
+  }
+
+  h1 {
+    display: flex;
+    flex-direction: column;
+    font: 500 min(140px, 10cqw) / 1.07 var(--display);
+    letter-spacing: -0.025em;
+  }
+
+  h1 em {
+    font-weight: 400;
+  }
+
+  .standfirst {
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+    width: min(590px, 41cqw);
+    font-size: 16.5px;
+    text-wrap: pretty;
+  }
+
+  .strip {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    border-top: 4px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .strip__links {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 28px;
+    font-size: 16px;
+    font-style: italic;
+  }
+
+  .strip__links a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    text-underline-offset: 4px;
+  }
+
+  /* ----- the spread ----- */
+  .spread {
+    padding: 36px 0 44px;
+    display: grid;
+    grid-template-columns: 272px minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .spread > * {
+    padding-inline: 32px;
+    border-left: 1px solid var(--ink);
+  }
+
+  .spread > :first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .spread > :last-child {
+    padding-right: 0;
+  }
+
+  .rail {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .rail section {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .rail section + section {
+    padding-top: 28px;
+    border-top: 1px solid var(--ink);
+  }
+
+  .school {
+    font: 500 22px/28px var(--display);
+  }
+
+  .strong {
+    font-size: 16.5px;
+    font-weight: 600;
+  }
+
+  .aside {
+    font-size: 14.5px;
+    font-style: italic;
+    line-height: 22px;
+    color: #3a3a3a;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .col--cont {
+    padding-top: 72px;
+  }
+
+  .job {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .job h3 {
+    font: 500 30px/36px var(--display);
+    letter-spacing: -0.01em;
+  }
+
+  .role {
+    font-size: 17px;
+    font-style: italic;
+  }
+
+  .role--split {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding-top: 10px;
+  }
+
+  .role--split .kicker {
+    font-style: normal;
+    white-space: nowrap;
+  }
+
+  .dz-bullets {
+    padding-top: 8px;
+  }
+
+  .pull {
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 4px solid var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+    font-style: italic;
+  }
+
+  .pull__value {
+    font: italic 400 min(64px, 5cqw) / 1.12 var(--display);
+    letter-spacing: -0.02em;
+  }
+
+  .pull--big .pull__value {
+    font-size: min(116px, 9cqw);
+    letter-spacing: -0.03em;
+  }
+
+  /* ----- projects ----- */
+  .projects {
+    padding: 24px 0 44px;
+    border-top: 4px solid var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .projects__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px 32px;
+  }
+
+  .projects__grid a {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 14px;
+    border-top: 1px solid var(--ink);
+    font-size: 15px;
+    line-height: 23px;
+    text-decoration: none;
+    text-wrap: pretty;
+  }
+
+  .projects__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .projects__top em {
+    font: italic 400 44px/48px var(--display);
+  }
+
+  .projects__name {
+    font: 500 24px/32px var(--display);
+  }
+
+  .projects__grid a:hover .projects__name {
+    background: linear-gradient(var(--accent), var(--accent)) no-repeat 0 100% / 100% 0.42em;
+    align-self: flex-start;
+    color: var(--ink);
+  }
+
+  /* ----- keyword wire ----- */
+  .wire {
+    height: 64px;
+    border-top: 4px solid var(--ink);
+    font: italic 500 30px/1 var(--display);
+    --marquee-gap: 36px;
+  }
+
+  /* ----- footer ----- */
+  .foot {
+    flex-grow: 1;
+    min-height: 88px;
+    padding: 0 max(56px, calc(50cqw - 664px));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+}
+
+@container dz (max-width: 1100px) {
+  .dz-magazine {
+    .standfirst {
+      position: static;
+      width: auto;
+      max-width: 720px;
+      padding: 12px 0 8px;
+    }
+
+    .spread {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      row-gap: 36px;
+    }
+
+    /* rail drops under the two experience columns, laid out in a row */
+    .rail {
+      order: 3;
+      grid-column: 1 / -1;
+      padding: 28px 0 0;
+      border-left: 0;
+      border-top: 4px solid var(--ink);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 32px;
+    }
+
+    .rail section + section {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    #experience {
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    .projects__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+@container dz (max-width: 720px) {
+  .dz-magazine {
+    > * {
+      margin-inline: 18px;
+    }
+
+    h1 {
+      font-size: 15cqw;
+    }
+
+    .strip {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      padding: 10px 0 4px;
+    }
+
+    .spread,
+    .rail {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .spread > * {
+      padding-inline: 0;
+      border-left: 0;
+    }
+
+    .col--cont {
+      padding-top: 0;
+    }
+
+    .pull {
+      margin-top: 0;
+    }
+
+    .pull__value {
+      font-size: 44px;
+    }
+
+    .pull--big .pull__value {
+      font-size: 84px;
+    }
+
+    .rail section + section {
+      padding-top: 28px;
+      border-top: 1px solid var(--ink);
+    }
+
+    .projects__grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .foot {
+      padding: 20px 18px;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}
+
+/* ----- motion: the masthead sets itself, then the highlighter gets to work ----- */
+.dz-magazine.dz--motion {
+  h1 span,
+  h1 em,
+  .standfirst,
+  .strip {
+    opacity: 0;
+  }
+
+  .mark {
+    background-size: 0 0.42em;
+    transition: background-size 0.9s 0.25s cubic-bezier(0.3, 0.7, 0.2, 1);
+  }
+
+  .is-in .mark,
+  .is-in.mark {
+    background-size: 100% 0.42em;
+  }
+}
+
+.dz-magazine.dz--live {
+  h1 span,
+  h1 em {
+    animation: magazine-set 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  h1 em {
+    animation-delay: 0.15s;
+  }
+
+  .standfirst {
+    animation: magazine-set 0.9s 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .strip {
+    animation: magazine-set 0.9s 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+}
+
+@keyframes magazine-set {
+  from {
+    opacity: 0;
+    translate: 0 28px;
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    clip-path: inset(-10% -10% -20% -10%);
+  }
+}
