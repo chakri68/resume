@@ -93,11 +93,22 @@ How it works, since it's the only non-obvious part of the repo:
 - `designs/designs.js` runs in `<head>` and stamps `data-design` on `<html>` before first paint, so there's no flash of the wrong page. Everything else loads lazily — pick `dada` and only then do `designs/dada.js`, `designs/dada.css` and its fonts get fetched. The default page pays for none of it.
 - Each design is a renderer (JSON in, HTML string out) mounted in a **shadow root**. That's deliberate: `styles.css` styles bare `section`, `article`, `h2`… and those would bleed straight into a design otherwise.
 - **Motion is opt-out by construction.** Marquees, hero entrances and scroll reveals only arm when the visitor *hasn't* asked for reduced motion, and only fire once the loading screen is gone (otherwise every entrance plays behind it). A renderer opts elements into scroll reveal with `{ reveal: "<selector>" }` as the third argument to `define`; `h.marquee()` builds a seamless ticker, and `.dz-bleed` breaks a band out of the 1440px sheet to the viewport edges.
+- **The tab follows along.** `favicon.svg` draws with CSS custom properties, so switching design re-inks the tab icon (paper tile, the design's ink, its accent rule) and sets `theme-color` to the design's paper. Classic gets the plain file back, which also has a dark-scheme variant baked in.
 - **Print is always classic.** The classic DOM stays populated underneath and every design is `@media screen` only, so `Ctrl+P`, the CLI and the ATS reading order are exactly what they were. The posters are for humans; the PDF is for parsers.
 
 The designs read a few optional fields (all in [`schema.json`](schema.json)): `personal.tagline`, per-job `headline` / `deck` (the newspaper needs headlines), and a top-level `highlights` array for pull quotes. Leave them out and the designs fall back to sensible text or just skip the block — `resumes/backend.json` has the full set if you want an example.
 
 Adding one: drop `designs/<id>.js` (call `ResumeDesigns.define("<id>", (data, h) => html, options)`) and `designs/<id>.css`, then add a line to the `DESIGNS` list at the top of `designs/designs.js`. Set the `--picker-*` variables in your CSS and the design menu follows suit.
+
+## Icons and the link preview
+
+`favicon.svg` and `scripts/og-card.html` are the sources; the PNGs are rendered from them, never drawn by hand:
+
+```bash
+npm run brand    # → og-image.png, icon-512.png, apple-touch-icon.png
+```
+
+The link-preview card is drawn as the top of the classic page — same logo, nav and type — since that's where a shared link lands. Crawlers don't run JS, so there's one card for the whole site regardless of `?design=`. Edit the copy in `scripts/og-card.html` when your headline changes.
 
 ## Printing
 

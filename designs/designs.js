@@ -95,6 +95,38 @@
     else root.style.removeProperty("--design-bg");
   }
 
+  // The tab icon and the browser-chrome colour follow the design. favicon.svg draws
+  // with custom properties, so re-inking it is one appended <style> block — paper for
+  // the tile, the design's ink for the letters and edge, its accent for the rule.
+  // Classic just gets the file back (which also restores its dark-scheme variant).
+  let faviconSource = null;
+  async function paintChrome(id) {
+    const design = byId(id);
+    const icon = document.querySelector('link[rel="icon"][type="image/svg+xml"]');
+    const themed = design && design.bg;
+
+    document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
+      if (!meta.dataset.classic) meta.dataset.classic = meta.content;
+      meta.content = themed ? design.bg : meta.dataset.classic;
+    });
+
+    if (!icon) return;
+    if (!icon.dataset.classic) icon.dataset.classic = icon.getAttribute("href");
+    if (!themed) return icon.setAttribute("href", icon.dataset.classic);
+    try {
+      faviconSource = faviconSource || (await (await fetch(icon.dataset.classic)).text());
+      if (current !== id) return; // switched again while fetching
+      const [paper, accent, ink] = design.swatch;
+      const inked = faviconSource.replace(
+        "</svg>",
+        `<style>:root{--tile:${paper};--edge:${ink};--ink:${ink};--accent:${accent}}</style></svg>`
+      );
+      icon.setAttribute("href", `data:image/svg+xml,${encodeURIComponent(inked)}`);
+    } catch {
+      /* no icon swap — not worth breaking anything over */
+    }
+  }
+
   current = initialDesign();
   markDocument(current);
 
@@ -353,6 +385,7 @@
       history.replaceState(null, "", url);
     }
     syncPicker();
+    paintChrome(id);
     window.scrollTo(0, 0);
     return mount(id);
   }
@@ -482,6 +515,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     host();
+    paintChrome(current);
     const controls = document.querySelector(".nav-controls");
     if (controls) controls.prepend(createPicker({ themed: false }));
   });
