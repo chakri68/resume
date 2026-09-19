@@ -120,9 +120,9 @@
       "url": "https://github.com/chakri68/systems-node"
     },
     {
-      "name": "codeCollab",
-      "description": "Real-time collaborative IDE built with Next.js, WebSockets, CodeMirror, and conflict-free syncing for multi-user editing.",
-      "url": "https://github.com/chakri68/codeCollab"
+      "name": "Family Vault",
+      "description": "Encrypted document store: per-file AES-256-GCM keys, passkey unlock, pluggable storage, property-tested CRDT index merge.",
+      "url": "https://github.com/chakri68/vault"
     },
     {
       "name": "JScratch",
@@ -163,6 +163,6 @@
   "keywords": "Software Engineer, SDE1, Google, Backend Engineering, Go, TypeScript, Java, C++, Python, Data Structures, Algorithms, DSA, Distributed Systems, Microservices, gRPC, Kafka, Redis, PostgreSQL, AWS, GCP, Kubernetes, Docker, System Design, Codeforces Expert, IIIT Lucknow, Zomato, Even Healthcare",
   "footer": {
     "copyright": "© 2026 Chakradhar Reddy Devireddy",
-    "lastUpdated": "Jun 2026"
+    "lastUpdated": "Sep 2026"
   }
 }

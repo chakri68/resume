@@ -22,7 +22,7 @@
     }
   },
   "summary": {
-    "text": "Backend-focused Software Engineer building Go and TypeScript systems across healthcare and logistics, with experience spanning internships and full-time engineering at Zomato and Even Healthcare. Strong in distributed systems, PostgreSQL, AWS, Kafka, Redis, and observability, with a bias toward reliable, developer-first backend tooling."
+    "text": "Backend engineer building Go and TypeScript systems for healthcare and logistics at Even Healthcare and Zomato. Strong in distributed systems, PostgreSQL, gRPC, AWS, and Terraform, with a bias toward reliable, developer-first backend tooling."
   },
   "highlights": [
     {
@@ -50,19 +50,15 @@
       },
       {
         "title": "Backend",
-        "items": "Node.js, Express, NestJS, gRPC, REST, GraphQL"
+        "items": "Node.js, Express, NestJS, gRPC, ConnectRPC, Protobuf, REST, GraphQL, Prisma ORM, Strapi CMS"
       },
       {
-        "title": "Frontend",
-        "items": "React, Next.js, Redux Toolkit"
-      },
-      {
-        "title": "Databases",
-        "items": "PostgreSQL, MySQL, MSSQL, Prisma ORM, Strapi CMS, Firestore"
+        "title": "Data",
+        "items": "PostgreSQL, MySQL, MSSQL, Redis, Kafka, Firestore"
       },
       {
         "title": "Cloud & DevOps",
-        "items": "AWS, GCP, Docker, Kubernetes, Redis, Kafka, Nginx, Bazel, Gerrit"
+        "items": "AWS, GCP, Terraform, Docker, Kubernetes, GitHub Actions, Nginx, Bazel, Gerrit"
       }
     ]
   },
@@ -75,8 +71,8 @@
       "headline": "Hospital Pass engagement jumps 65% under new backend owner",
       "achievements": [
         "Owned backend for Even Infinite's Hospital Pass, simplifying member access to partner-hospital services and lifting pass engagement by 65%+.",
-        "Designed an AI calling framework for clinical follow-ups — LLM-based report summarization, care-manager suggestions, and automated call flows — cutting manual follow-up effort by ~40%.",
-        "Built an in-house product analytics and user-event tracking platform processing 100+ events/min, enabling teams to capture, query, and analyze user behavior without relying on third-party tooling.",
+        "Designed an AI framework for clinical follow-up calls: LLM report summaries, care-manager suggestions, and automated calls, cutting manual effort ~40%.",
+        "Built an in-house product analytics and event-tracking platform ingesting ~140k user events a day, so teams query user behavior without third-party tooling.",
         "Built a reusable onboarding package for insurance providers with automated CI/CD, cutting provider integration time from 6 weeks to 2.",
         "Fixed recurring document re-upload failures across post-hospitalization workflows, restoring reliable generation of 300+ weekly forms for care managers."
       ]
@@ -93,7 +89,7 @@
           "title": "Software Development Engineer",
           "period": "Jul 2025 - Oct 2025",
           "achievements": [
-            "Built an automated vehicle onboarding flow with plate detection and dynamic step routing across a 15-screen journey, cutting manual review effort by 60% and onboarding errors by 80%.",
+            "Built automated vehicle onboarding with plate detection and dynamic step routing across 15 screens, cutting manual review 60% and onboarding errors 80%.",
             "Redesigned delayed-order ticketing with automated escalation states and operator actions, reducing cancellation-prone cases by 80%.",
             "Built a Python sync pipeline for ~1M support tickets, automating recurring ops workflows and removing ~95% of manual sync work.",
             "Migrated logistics map tooling to Google Maps and optimized usage patterns, lowering map-related operating costs by 25%."
@@ -105,19 +101,35 @@
           "achievements": [
             "Built a production-safe Go SDK to stream multi-GB ZIP archives directly to S3, reducing transfer latency by 65% and peak memory usage by 50%.",
             "Developed a GPS ingestion service handling ~50k location events/sec with live monitoring dashboards, improving ETA prediction accuracy by 12%.",
-            "Refactored service-to-service RPC flows with goroutine fan-out and gRPC request batching, cutting P95 latency by ~95% at ~2k TPS by collapsing chatty per-item calls into batched requests."
+            "Cut P95 latency by ~95% at ~2k TPS by collapsing chatty per-item service calls into batched gRPC requests with goroutine fan-out."
           ]
         }
       ]
     },
     {
       "company": "Shinpo Engineering Pvt. Ltd.",
-      "title": "Backend Developer Intern",
+      "title": "Backend Engineer (Freelance)",
       "location": "Remote",
-      "period": "Dec 2023 - Apr 2024",
-      "headline": "Strapi platform scaled to 1k requests a second",
-      "achievements": [
-        "Scaled a Strapi-based ERM platform to ~1k RPS by adding in-memory caching, optimizing SQL queries, and restructuring backend routes."
+      "period": "2023 - 24, 2026 - Present",
+      "headline": "Former intern returns to rebuild the platform",
+      "deck": "Go, Postgres row-level security and Terraform; one AWS stack per tenant",
+      "positions": [
+        {
+          "title": "Backend Engineer (Freelance)",
+          "period": "Jul 2026 - Present",
+          "achievements": [
+            "Primary engineer on a multi-tenant procurement platform in Go, ConnectRPC, and PostgreSQL, isolating tenants with row-level security that fails closed.",
+            "Provisioned per-tenant AWS stacks (VPC, ECS Fargate, RDS, CloudFront) with Terraform and Bazel; took a second tenant live with config and DNS alone.",
+            "Built LLM extraction of emailed customer enquiries into job drafts, and migrated records off two legacy Strapi systems."
+          ]
+        },
+        {
+          "title": "Backend Developer Intern",
+          "period": "Dec 2023 - Apr 2024",
+          "achievements": [
+            "Scaled a Strapi-based ERM platform to ~1k RPS by adding in-memory caching, optimizing SQL queries, and restructuring backend routes."
+          ]
+        }
       ]
     },
     {
@@ -127,30 +139,25 @@
       "period": "Oct 2022 - Mar 2023",
       "headline": "Tax department reports now write themselves",
       "achievements": [
-        "Developed backend and dashboard flows for a Next.js platform used by the UP Commercial Tax Department, with automated PDF-based discrepancy tax report generation that cut manual effort by 60%."
+        "Built backend and dashboards for the UP Commercial Tax Department's Next.js platform, automating PDF discrepancy reports to cut manual effort by 60%."
       ]
     }
   ],
   "projects": [
     {
-      "name": "JScratch",
-      "description": "Published VS Code extension for writing and testing TypeScript-based ETL/data transformation scripts inside the editor.",
-      "url": "https://github.com/chakri68/jscratch"
-    },
-    {
-      "name": "codeCollab",
-      "description": "Real-time collaborative IDE built with Next.js, WebSockets, and CodeMirror, with conflict-free syncing for multi-user editing.",
-      "url": "https://github.com/chakri68/codeCollab"
+      "name": "Family Vault",
+      "description": "Encrypted document store: per-file AES-256-GCM keys, passkey unlock, pluggable storage, property-tested CRDT index merge.",
+      "url": "https://github.com/chakri68/vault"
     },
     {
       "name": "systems-node",
-      "description": "Low-level Node.js systems playground implementing worker-thread multithreading and concurrency primitives in TypeScript.",
+      "description": "Concurrency primitives for Node.js in TypeScript: worker-thread pool executor, semaphore, connection pool, and geohash store.",
       "url": "https://github.com/chakri68/systems-node"
     },
     {
-      "name": "life-sim",
-      "description": "Framework-free TypeScript cellular-automata engine with a pluggable simulator architecture (totalistic, agent-based ecosystem, Gray-Scott reaction-diffusion, custom rules) over a toroidal grid, with a Canvas2D renderer in ~17KB gzipped.",
-      "url": "https://github.com/chakri68/life-sim"
+      "name": "JScratch",
+      "description": "Published VS Code extension for writing and testing TypeScript-based ETL/data transformation scripts inside the editor.",
+      "url": "https://github.com/chakri68/jscratch"
     }
   ],
   "education": {
@@ -170,15 +177,11 @@
       "description": "Top 50 of 5,000+ teams • 2023"
     },
     {
-      "title": "WCARL Drone Contributor",
-      "description": "Contributed to a drone research project featured in The Times of India • 2023"
-    },
-    {
       "title": "Executive Member, GDSC",
       "description": "Organized 15+ tech events and mentored 50+ juniors • 2022-24"
     }
   ],
-  "keywords": "Go, TypeScript, JavaScript, Node.js, NestJS, Express, React, Next.js, SvelteKit, AWS, GCP, PostgreSQL, MySQL, Redis, Kafka, gRPC, GraphQL, Docker, Kubernetes, Strapi, Sanity, Distributed Systems, Microservices, Observability, CI/CD, Backend Engineering",
+  "keywords": "Go, TypeScript, JavaScript, Node.js, NestJS, Express, AWS, GCP, Terraform, PostgreSQL, MySQL, Redis, Kafka, gRPC, ConnectRPC, Protobuf, GraphQL, Docker, Kubernetes, Bazel, Strapi, Distributed Systems, Microservices, Multi-tenancy, Row-Level Security, Observability, CI/CD, Backend Engineering",
   "footer": {
     "copyright": "© 2026 Chakradhar Reddy Devireddy",
     "lastUpdated": "Sep 2026"

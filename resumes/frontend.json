@@ -118,9 +118,9 @@
       "url": "https://github.com/chakri68/jscratch"
     },
     {
-      "name": "codeCollab",
-      "description": "Real‑time code‑sharing IDE with collaborative editing (Next.js, WebSockets, CodeMirror); designed intuitive editor interface and synced 20+ users using operational-transform logic.",
-      "url": "https://github.com/chakri68/codeCollab"
+      "name": "Family Vault",
+      "description": "Offline-first encrypted document vault (PWA): service-worker shell, IndexedDB cache, passkey unlock, client-side AES-256-GCM.",
+      "url": "https://github.com/chakri68/vault"
     },
     {
       "name": "get‑proctored.ai",
@@ -161,6 +161,6 @@
   "keywords": "Frontend Engineering, React, TypeScript, Next.js, Redux, SvelteKit, Tailwind CSS, WebSockets, Canvas, UI/UX, Performance Optimization, Responsive Design, JavaScript, Go, CI/CD, AWS, Kubernetes, DevTools, Developer Experience",
   "footer": {
     "copyright": "© 2026 Chakradhar Reddy Devireddy",
-    "lastUpdated": "Jun 2026"
+    "lastUpdated": "Sep 2026"
   }
 }

@@ -117,9 +117,9 @@
       "url": "https://github.com/chakri68/jscratch"
     },
     {
-      "name": "codeCollab",
-      "description": "Real-time collaborative IDE built with Next.js, WebSockets, CodeMirror, and conflict-free syncing for multi-user editing.",
-      "url": "https://github.com/chakri68/codeCollab"
+      "name": "Family Vault",
+      "description": "Encrypted document store in Next.js: per-file AES-256-GCM keys, passkey unlock, offline PWA, property-tested CRDT index merge.",
+      "url": "https://github.com/chakri68/vault"
     },
     {
       "name": "life-sim",
@@ -160,6 +160,6 @@
   "keywords": "Go, Node.js, React, AWS, Kubernetes, PostgreSQL, Distributed Systems, Microservices, gRPC, Scalability, CI/CD",
   "footer": {
     "copyright": "© 2026 Chakradhar Reddy Devireddy",
-    "lastUpdated": "Jun 2026"
+    "lastUpdated": "Sep 2026"
   }
 }
