@@ -188,3 +188,48 @@ svg {
     display: none;
   }
 }
+
+/* ----- print -----
+   A design prints on one page cut to the 1440px sheet it's drawn for (preparePrint in
+   designs.js). `.dz-frame--print` stays on for the whole print: it pins the sheet width
+   so it can be measured at the width it prints, and clips any decoration hanging past
+   the last row. Measuring happens with no minimum height; after that, --dz-sheet (the
+   page height, headroom included) stretches the sheet to fill the page. The nav is
+   for scrolling a page, and paper doesn't scroll. */
+/* Width comes from the page itself, not a hard 1440px: Chrome's print dialog leaves a
+   small margin that page.pdf() doesn't, and a fixed sheet inside a slightly narrower
+   page sits flush left and loses its right edge. designs.js pins the width to the sheet
+   only while it measures. */
+.dz-frame--print {
+  width: 100%;
+  overflow: clip;
+}
+
+/* Measured with no minimum (so the measurement is the content's own height); printed
+   filling the page area, so the slack lands inside the page rather than after it. */
+.dz-frame--print .dz {
+  min-height: 0;
+}
+
+@media print {
+  .dz-frame--print .dz {
+    min-height: 100vh;
+  }
+}
+
+/* The headroom opens up above the footer rather than under it, so a full-bleed footer
+   band still sits on the bottom edge. The footer keeps its own margin; an empty flex
+   item ordered in front of it takes the slack. */
+.dz-frame--print .dz::after {
+  content: "";
+  flex-grow: 1;
+  order: 1;
+}
+
+.dz-frame--print .dz > .foot {
+  order: 2;
+}
+
+.dz-frame--print .dz-nav {
+  display: none;
+}

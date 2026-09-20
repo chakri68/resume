@@ -94,7 +94,7 @@ How it works, since it's the only non-obvious part of the repo:
 - Each design is a renderer (JSON in, HTML string out) mounted in a **shadow root**. That's deliberate: `styles.css` styles bare `section`, `article`, `h2`… and those would bleed straight into a design otherwise.
 - **Motion is opt-out by construction.** Marquees, hero entrances and scroll reveals only arm when the visitor *hasn't* asked for reduced motion, and only fire once the loading screen is gone (otherwise every entrance plays behind it). A renderer opts elements into scroll reveal with `{ reveal: "<selector>" }` as the third argument to `define`; `h.marquee()` builds a seamless ticker, and `.dz-bleed` breaks a band out of the 1440px sheet to the viewport edges.
 - **The tab follows along.** `favicon.svg` draws with CSS custom properties, so switching design re-inks the tab icon (paper tile, the design's ink, its accent rule) and sets `theme-color` to the design's paper. Classic gets the plain file back, which also has a dark-scheme variant baked in.
-- **Print is always classic.** The classic DOM stays populated underneath and every design is `@media screen` only, so `Ctrl+P`, the CLI and the ATS reading order are exactly what they were. The posters are for humans; the PDF is for parsers.
+- **Classic prints to A4, designs print as themselves.** Classic's print is the one that goes to recruiters, so nothing about it changed: A4, one page, ATS reading order intact. Print from a design (`Ctrl+P`, or its own print button) and you get that design on a single page cut to its own size: 1440px wide, the sheet it's drawn for, and exactly as tall as it runs. No shrinking to fit A4, nothing split across pages. The height doesn't exist until it's laid out at 1440px and your window might be narrower, so `beforeprint` pins the sheet to 1440px, measures it, writes an `@page` rule, and turns motion off (unrevealed blocks would otherwise print blank). `afterprint` puts all of it back. The posters are for humans; the A4 is for parsers.
 
 The designs read a few optional fields (all in [`schema.json`](schema.json)): `personal.tagline`, per-job `headline` / `deck` (the newspaper needs headlines), and a top-level `highlights` array for pull quotes. Leave them out and the designs fall back to sensible text or just skip the block — `resumes/backend.json` has the full set if you want an example.
 
@@ -112,7 +112,7 @@ The link-preview card is drawn as the top of the classic page — same logo, nav
 
 ## Printing
 
-Hit the print button (🖨️) in the nav, or just `Ctrl/Cmd + P`. It's tuned for A4.
+Hit the print button (🖨️) in the nav, or just `Ctrl/Cmd + P`. Classic is tuned for A4. A design prints on one page sized to the design (see [Designs](#designs)), which is great for sharing and questionable for your office printer.
 
 ## Generating a PDF from the CLI
 
@@ -124,6 +124,7 @@ npm install                                # pulls puppeteer (bundles Chromium)
 node cli/resume-to-pdf.js resumes/backend.json -o backend.pdf
 npm run pdf -- resumes/backend.json        # same thing, via npm script
 cat resumes/google.json | node cli/resume-to-pdf.js -   # or pipe it in
+node cli/resume-to-pdf.js resumes/backend.json -d broadsheet   # a design instead → backend-broadsheet.pdf
 ```
 
 By default it renders against the live site (`https://resume.chakri.me`). Point it at a local server with `--url http://localhost:<port>` if you want to see changes you haven't pushed yet.

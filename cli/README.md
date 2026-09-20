@@ -59,6 +59,9 @@ cat resumes/google.json | resume-to-pdf -
 
 # Drive a local server instead of the live site
 resume-to-pdf resumes/backend.json --url http://localhost:8080
+
+# An alternate design instead of classic (writes resumes/backend-riso.pdf)
+resume-to-pdf resumes/backend.json --design riso
 ```
 
 ## Options
@@ -68,7 +71,8 @@ resume-to-pdf resumes/backend.json --url http://localhost:8080
 | `-o, --output`      | Output PDF path (default: `<input>.pdf` or `resume.pdf`) |
 | `-u, --url`         | Site URL to drive (default: `https://resume.chakri.me`) |
 | `--json <text>`     | Pass JSON inline instead of a file                     |
-| `-m, --margin <css>`| Page margin, any CSS length (default: `1.2cm`; `0` for none) |
+| `-d, --design <id>` | Print an alternate design (`riso`, `magazine`, `broadsheet`, `broadside`, `dada`, `almanac`) instead of classic: one page sized to the design, not A4 |
+| `-m, --margin <css>`| Page margin, any CSS length (default: `1.2cm`; `0` for none). Classic only |
 | `--no-headless`     | Show the browser window (for debugging)                |
 | `--timeout <ms>`    | Navigation/render timeout (default: `30000`)           |
 | `-h, --help`        | Show help                                              |
@@ -86,6 +90,12 @@ stashes the JSON in `sessionStorage["debugResumeData"]` and reloads
    reload so the resume renders through the normal `populateResume()` flow.
 3. Wait for the loading overlay to disappear, switch to print media, and export an
    A4 PDF.
+
+With `--design`, step 2 loads `?design=<id>` instead of reloading, with reduced
+motion on so no entrance gets caught halfway. The page then sizes its own sheet on
+`beforeprint` (`designs/designs.js`: 1440px wide, as tall as the design runs), and
+the PDF follows that `@page` size instead of pinning A4. An unknown id fails loudly
+rather than quietly printing classic under a design's filename.
 
 ### A note on margins
 

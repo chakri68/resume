@@ -1,9 +1,10 @@
 // ===== Alternate designs =====
-// The classic page (index.html + styles.css) is the default, and it is ALWAYS what
-// prints — the PDF/ATS pipeline never sees any of this. Every other design is a
+// The classic page (index.html + styles.css) is the default, and its A4 print is the
+// one that goes to recruiters — nothing here changes it. Every other design is a
 // renderer (designs/<id>.js) plus a stylesheet (designs/<id>.css), fetched only
 // when picked and mounted inside a shadow root so styles.css's global element
 // selectors (section, article, h2, …) can't leak in, and the design's can't leak out.
+// A design prints as itself, on one page cut to its own size (see "print" below).
 (function () {
   const DESIGN_STORAGE_KEY = "design";
   const DESIGN_PARAM = "design";
@@ -427,6 +428,61 @@
     };
     go();
   }
+
+  // ----- print -----
+  // A design prints on a single page, 1440px wide (the sheet it's drawn for) and as
+  // tall as it runs, so nothing gets shrunk to fit A4 and nothing splits across pages.
+  // That height only exists once it's laid out at sheet width, and the window may be
+  // narrower, so beforeprint widens the frame to measure it, writes the @page rule, and
+  // hands the width back. Motion comes off first: entrances and unrevealed blocks start
+  // hidden, and paper should get the finished page. afterprint (which also fires on
+  // cancel) puts all of it back. Classic is never touched.
+  //
+  // The measurement is a screen measurement, and screen and paper don't set text quite
+  // alike: on-screen Linux Chrome snaps glyphs to whole pixels, print doesn't, and the
+  // printed sheet ran 2–5px taller. A page cut 3px short prints a 3px second page. So
+  // the page gets 1% headroom, the sheet fills the page area (the slack lands above the
+  // footer), and anything still over is clipped rather than paginated (designs.css).
+  //
+  // Measuring is done a little narrower than the sheet, because Chrome's print dialog
+  // keeps a small margin that page.pdf() doesn't: the printed sheet is then never wider
+  // — and so never taller — than what was measured.
+  const SHEET_WIDTH = 1440;
+  const MEASURE_WIDTH = 1416;
+  const HEADROOM = 1.01;
+  let printing = null;
+
+  function preparePrint() {
+    const frame = shadow && shadow.querySelector(".dz-frame");
+    if (current === DEFAULT_DESIGN || !frame || printing) return;
+    const root = frame.firstElementChild;
+    const motion = ["dz--motion", "dz--live"].filter((c) => root.classList.contains(c));
+    root.classList.remove(...motion);
+    frame.classList.add("dz-frame--print");
+
+    // Measure at a fixed width, then hand the width back to the page: printing lays out
+    // at whatever the page box gives (1440px, less any margin the dialog adds).
+    frame.style.width = `${MEASURE_WIDTH}px`;
+    const height = Math.ceil(root.getBoundingClientRect().height * HEADROOM);
+    frame.style.width = "";
+    const page = document.createElement("style");
+    page.textContent = `@page { size: ${SHEET_WIDTH}px ${height}px; margin: 0; }`;
+    document.head.appendChild(page);
+    printing = { frame, root, motion, page };
+  }
+
+  function finishPrint() {
+    if (!printing) return;
+    const { frame, root, motion, page } = printing;
+    page.remove();
+    frame.style.removeProperty("width");
+    frame.classList.remove("dz-frame--print");
+    root.classList.add(...motion);
+    printing = null;
+  }
+
+  window.addEventListener("beforeprint", preparePrint);
+  window.addEventListener("afterprint", finishPrint);
 
   // ----- the picker -----
   // Lives in the top bar: beside the theme toggle on the classic page (emoji, like its

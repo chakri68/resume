@@ -8,7 +8,7 @@
 
 @media screen {
   /* A non-classic design is active: clear the stage. The classic DOM stays
-     populated underneath — it's still what prints. */
+     populated underneath, so switching back is instant. */
   html[data-design]:not([data-design="classic"]) body {
     max-width: none;
     margin: 0;
@@ -38,8 +38,32 @@
   --picker-font: 600 0.85rem/1.25 var(--font-head);
 }
 
+/* ----- print -----
+   Classic prints exactly as styles.css says (A4, the version that goes to recruiters),
+   and nothing below matches while it's active. A design prints as itself instead, on a
+   single page cut to its own size: designs.js writes that @page rule on beforeprint.
+   Every design sets its own font and colour on its root, so the classic print rules
+   that still reach <html>/<body> (7.25pt type, white paper) only need the paper undone. */
 @media print {
   #design-root {
     display: none !important;
+  }
+
+  html[data-design]:not([data-design="classic"]) body > :not(#design-root) {
+    display: none !important;
+  }
+
+  html[data-design]:not([data-design="classic"]) #design-root {
+    display: block !important;
+  }
+
+  html[data-design]:not([data-design="classic"]),
+  html[data-design]:not([data-design="classic"]) body {
+    background-color: var(--design-bg) !important;
+    /* One page, always. Clipping to the page area means a sheet that comes out a few px
+       tall — text sets differently on screen than on paper — loses those pixels instead
+       of starting a second page. */
+    height: 100%;
+    overflow: hidden;
   }
 }
