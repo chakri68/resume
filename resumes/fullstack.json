@@ -111,6 +111,11 @@
   ],
   "projects": [
     {
+      "name": "party games",
+      "description": "26 real-time multiplayer phone games on Cloudflare Workers: one Durable Object per room over WebSockets.",
+      "url": "https://github.com/chakri68/party"
+    },
+    {
       "name": "JScratch",
       "description": "Published VS Code extension for writing and testing TypeScript-based ETL/data transformation scripts inside the editor.",
       "url": "https://github.com/chakri68/jscratch"
@@ -119,11 +124,6 @@
       "name": "Family Vault",
       "description": "Encrypted document store in Next.js: per-file AES-256-GCM keys, passkey unlock, offline PWA, property-tested CRDT index merge.",
       "url": "https://github.com/chakri68/vault"
-    },
-    {
-      "name": "life-sim",
-      "description": "Framework-free cellular-automata engine in TypeScript with four pluggable simulators (totalistic, agent-based ecosystem, Gray-Scott reaction-diffusion, and live JS rules); Canvas2D pan/zoom renderer with base64 URL-shareable state.",
-      "url": "https://github.com/chakri68/life-sim"
     },
     {
       "name": "get-proctored.ai",

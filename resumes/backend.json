@@ -146,14 +146,14 @@
   ],
   "projects": [
     {
+      "name": "party games",
+      "description": "26 real-time multiplayer phone games on Cloudflare Workers: one Durable Object per room over WebSockets.",
+      "url": "https://github.com/chakri68/party"
+    },
+    {
       "name": "Family Vault",
       "description": "Encrypted document store: per-file AES-256-GCM keys, passkey unlock, pluggable storage, property-tested CRDT index merge.",
       "url": "https://github.com/chakri68/vault"
-    },
-    {
-      "name": "systems-node",
-      "description": "Concurrency primitives for Node.js in TypeScript: worker-thread pool executor, semaphore, connection pool, and geohash store.",
-      "url": "https://github.com/chakri68/systems-node"
     },
     {
       "name": "JScratch",

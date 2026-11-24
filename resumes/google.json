@@ -114,9 +114,9 @@
   ],
   "projects": [
     {
-      "name": "systems-node",
-      "description": "Systems playground: worker-thread multithreading, task scheduling, and concurrency primitives in TypeScript.",
-      "url": "https://github.com/chakri68/systems-node"
+      "name": "party games",
+      "description": "26 real-time multiplayer phone games on Cloudflare Workers: one Durable Object per room over WebSockets.",
+      "url": "https://github.com/chakri68/party"
     },
     {
       "name": "Family Vault",
