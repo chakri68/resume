@@ -4,11 +4,11 @@
     "tagline": "Backend engineer · Go & TypeScript · Distributed systems",
     "contact": {
       "github": {
-        "text": "GitHub",
+        "text": "github.com/chakri68",
         "url": "https://github.com/chakri68"
       },
       "linkedin": {
-        "text": "LinkedIn",
+        "text": "linkedin.com/in/chakradhar-reddy-d",
         "url": "https://www.linkedin.com/in/chakradhar-reddy-d"
       },
       "email": {
@@ -22,7 +22,7 @@
     }
   },
   "summary": {
-    "text": "Backend engineer building Go and TypeScript systems for healthcare and logistics at Even Healthcare and Zomato. Strong in distributed systems, PostgreSQL, gRPC, AWS, and Terraform, with a bias toward reliable, developer-first backend tooling."
+    "text": "Backend engineer building Go and TypeScript systems for healthcare and logistics at Even Healthcare and Zomato. Strong in data structures, algorithms, distributed systems, workflow engines, PostgreSQL, gRPC, and GCP/AWS."
   },
   "highlights": [
     {
@@ -46,7 +46,7 @@
     "categories": [
       {
         "title": "Languages",
-        "items": "Go, TypeScript, JavaScript, Java, Python, SQL, Bash"
+        "items": "Go, TypeScript, JavaScript, Java, Python, C++, SQL, Bash"
       },
       {
         "title": "Backend",
@@ -68,13 +68,14 @@
       "title": "Software Development Engineer",
       "location": "Bengaluru",
       "period": "Oct 2025 - Present",
-      "headline": "Hospital Pass engagement jumps 65% under new backend owner",
+      "headline": "Home screen goes live for ~70k members as cards update in 2 seconds",
       "achievements": [
-        "Owned backend for Even Infinite's Hospital Pass, simplifying member access to partner-hospital services and lifting pass engagement by 65%+.",
-        "Designed an AI framework for clinical follow-up calls: LLM report summaries, care-manager suggestions, and automated calls, cutting manual effort ~40%.",
+        "Built Action Cards, a server-driven Go engine turning bookings, orders, and claims into live home cards for ~70k members; update lag 7.3s to 2s.",
+        "Owned backend for Even Infinite's Hospital Pass: policy verification, tiered waitlist ranking, auto-approval, and renewals; pass engagement up 65%+.",
+        "Built a no-code care-journey engine compiling member flows to GCP Workflows, with SQL-defined cohorts and a visual audience builder for care teams.",
+        "Built AI voice-call and call-audit pipelines (LLM transcription, summaries, auto-filled forms), auditing 19k+ calls and cutting manual follow-ups ~40%.",
         "Built an in-house product analytics and event-tracking platform ingesting ~140k user events a day, so teams query user behavior without third-party tooling.",
-        "Built a reusable onboarding package for insurance providers with automated CI/CD, cutting provider integration time from 6 weeks to 2.",
-        "Fixed recurring document re-upload failures across post-hospitalization workflows, restoring reliable generation of 300+ weekly forms for care managers."
+        "Cut consult-history API latency from 36s to 6.6s via per-policy-window caching; kept doctor-slot search under 3s through vendor outages."
       ]
     },
     {
@@ -184,6 +185,6 @@
   "keywords": "Go, TypeScript, JavaScript, Node.js, NestJS, Express, AWS, GCP, Terraform, PostgreSQL, MySQL, Redis, Kafka, gRPC, ConnectRPC, Protobuf, GraphQL, Docker, Kubernetes, Bazel, Strapi, Distributed Systems, Microservices, Multi-tenancy, Row-Level Security, Observability, CI/CD, Backend Engineering",
   "footer": {
     "copyright": "© 2026 Chakradhar Reddy Devireddy",
-    "lastUpdated": "Sep 2026"
+    "lastUpdated": "Nov 2026"
   }
 }

@@ -3,11 +3,11 @@
     "name": "CHAKRADHAR REDDY DEVIREDDY",
     "contact": {
       "github": {
-        "text": "GitHub",
+        "text": "github.com/chakri68",
         "url": "https://github.com/chakri68"
       },
       "linkedin": {
-        "text": "LinkedIn",
+        "text": "linkedin.com/in/chakradhar-reddy-d",
         "url": "https://www.linkedin.com/in/chakradhar-reddy-d"
       },
       "email": {
@@ -21,7 +21,7 @@
     }
   },
   "summary": {
-    "text": "Software Engineer from IIIT Lucknow with production experience at Zomato and Even Healthcare, building backend systems in Go, TypeScript, gRPC, Kafka, Redis, PostgreSQL, and AWS. Codeforces Expert with strong DSA/problem-solving background and experience improving high-throughput logistics, healthcare, and internal platform systems."
+    "text": "Software Engineer (IIIT Lucknow) with production experience at Zomato and Even Healthcare, building backend systems in Go, TypeScript, gRPC, Kafka, Redis, PostgreSQL, and GCP/AWS. Codeforces Expert; recent work spans event-driven platforms, workflow engines, LLM pipelines, and latency."
   },
   "skills": {
     "categories": [
@@ -43,7 +43,7 @@
       },
       {
         "title": "Cloud & Infrastructure",
-        "items": "AWS, GCP, Docker, Kubernetes, Kafka, Nginx, Bazel, Gerrit, CI/CD"
+        "items": "AWS, GCP (Workflows, Cloud Tasks), Docker, Kubernetes, Kafka, Nginx, Bazel, CI/CD"
       },
       {
         "title": "Frontend",
@@ -58,10 +58,11 @@
       "location": "Bengaluru",
       "period": "Oct 2025 - Present",
       "achievements": [
-        "Owned backend development for Even Infinite's Hospital Pass, improving member access to partner-hospital services and increasing pass engagement by 65%+.",
-        "Designed an AI-assisted clinical follow-up framework using LLM-based report summarization, care-manager recommendations, and automated call flows, reducing manual follow-up effort by ~40%.",
-        "Built reusable onboarding infrastructure for insurance providers with automated CI/CD workflows, reducing provider integration time from 6 weeks to 2 weeks.",
-        "Resolved recurring document generation and re-upload failures in post-hospitalization workflows, restoring reliable generation of 300+ weekly care-manager forms."
+        "Designed and built Action Cards, a server-driven engine (Go, Firestore, Cloud Tasks) turning consults, lab tests, scans, medicines, and claims into live home-screen cards and detail pages for ~70k members, cutting update lag from ~7.3s to ~2s.",
+        "Owned backend for Even Infinite's Hospital Pass: policy verification, tiered waitlist ranking, auto-approval, and renewals; pass engagement up 65%+.",
+        "Built a no-code care-journey engine that compiles member flows to GCP Workflows, with SQL-defined cohorts on a read-only Postgres mirror and a visual audience builder, letting care teams define outreach without engineers.",
+        "Built AI voice-call and call-audit pipelines (LLM transcription, summaries, auto-filled forms), auditing 19k+ calls and cutting manual follow-ups ~40%.",
+        "Cut consult-history API latency from 36s to 6.6s via per-policy-window caching; kept doctor-slot search under 3s through vendor outages."
       ]
     },
     {
@@ -74,7 +75,7 @@
           "title": "Software Development Engineer",
           "period": "Jul 2025 - Oct 2025",
           "achievements": [
-            "Built an automated vehicle onboarding workflow with plate detection and dynamic step routing across 15 screens, reducing manual review effort by 60% and onboarding errors by 80%.",
+            "Built an automated vehicle onboarding flow with plate detection across 15 screens, cutting manual review by 60% and onboarding errors by 80%.",
             "Redesigned delayed-order ticketing workflows with automated escalation states and operator actions, reducing cancellation-prone cases by 80%.",
             "Migrated logistics map tooling to Google Maps and optimized API usage patterns, reducing map-related operating costs by 25%.",
             "Built a Python-based sync pipeline for ~1M support tickets, automating recurring operations workflows and eliminating 95% of manual sync effort."
@@ -84,7 +85,6 @@
           "title": "Software Development Intern",
           "period": "Jan 2025 - Jun 2025",
           "achievements": [
-            "Migrated 200+ legacy JavaScript components to TypeScript and Redux inside a large Next.js monorepo, reducing build-time errors by 40% and improving development velocity by 30%.",
             "Built a production-safe Go SDK to stream multi-GB ZIP archives directly to S3, reducing transfer latency by 65% and cutting peak memory usage by 50%.",
             "Developed a GPS ingestion service processing ~50k location events/sec with monitoring dashboards, improving ETA prediction accuracy by 12%.",
             "Refactored service-to-service RPC flows using goroutines and gRPC batching, reducing P95 latency by 95% at ~2k TPS."
@@ -108,15 +108,14 @@
       "location": "Lucknow",
       "period": "Oct 2022 - Mar 2023",
       "achievements": [
-        "Developed backend and dashboard workflows for a Next.js platform used by the UP Commercial Tax Department, including automated PDF-based discrepancy tax report generation that reduced manual effort by 60%.",
-        "Implemented WAF protections, API validation, and access-control improvements for sensitive government-facing workflows."
+        "Built backend and dashboards for a Next.js platform used by the UP Commercial Tax Department; automated tax-discrepancy reports cut manual work 60%."
       ]
     }
   ],
   "projects": [
     {
       "name": "systems-node",
-      "description": "Low-level systems playground implementing worker-thread multithreading, task scheduling, and concurrency primitives in TypeScript.",
+      "description": "Systems playground: worker-thread multithreading, task scheduling, and concurrency primitives in TypeScript.",
       "url": "https://github.com/chakri68/systems-node"
     },
     {
@@ -128,11 +127,6 @@
       "name": "JScratch",
       "description": "Published VS Code extension for writing, testing, and running TypeScript-based ETL/data transformation scripts inside the editor.",
       "url": "https://github.com/chakri68/jscratch"
-    },
-    {
-      "name": "life-sim",
-      "description": "TypeScript cellular-automata engine with four pluggable simulators (totalistic automata, agent-based ecosystem, Gray-Scott reaction-diffusion, custom JS rules) on a toroidal grid; Canvas2D pan/zoom renderer with base64 URL-encoded state, ~17KB gzipped and framework-free.",
-      "url": "https://github.com/chakri68/life-sim"
     }
   ],
   "education": {
@@ -152,10 +146,6 @@
       "description": "Top 50 of 5,000+ teams • 2023"
     },
     {
-      "title": "WCARL Drone Contributor",
-      "description": "Contributed to a drone research project featured in The Times of India • 2023"
-    },
-    {
       "title": "Executive Member, GDSC",
       "description": "Organized 15+ tech events and mentored 50+ juniors • 2022-24"
     }
@@ -163,6 +153,6 @@
   "keywords": "Software Engineer, SDE1, Google, Backend Engineering, Go, TypeScript, Java, C++, Python, Data Structures, Algorithms, DSA, Distributed Systems, Microservices, gRPC, Kafka, Redis, PostgreSQL, AWS, GCP, Kubernetes, Docker, System Design, Codeforces Expert, IIIT Lucknow, Zomato, Even Healthcare",
   "footer": {
     "copyright": "© 2026 Chakradhar Reddy Devireddy",
-    "lastUpdated": "Sep 2026"
+    "lastUpdated": "Nov 2026"
   }
 }

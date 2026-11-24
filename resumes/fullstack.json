@@ -3,11 +3,11 @@
     "name": "CHAKRADHAR REDDY DEVIREDDY",
     "contact": {
       "github": {
-        "text": "GitHub",
+        "text": "github.com/chakri68",
         "url": "https://github.com/chakri68"
       },
       "linkedin": {
-        "text": "LinkedIn",
+        "text": "linkedin.com/in/chakradhar-reddy-d",
         "url": "https://www.linkedin.com/in/chakradhar-reddy-d"
       },
       "email": {
@@ -27,7 +27,7 @@
     "categories": [
       {
         "title": "Languages",
-        "items": "Go, TypeScript, JavaScript, Java, Python, SQL, Bash"
+        "items": "Go, TypeScript, JavaScript, Java, Python, C++, SQL, Bash"
       },
       {
         "title": "Backend",
@@ -54,10 +54,10 @@
       "location": "Bengaluru",
       "period": "Oct 2025 - Present",
       "achievements": [
-        "Built and led backend systems for Even Infinite's Hospital Pass, simplifying hospital-service access and driving a 65%+ increase in user engagement.",
-        "Designed and built an AI calling framework integrating LLMs into clinical workflows, enabling automated report summarization, smart care-manager suggestions, and fully automated follow-up calls—reducing manual effort by ~40%.",
-        "Built a generalized onboarding package for new insurance providers and automated CI/CD pipelines, cutting integration time from 6 weeks to 2 weeks.",
-        "Resolved 900+ weekly document re-upload failures, unblocking reliable generation of 300+ post-hospitalization forms per week across care manager workflows.",
+        "Designed and built Action Cards, a server-driven UI engine (Go, Firestore, Cloud Tasks) rendering live home-screen cards and Figma-spec detail pages for consults, labs, scans, medicines, and claims across ~70k members, with ~2s update lag.",
+        "Owned Even Infinite's Hospital Pass end to end: onboarding flows, a policy-verification tool, waitlist ranking, and auto-approval; engagement up 65%+.",
+        "Built a no-code care-journey engine compiling member flows to GCP Workflows, with a visual flow editor and a SQL-free audience builder for care teams.",
+        "Built AI voice-call and call-audit pipelines (LLM transcription, summaries, auto-filled forms), auditing 19k+ calls and cutting manual follow-ups ~40%.",
         "Refactored core frontend modules to enable true parallel data loading, reducing render times by ~25% and improving stability on high-traffic screens."
       ]
     },
@@ -105,8 +105,7 @@
       "location": "Lucknow",
       "period": "Oct 2022 - Mar 2023",
       "achievements": [
-        "Developed backend and dashboard flows for a Next.js platform used by the UP Commercial Tax Department with automated PDF-based discrepancy tax report generation, reducing manual effort by 60%.",
-        "Implemented WAF protections, API validation, and access-control improvements for sensitive government-facing workflows."
+        "Developed backend and dashboard flows for a Next.js platform used by the UP Commercial Tax Department with automated PDF-based discrepancy tax report generation, reducing manual effort by 60%."
       ]
     }
   ],
@@ -149,10 +148,6 @@
       "description": "Top 50 of 5,000+ teams • 2023"
     },
     {
-      "title": "WCARL Drone Contributor",
-      "description": "Project featured in The Times of India • 2023"
-    },
-    {
       "title": "Executive Member, GDSC",
       "description": "Organised 15+ tech events; mentored 50+ juniors • 2022-24"
     }
@@ -160,6 +155,6 @@
   "keywords": "Go, Node.js, React, AWS, Kubernetes, PostgreSQL, Distributed Systems, Microservices, gRPC, Scalability, CI/CD",
   "footer": {
     "copyright": "© 2026 Chakradhar Reddy Devireddy",
-    "lastUpdated": "Sep 2026"
+    "lastUpdated": "Nov 2026"
   }
 }
